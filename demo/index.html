@@ -14,9 +14,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="https://images.pexels.com/photos/18126715/pexels-photo-18126715.jpeg?auto=compress&cs=tinysrgb&w=1600" fetchpriority="high">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
-<script type="importmap">
-{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js"}}
-</script>
 <style>
 :root{
   --ink:#0A0A0B; --ink-2:#111113; --ink-3:#18181C;
@@ -229,13 +226,14 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 .b3d{background:var(--ink-2);position:relative;overflow:hidden}
 .b3d-stage{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(20px,4vw,56px);align-items:center;min-height:86svh}
 @media(max-width:940px){.b3d-stage{grid-template-columns:1fr;min-height:0;gap:26px;padding-block:20px}}
-.b3d-canvas{position:relative;aspect-ratio:1/1;max-height:74svh;width:100%}
-.b3d-canvas canvas{width:100%;height:100%;display:block;touch-action:pan-y}
-.b3d-fallback{position:absolute;inset:0;display:none;place-items:center;border-radius:16px;overflow:hidden;
-  border:1px solid var(--line);background:var(--ink-3)}
-.b3d-fallback img{width:100%;height:100%;object-fit:cover}
-.b3d.nogl .b3d-canvas canvas{display:none}
-.b3d.nogl .b3d-fallback{display:grid}
+.b3d-canvas{position:relative;width:100%;aspect-ratio:2/3;max-height:78svh;margin-inline:auto}
+.bstack{position:absolute;inset:0}
+.bstack .ly{position:absolute;left:50%;top:50%;width:30%;
+  transform:translate(-50%,-50%);will-change:transform,top;transform-origin:50% 50%}
+.bstack .ly img{width:100%;height:auto;display:block;
+  filter:drop-shadow(0 18px 26px rgba(0,0,0,.55))}
+.b3d-shadow{position:absolute;left:50%;bottom:6%;width:46%;height:5%;transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.72),transparent 70%);filter:blur(6px);pointer-events:none}
 .b3d-glow{position:absolute;width:56%;aspect-ratio:1;border-radius:50%;filter:blur(90px);
   background:rgba(232,50,30,.28);top:18%;left:4%;pointer-events:none;z-index:0}
 .b3d-copy{position:relative;z-index:2}
@@ -379,23 +377,30 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
   <div class="wrap">
     <div class="head rv">
       <div class="kicker mono">Built To Order</div>
-      <h2 class="display">Six layers.<br><span class="grad">Zero shortcuts.</span></h2>
+      <h2 class="display">Seven layers.<br><span class="grad">Zero shortcuts.</span></h2>
     </div>
     <div class="b3d-stage" id="b3dStage">
       <div class="b3d-canvas" id="b3dCanvas">
-        <canvas id="burgerGL" aria-label="Rotating 3D model of a Burger Mafia burger" role="img"></canvas>
-        <div class="b3d-fallback">
-          <img src="https://images.pexels.com/photos/18987002/pexels-photo-18987002.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Stacked flame-grilled burgers" width="900" height="600" loading="lazy" decoding="async">
+        <div class="bstack" id="bstack">
+          <div class="ly" data-ly="0" data-w="63.3" data-cx="50.0" data-open="84.7" style="width:63.3%;left:50.0%;top:84.7%"><img src="img/bun-base.webp" alt="Toasted sesame base" loading="lazy" decoding="async"></div>
+          <div class="ly" data-ly="1" data-w="58.3" data-cx="49.1" data-open="68.3" style="width:58.3%;left:49.1%;top:68.3%"><img src="img/lettuce.webp" alt="Crisp lettuce" loading="lazy" decoding="async"></div>
+          <div class="ly" data-ly="2" data-w="25.4" data-cx="47.4" data-open="55.7" style="width:25.4%;left:47.4%;top:55.7%"><img src="img/onion.webp" alt="Raw onion rings" loading="lazy" decoding="async"></div>
+          <div class="ly" data-ly="3" data-w="37.6" data-cx="47.5" data-open="44.3" style="width:37.6%;left:47.5%;top:44.3%"><img src="img/tomato.webp" alt="Beef tomato" loading="lazy" decoding="async"></div>
+          <div class="ly" data-ly="4" data-w="32.3" data-cx="47.7" data-open="32.4" style="width:32.3%;left:47.7%;top:32.4%"><img src="img/patty.webp" alt="Flame-grilled patty" loading="lazy" decoding="async"></div>
+          <div class="ly" data-ly="5" data-w="36.8" data-cx="48.0" data-open="20.4" style="width:36.8%;left:48.0%;top:20.4%"><img src="img/cheese.webp" alt="Real cheddar" loading="lazy" decoding="async"></div>
+          <div class="ly" data-ly="6" data-w="29.4" data-cx="47.1" data-open="8.8" style="width:29.4%;left:47.1%;top:8.8%"><img src="img/bun-top.webp" alt="Sesame crown" loading="lazy" decoding="async"></div>
         </div>
+        <div class="b3d-shadow"></div>
       </div>
       <div class="b3d-copy">
-        <div class="ing" data-ing="0"><b>01</b><div><h4>Toasted Base</h4><p>Brioche, buttered and seared on the flat top so it never goes soft under the sauce.</p></div></div>
-        <div class="ing" data-ing="1"><b>02</b><div><h4>Flame-Grilled Patty</h4><p>Cooked over open flame to order. Char you can taste, not a griddle stripe.</p></div></div>
-        <div class="ing" data-ing="2"><b>03</b><div><h4>Real Cheddar</h4><p>A full square slice, laid on hot so it melts over the edge instead of sitting on top.</p></div></div>
-        <div class="ing" data-ing="3"><b>04</b><div><h4>Crisp Lettuce</h4><p>Shredded to order. Cold against the patty — the contrast is the point.</p></div></div>
-        <div class="ing" data-ing="4"><b>05</b><div><h4>Beef Tomato</h4><p>Thick cut, seeds in, seasoned. Not the watery disc you get elsewhere.</p></div></div>
-        <div class="ing" data-ing="5"><b>06</b><div><h4>Sesame Crown</h4><p>Domed, seeded, steamed for ninety seconds so it gives when you bite.</p></div></div>
-        <div class="b3d-hint mono"><i></i> <span id="b3dHint">Scroll to build · drag to spin</span></div>
+        <div class="ing" data-ing="0"><b>01</b><div><h4>Toasted sesame base</h4><p>Seared on the flat top so it never goes soft under the sauce.</p></div></div>
+        <div class="ing" data-ing="1"><b>02</b><div><h4>Crisp lettuce</h4><p>Shredded to order. Cold against the patty — the contrast is the point.</p></div></div>
+        <div class="ing" data-ing="2"><b>03</b><div><h4>Raw onion rings</h4><p>Cut thin, never cooked. The bite that stops it tasting heavy.</p></div></div>
+        <div class="ing" data-ing="3"><b>04</b><div><h4>Thick-cut tomato</h4><p>Seeds in, seasoned. Not the watery disc you get elsewhere.</p></div></div>
+        <div class="ing" data-ing="4"><b>05</b><div><h4>Flame-grilled patty</h4><p>Cooked over open flame to order. Char you can taste, not a griddle stripe.</p></div></div>
+        <div class="ing" data-ing="5"><b>06</b><div><h4>Real cheddar</h4><p>A full square slice, laid on hot so it melts over the edge.</p></div></div>
+        <div class="ing" data-ing="6"><b>07</b><div><h4>Sesame crown</h4><p>Domed, seeded, steamed for ninety seconds so it gives when you bite.</p></div></div>
+        <div class="b3d-hint mono"><i></i> <span id="b3dHint">Scroll to close · keep going to split</span></div>
       </div>
     </div>
   </div>
@@ -1021,83 +1026,78 @@ window.addEventListener('load', function () {
     if (goo) goo.style.display = 'none';
   }
 
-  /* ---------- 3D burger build ---------- */
+  /* ---------- burger build: real ingredient layers that split and close ----------
+     Each layer is a photographed ingredient cut out of one studio shot, so the
+     open state reproduces the original photograph exactly. Scroll drives it
+     closed, holds it whole, then splits it apart again. */
   (function () {
+    var stack = document.getElementById('bstack');
+    if (!stack) return;
     var sec = document.getElementById('build');
-    var canvas = document.getElementById('burgerGL');
+    var lys = gsap.utils.toArray('#bstack .ly');
     var ings = gsap.utils.toArray('.ing');
 
-    function highlight(i) {
-      ings.forEach(function (n, k) { n.classList.toggle('on', k === i); });
-    }
-    highlight(0);
+    /* where each layer sits when the burger is shut (% of frame height) */
+    var CLOSED = [84.7, 78.5, 73.5, 68.0, 61.0, 55.0, 48.0];
+    /* sideways drift and tilt applied only while it is open */
+    var DRIFT = [0, -7, 6, -5, 5, -8, 4];
+    var TILT = [0, -4, 5, -3, 4, -6, 3];
 
-    function webglOK() {
-      try {
-        var c = document.createElement('canvas');
-        return !!(c.getContext('webgl2') || c.getContext('webgl'));
-      } catch (e) { return false; }
-    }
-    var capable = !reduce && !lowPower && webglOK() &&
-      !(navigator.deviceMemory && navigator.deviceMemory < 4) &&
-      typeof HTMLScriptElement !== 'undefined' && HTMLScriptElement.supports &&
-      HTMLScriptElement.supports('importmap');
-
-    if (!capable) {
-      sec.classList.add('nogl');
-      document.getElementById('b3dHint').textContent = 'Scroll to explore';
-      /* still drive the ingredient copy on scroll */
-      ScrollTrigger.create({
-        trigger: sec, start: 'top 70%', end: 'bottom 40%', scrub: true,
-        onUpdate: function (s) { highlight(Math.min(ings.length - 1, Math.floor(s.progress * ings.length))); }
-      });
-      return;
-    }
-
-    var api = null, pending = { build: 0, spin: 0 };
-
-    /* only fetch three.js once the section is close */
-    ScrollTrigger.create({
-      trigger: sec, start: 'top bottom+=400', once: true,
-      onEnter: function () {
-        import('./burger3d.js')
-          .then(function (m) { return m.mountBurger(canvas, {}); })
-          .then(function (inst) { api = inst; api.set(pending.build, pending.spin); })
-          .catch(function () {
-            sec.classList.add('nogl');
-            document.getElementById('b3dHint').textContent = 'Scroll to explore';
-          });
-      }
+    lys.forEach(function (el, i) {
+      el.style.width = el.dataset.w + '%';
+      el.style.left = el.dataset.cx + '%';
+      el.dataset.closed = CLOSED[i];
     });
 
+    function apply(t) {
+      /* t: 0 = fully split, 1 = fully shut */
+      for (var i = 0; i < lys.length; i++) {
+        var el = lys[i];
+        /* bottom layers land first, so it assembles upward */
+        var from = i * 0.07;
+        var k = gsap.utils.clamp(0, 1, (t - from) / (1 - from || 1));
+        var e = k * k * (3 - 2 * k);
+        var open = parseFloat(el.dataset.open);
+        var shut = parseFloat(el.dataset.closed);
+        el.style.top = (open + (shut - open) * e) + '%';
+        el.style.transform = 'translate(-50%,-50%) translateX(' + (DRIFT[i] * (1 - e)) +
+          '%) rotate(' + (TILT[i] * (1 - e)) + 'deg)';
+      }
+      var idx = Math.min(ings.length - 1, Math.max(0, Math.floor(t * ings.length * 1.02)));
+      for (var j = 0; j < ings.length; j++) ings[j].classList.toggle('on', j === idx);
+    }
+
+    apply(0);
+
+    if (reduce) { apply(1); return; }
+
+    var st = {
+      trigger: '#b3dStage', scrub: 0.6,
+      onUpdate: function (self) {
+        var p = self.progress, t;
+        if (p < 0.55) t = p / 0.55;             // close it
+        else if (p < 0.76) t = 1;               // hold it shut
+        else t = 1 - (p - 0.76) / 0.24;         // split it open again
+        apply(t);
+      }
+    };
+
     mm.add('(min-width: 941px)', function () {
-      var st = ScrollTrigger.create({
-        trigger: '#b3dStage', start: 'center center', end: '+=' + (ings.length * 380),
-        pin: true, scrub: .6,
-        onUpdate: function (self) {
-          var p = self.progress;
-          pending.build = gsap.utils.clamp(0, 1, p * 1.25);
-          pending.spin = p * Math.PI * 1.6;
-          if (api) api.set(pending.build, pending.spin);
-          highlight(Math.min(ings.length - 1, Math.floor(p * ings.length)));
-        }
-      });
-      return function () { st.kill(); };
+      var trig = ScrollTrigger.create(Object.assign({}, st, {
+        start: 'center center', end: '+=1500', pin: true
+      }));
+      return function () { trig.kill(); apply(0); };
     });
 
     mm.add('(max-width: 940px)', function () {
-      var st = ScrollTrigger.create({
-        trigger: sec, start: 'top 80%', end: 'bottom 30%', scrub: .5,
-        onUpdate: function (self) {
-          var p = self.progress;
-          pending.build = gsap.utils.clamp(0, 1, p * 1.3);
-          pending.spin = p * Math.PI;
-          if (api) api.set(pending.build, pending.spin);
-          highlight(Math.min(ings.length - 1, Math.floor(p * ings.length)));
-        }
-      });
-      return function () { st.kill(); };
+      var trig = ScrollTrigger.create(Object.assign({}, st, {
+        start: 'top 78%', end: 'bottom 25%'
+      }));
+      return function () { trig.kill(); apply(0); };
     });
+
+    var hint = document.getElementById('b3dHint');
+    if (hint) hint.textContent = 'Scroll to close · keep going to split';
   })();
 
   /* ---------- anchor links through Lenis ---------- */
