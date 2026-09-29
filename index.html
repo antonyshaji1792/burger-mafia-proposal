@@ -148,6 +148,8 @@ nav.on{background:rgba(10,10,11,.86);backdrop-filter:blur(14px) saturate(140%);b
 .pkg .meta{display:flex;gap:22px;padding:14px 0;border-block:1px solid var(--line);font-family:var(--mono);font-size:.64rem;
   letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
 .pkg .meta b{display:block;color:var(--gold);font-weight:500;font-size:.8rem;margin-top:4px}
+.pkg .price{font-family:var(--display);font-size:clamp(1.9rem,3.6vw,2.5rem);line-height:1;color:var(--gold);margin:4px 0 16px}
+.pkg .price small{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-left:6px}
 .pkg .plus{margin-top:18px;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
 .pkg ul:last-of-type{flex:1}
 .pkg .out{margin-top:20px;padding-top:14px;border-top:1px dashed var(--line-2);font-size:.82rem;color:var(--muted-2);line-height:1.5}
@@ -225,6 +227,56 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
   justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.68rem;
   letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
 
+/* ---------- sitemap & flow ---------- */
+.sm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(14px,2vw,22px)}
+.sm-col{background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:22px 22px 24px}
+.sm-root{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.sm-root b{color:var(--cream);font-weight:600}
+.sm-root code{font-family:var(--mono);font-size:.72rem;color:var(--flame)}
+.sm,.sm ul{list-style:none}
+.sm ul{margin-left:9px;padding-left:14px;border-left:1px solid var(--line-2)}
+.sm li{position:relative;font-size:.86rem;color:var(--muted);line-height:1.4;padding:4px 0}
+.sm ul li::before{content:'';position:absolute;left:-14px;top:.95em;width:10px;height:1px;background:var(--line-2)}
+.sm>li>span{color:var(--cream);font-weight:500}
+.lv{font-style:normal;font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:2px 7px;margin-left:5px;vertical-align:1px;white-space:nowrap}
+.lv.g{color:var(--gold);border:1px solid rgba(245,196,81,.4)}
+.lv.s{color:var(--ember);border:1px solid rgba(255,107,53,.45)}
+.acc{display:grid;gap:22px}
+.acc-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.acc-h b{color:var(--cream);font-weight:600;padding-left:12px;border-left:3px solid var(--muted-2)}
+.acc-h span{font-size:.84rem;color:var(--muted)}
+.acc-grp.public .acc-h b{border-color:#5BB974}
+.acc-grp.guest .acc-h b{border-color:var(--muted)}
+.acc-grp.customer .acc-h b{border-color:var(--gold)}
+.acc-grp.admin .acc-h b{border-color:var(--flame)}
+.acc .tbl td:nth-child(2){white-space:nowrap}
+.acc .tbl th:first-child{width:38%}
+.acc .tbl th:last-child{width:120px}
+.fl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px;background:var(--ink)}
+.fl{display:block;min-width:900px;width:100%;height:auto;font-family:var(--body)}
+.fl .lane{fill:rgba(247,243,236,.02);stroke:var(--line)}
+.fl .ln{fill:var(--muted-2);font-family:var(--mono);font-size:11px;letter-spacing:.14em}
+.fl rect.n{fill:var(--ink-2);stroke:var(--line-2)}
+.fl rect.k{stroke:var(--flame);fill:rgba(232,50,30,.08)}
+.fl text{fill:var(--cream);font-size:12.5px}
+.fl tspan+tspan{fill:var(--muted)}
+.fl .a{stroke:var(--muted-2);stroke-width:1.4;fill:none}
+.fl .d{stroke-dasharray:4 4}
+.fl .ah{fill:var(--muted-2)}
+.fl .note{fill:var(--muted);font-size:11px;font-style:italic}
+
+/* ---------- week plan ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.tab{font:500 .78rem var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:transparent;
+  border:1px solid var(--line-2);border-radius:100px;padding:10px 18px;cursor:pointer}
+.tab.on{background:var(--flame);border-color:var(--flame);color:#fff}
+.js .plan{display:none}.js .plan.on{display:block}
+.plan .sub{margin-top:28px}
+.wk td:first-child{white-space:nowrap;font-family:var(--mono);font-size:.78rem}
+.ph-tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.you{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+  background:rgba(232,50,30,.85);border-radius:100px;padding:3px 9px;margin-left:4px;vertical-align:1px}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
 .rv.in{opacity:1;transform:none}
@@ -244,6 +296,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
   <div class="links">
     <a href="#overview">Overview</a>
     <a href="#packages">Packages</a>
+    <a href="#sitemap">Sitemap</a>
     <a href="#tech">Technical</a>
     <a href="#features">Scope</a>
     <a href="#roadmap">Timeline</a>
@@ -311,7 +364,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <span class="n">PACKAGE 01</span>
         <h3>Essential</h3>
         <p class="for">A food ordering website that takes payment, and an admin panel to run it.</p>
-        <div class="meta"><div>Timeline<b>8–10 weeks</b></div><div>Best for<b>Launching lean</b></div></div>
+        <div class="price">₹3,60,000<small>+ GST</small></div>
+        <div class="meta"><div>Timeline<b>10 weeks</b></div><div>Best for<b>Launching lean</b></div></div>
         <p class="plus">Ordering website</p>
         <ul>
           <li>Menu with categories, photos, prices and veg / non-veg marks</li>
@@ -343,7 +397,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <span class="n">PACKAGE 02</span>
         <h3>Growth</h3>
         <p class="for">Own the repeat customer.</p>
-        <div class="meta"><div>Timeline<b>14–15 weeks</b></div><div>Best for<b>Building regulars</b></div></div>
+        <div class="price">₹8,40,000<small>+ GST</small></div>
+        <div class="meta"><div>Timeline<b>15 weeks</b></div><div>Best for<b>Building regulars</b></div></div>
         <p class="plus">Everything in Essential, plus</p>
         <ul>
           <li><strong>SMS and WhatsApp OTP</strong> — passwordless phone login and verified numbers</li>
@@ -368,7 +423,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <span class="n">PACKAGE 03</span>
         <h3>Signature</h3>
         <p class="for">The whole brand, built as one piece.</p>
-        <div class="meta"><div>Timeline<b>16–18 weeks</b></div><div>Best for<b>A brand that scales</b></div></div>
+        <div class="price">₹10,30,000<small>+ GST</small></div>
+        <div class="meta"><div>Timeline<b>18 weeks</b></div><div>Best for<b>A brand that scales</b></div></div>
         <p class="plus">Everything in Growth, plus</p>
         <ul>
           <li>Live order tracking with WhatsApp updates</li>
@@ -388,6 +444,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <span class="n">PACKAGE 04</span>
         <h3>Secure</h3>
         <p class="for">A hardened server that tells us when something breaks.</p>
+        <div class="price">₹25,000<small>one-time + GST</small></div>
         <div class="meta"><div>Set-up<b>~1 week</b></div><div>Tool costs<b>~₹0 / month</b></div></div>
         <p class="plus">Logging</p>
         <ul>
@@ -414,6 +471,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <span class="n">PACKAGE 05</span>
         <h3>Secure Pro</h3>
         <p class="for">Full visibility, extra protection and monthly care.</p>
+        <div class="price">₹50,000<small>set-up + GST</small></div><p class="for" style="margin-top:-8px">then ₹15,000 / month for monitoring and care</p>
         <div class="meta"><div>Set-up<b>~2 weeks</b></div><div>Tool costs<b>~₹2,000–4,500 / month</b></div></div>
         <p class="plus">Everything in Secure, plus</p>
         <ul>
@@ -433,9 +491,145 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 
     <div class="addons rv">
       <div><span>All packages</span><b>Food images</b><i>We use the photos and creatives you give us. If none are supplied, we source royalty-free images from the internet. No photo shoots.</i></div>
-            <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. Quoted separately.</i></div>
+            <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. ₹90,000 + GST.</i></div>
       <div><span>Later phase</span><b>Native iOS and Android apps</b><i>Built on the same back end once the web platform is proven.</i></div>
     </div>
+  </div>
+</section>
+
+<!-- SITEMAP -->
+<section id="sitemap" style="background:var(--ink-2)">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">03 — Sitemap &amp; Flow</div>
+      <h2 class="display">Pages and<br>order flow</h2>
+      <p>Every page in the platform, who can open it, and how an order moves from the customer&rsquo;s phone to your kitchen. Pages without a tag are in every package.</p>
+    </div>
+    <div class="sub rv">Sitemap</div>
+    <div class="sm-grid rv">
+      <div class="sm-col">
+        <div class="sm-root"><b>Ordering website</b><code>/</code></div>
+        <ul class="sm"><li><span>Home</span><ul><li><span>Banners and top items</span></li><li><span>Delivery / takeaway switch</span></li></ul></li><li><span>Menu</span><ul><li><span>Category</span><ul><li><span>Item page — sizes, add-ons</span></li></ul></li><li><span>Search</span></li><li><span>Offers <em class="lv g">Growth+</em></span></li></ul></li><li><span>Cart</span><ul><li><span>Coupon <em class="lv g">Growth+</em></span></li><li><span>Bill summary</span></li></ul></li><li><span>Checkout</span><ul><li><span>Login or guest</span></li><li><span>Address</span></li><li><span>Payment — Razorpay or COD</span></li></ul></li><li><span>Order</span><ul><li><span>Confirmation</span></li><li><span>Status page</span></li><li><span>Live tracking <em class="lv s">Signature</em></span></li></ul></li><li><span>Info pages</span><ul><li><span>About, contact</span></li><li><span>Terms, privacy, refunds</span></li><li><span>Reviews <em class="lv g">Growth+</em></span></li><li><span>Brand story, gallery <em class="lv s">Signature</em></span></li></ul></li></ul>
+      </div>
+      <div class="sm-col">
+        <div class="sm-root"><b>Customer account</b><code>/account</code></div>
+        <ul class="sm"><li><span>Access</span><ul><li><span>Sign up</span></li><li><span>Log in</span></li><li><span>Forgot password</span></li><li><span>OTP login <em class="lv g">Growth+</em></span></li></ul></li><li><span>Profile</span></li><li><span>Saved addresses</span></li><li><span>Orders</span><ul><li><span>Order history</span></li><li><span>Reorder <em class="lv g">Growth+</em></span></li><li><span>Rate an order <em class="lv g">Growth+</em></span></li></ul></li><li><span>Rewards <em class="lv g">Growth+</em></span><ul><li><span>Points and ledger</span></li><li><span>Voucher wallet</span></li><li><span>Daily streak</span></li></ul></li></ul>
+      </div>
+      <div class="sm-col">
+        <div class="sm-root"><b>Admin panel</b><code>/admin</code></div>
+        <ul class="sm"><li><span>Dashboard — today&rsquo;s orders and sales</span></li><li><span>Orders</span><ul><li><span>Live queue with sound alert</span></li><li><span>Order detail — accept, reject, status</span></li><li><span>Kitchen screen, ticket print <em class="lv g">Growth+</em></span></li></ul></li><li><span>Menu</span><ul><li><span>Categories</span></li><li><span>Items — price, photo, availability</span></li><li><span>Options — sizes, add-ons</span></li></ul></li><li><span>Customers</span></li><li><span>Marketing <em class="lv g">Growth+</em></span><ul><li><span>Coupons and offers</span></li><li><span>Loyalty rules</span></li><li><span>Banners</span></li></ul></li><li><span>Reports <em class="lv g">Growth+</em></span><ul><li><span>Sales, item mix</span></li><li><span>Repeat rate, peak hours</span></li></ul></li><li><span>Settings</span><ul><li><span>Outlet, hours, delivery radius, fees</span></li><li><span>Staff and roles</span></li></ul></li></ul>
+      </div>
+    </div>
+    <div class="sub rv">Page access</div>
+    <p class="rv" style="margin:-6px 0 22px;font-size:.94rem">Which pages need a login, and who can see them.</p>
+    <div class="acc rv">
+      <div class="acc-grp public">
+        <div class="acc-h"><b>Public — anyone, no login</b><span>Browsing, ordering and paying all work without an account.</span></div>
+        <div class="tbl-wrap"><table class="tbl">
+        <tr><th>Page</th><th>URL</th><th>Package</th></tr>
+        <tr><td>Home</td><td><code>/</code></td><td>All</td></tr>
+        <tr><td>Menu</td><td><code>/menu</code></td><td>All</td></tr>
+        <tr><td>Category</td><td><code>/menu/{category}</code></td><td>All</td></tr>
+        <tr><td>Item page</td><td><code>/items/{item}</code></td><td>All</td></tr>
+        <tr><td>Search</td><td><code>/search</code></td><td>All</td></tr>
+        <tr><td>Offers</td><td><code>/offers</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Cart</td><td><code>/cart</code></td><td>All</td></tr>
+        <tr><td>Checkout (guest or logged in)</td><td><code>/checkout</code></td><td>All</td></tr>
+        <tr><td>Payment</td><td><code>/checkout/pay</code></td><td>All</td></tr>
+        <tr><td>Order confirmation</td><td><code>/orders/{code}</code></td><td>All</td></tr>
+        <tr><td>Order status</td><td><code>/orders/{code}/status</code></td><td>All</td></tr>
+        <tr><td>Live tracking</td><td><code>/orders/{code}/track</code></td><td><em class="lv s">Signature</em></td></tr>
+        <tr><td>About, contact</td><td><code>/about · /contact</code></td><td>All</td></tr>
+        <tr><td>Terms, privacy, refund policy</td><td><code>/legal/{page}</code></td><td>All</td></tr>
+        <tr><td>Reviews</td><td><code>/reviews</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Brand story, gallery</td><td><code>/story · /gallery</code></td><td><em class="lv s">Signature</em></td></tr>
+        </table></div>
+      </div>
+      <div class="acc-grp guest">
+        <div class="acc-h"><b>Guest-only — shown only when logged out</b><span>Logged-in customers are redirected to their account.</span></div>
+        <div class="tbl-wrap"><table class="tbl">
+        <tr><th>Page</th><th>URL</th><th>Package</th></tr>
+        <tr><td>Sign up</td><td><code>/register</code></td><td>All</td></tr>
+        <tr><td>Log in</td><td><code>/login</code></td><td>All</td></tr>
+        <tr><td>Forgot password</td><td><code>/forgot-password</code></td><td>All</td></tr>
+        <tr><td>Reset password (link from email)</td><td><code>/reset-password/{token}</code></td><td>All</td></tr>
+        <tr><td>OTP login — SMS / WhatsApp</td><td><code>/login/otp</code></td><td><em class="lv g">Growth+</em></td></tr>
+        </table></div>
+      </div>
+      <div class="acc-grp customer">
+        <div class="acc-h"><b>Customer — login required</b><span>Each customer sees only their own data.</span></div>
+        <div class="tbl-wrap"><table class="tbl">
+        <tr><th>Page</th><th>URL</th><th>Package</th></tr>
+        <tr><td>Account overview</td><td><code>/account</code></td><td>All</td></tr>
+        <tr><td>Profile</td><td><code>/account/profile</code></td><td>All</td></tr>
+        <tr><td>Saved addresses</td><td><code>/account/addresses</code></td><td>All</td></tr>
+        <tr><td>Order history</td><td><code>/account/orders</code></td><td>All</td></tr>
+        <tr><td>Order detail</td><td><code>/account/orders/{id}</code></td><td>All</td></tr>
+        <tr><td>Reorder</td><td><code>/account/orders/{id}/reorder</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Rate an order</td><td><code>/account/orders/{id}/rate</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Rewards — points and ledger</td><td><code>/account/rewards</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Voucher wallet</td><td><code>/account/vouchers</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Log out</td><td><code>/logout</code></td><td>All</td></tr>
+        </table></div>
+      </div>
+      <div class="acc-grp admin">
+        <div class="acc-h"><b>Admin — staff login, by role</b><span>Separate staff login. Staff see orders; managers also run the menu and marketing; the owner controls settings and staff.</span></div>
+        <div class="tbl-wrap"><table class="tbl">
+        <tr><th>Page</th><th>URL</th><th>Who</th><th>Package</th></tr>
+        <tr><td>Admin login</td><td><code>/admin/login</code></td><td>Logged-out staff</td><td>All</td></tr>
+        <tr><td>Dashboard</td><td><code>/admin</code></td><td>All staff</td><td>All</td></tr>
+        <tr><td>Orders — live queue</td><td><code>/admin/orders</code></td><td>All staff</td><td>All</td></tr>
+        <tr><td>Order detail — accept, reject, status</td><td><code>/admin/orders/{id}</code></td><td>All staff</td><td>All</td></tr>
+        <tr><td>Kitchen screen</td><td><code>/admin/kitchen</code></td><td>All staff</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Categories</td><td><code>/admin/categories</code></td><td>Manager, owner</td><td>All</td></tr>
+        <tr><td>Items</td><td><code>/admin/items</code></td><td>Manager, owner</td><td>All</td></tr>
+        <tr><td>Options — sizes, add-ons</td><td><code>/admin/option-groups</code></td><td>Manager, owner</td><td>All</td></tr>
+        <tr><td>Customers</td><td><code>/admin/customers</code></td><td>Manager, owner</td><td>All</td></tr>
+        <tr><td>Coupons and offers</td><td><code>/admin/coupons</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Loyalty rules</td><td><code>/admin/loyalty</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Banners</td><td><code>/admin/banners</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Feedback</td><td><code>/admin/feedback</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Support tickets</td><td><code>/admin/tickets</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Reports</td><td><code>/admin/reports</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Settings — outlet, hours, fees</td><td><code>/admin/settings</code></td><td>Owner</td><td>All</td></tr>
+        <tr><td>Staff and roles</td><td><code>/admin/staff</code></td><td>Owner</td><td>All</td></tr>
+        <tr><td>Activity log</td><td><code>/admin/activity</code></td><td>Owner</td><td><em class="lv g">Growth+</em></td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="sub rv">Order flow</div>
+    <div class="fl-wrap rv">
+      <svg class="fl" viewBox="0 0 1080 400" role="img" aria-label="Order flow: customer browses the menu, chooses item options, reviews the cart, checks out and pays; the payment is verified by webhook, the admin panel raises a new-order alert, staff accept and update the status, and the customer status page updates live.">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ah"/></marker></defs>
+  <rect class="lane" x="6" y="30" width="1068" height="140" rx="14"/><text class="ln" x="22" y="54">CUSTOMER — ORDERING WEBSITE</text>
+  <rect class="lane" x="6" y="240" width="1068" height="140" rx="14"/><text class="ln" x="22" y="264">RESTAURANT — ADMIN PANEL</text>
+  <rect class="n" x="20" y="78" width="130" height="74" rx="10"/><text x="85" y="111.2" text-anchor="middle"><tspan x="85" dy="0">Browse</tspan><tspan x="85" dy="1.25em">menu</tspan></text>
+  <rect class="n" x="170" y="78" width="130" height="74" rx="10"/><text x="235" y="111.2" text-anchor="middle"><tspan x="235" dy="0">Item page</tspan><tspan x="235" dy="1.25em">choose options</tspan></text>
+  <rect class="n" x="320" y="78" width="130" height="74" rx="10"/><text x="385" y="111.2" text-anchor="middle"><tspan x="385" dy="0">Cart</tspan><tspan x="385" dy="1.25em">review bill</tspan></text>
+  <rect class="n" x="470" y="78" width="130" height="74" rx="10"/><text x="535" y="103.4" text-anchor="middle"><tspan x="535" dy="0">Checkout</tspan><tspan x="535" dy="1.25em">login or guest,</tspan><tspan x="535" dy="1.25em">address</tspan></text>
+  <rect class="n k" x="620" y="78" width="130" height="74" rx="10"/><text x="685" y="111.2" text-anchor="middle"><tspan x="685" dy="0">Pay</tspan><tspan x="685" dy="1.25em">Razorpay or COD</tspan></text>
+  <rect class="n" x="770" y="78" width="130" height="74" rx="10"/><text x="835" y="111.2" text-anchor="middle"><tspan x="835" dy="0">Order</tspan><tspan x="835" dy="1.25em">confirmed</tspan></text>
+  <rect class="n" x="920" y="78" width="130" height="74" rx="10"/><text x="985" y="111.2" text-anchor="middle"><tspan x="985" dy="0">Status page</tspan><tspan x="985" dy="1.25em">updates live</tspan></text>
+  <path class="a" d="M150 115 L166 115" marker-end="url(#ah)"/>
+  <path class="a" d="M300 115 L316 115" marker-end="url(#ah)"/>
+  <path class="a" d="M450 115 L466 115" marker-end="url(#ah)"/>
+  <path class="a" d="M600 115 L616 115" marker-end="url(#ah)"/>
+  <path class="a" d="M750 115 L766 115" marker-end="url(#ah)"/>
+  <path class="a" d="M900 115 L916 115" marker-end="url(#ah)"/>
+  <rect class="n" x="620" y="288" width="130" height="74" rx="10"/><text x="685" y="313.4" text-anchor="middle"><tspan x="685" dy="0">Payment</tspan><tspan x="685" dy="1.25em">verified</tspan><tspan x="685" dy="1.25em">(webhook)</tspan></text>
+  <rect class="n k" x="770" y="288" width="130" height="74" rx="10"/><text x="835" y="321.2" text-anchor="middle"><tspan x="835" dy="0">New-order</tspan><tspan x="835" dy="1.25em">alert + sound</tspan></text>
+  <rect class="n" x="920" y="288" width="130" height="74" rx="10"/><text x="985" y="313.4" text-anchor="middle"><tspan x="985" dy="0">Accept / reject</tspan><tspan x="985" dy="1.25em">preparing → ready</tspan><tspan x="985" dy="1.25em">→ delivered</tspan></text>
+  <path class="a" d="M685 152 L685 284" marker-end="url(#ah)"/>
+  <path class="a" d="M750 325 L766 325" marker-end="url(#ah)"/>
+  <path class="a" d="M900 325 L916 325" marker-end="url(#ah)"/>
+  <path class="a" d="M740 288 L790 156" marker-end="url(#ah)"/>
+  <path class="a d" d="M985 288 L985 156" marker-end="url(#ah)"/>
+  <text class="note" x="612" y="192" text-anchor="end">payment failed → retry, basket kept</text>
+  <text class="note" x="993" y="212">status updates</text>
+</svg>
+    </div>
+    <p class="rv" style="margin-top:14px;font-size:.88rem">The price is always recalculated on the server, and an order is only confirmed after Razorpay&rsquo;s webhook is verified. Cash-on-delivery orders go straight to the admin alert.</p>
   </div>
 </section>
 
@@ -443,7 +637,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="tech" style="background:var(--ink-2)">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">03 — Technical</div>
+      <div class="kicker">04 — Technical</div>
       <h2 class="display">How it<br>is built</h2>
       <p>A single Laravel application — website, admin panel and background jobs in one codebase, one deployment, one server. Mainstream open-source tools with no proprietary lock-in, so any Laravel developer can take it over.</p>
     </div>
@@ -561,7 +755,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="features" style="background:var(--ink-2)">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">04 — Full Scope</div>
+      <div class="kicker">05 — Full Scope</div>
       <h2 class="display">The full<br>scope</h2>
       <p>The complete build, area by area. <strong>147 features across nineteen areas</strong> &mdash; the guest-facing platform and the back office that runs your kitchen. This is the complete Signature build. The packages above show which parts each tier includes.</p>
     </div>
@@ -598,18 +792,79 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="roadmap">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">05 — Timeline</div>
-      <h2 class="display">Delivery<br>plan</h2>
-      <p>Working weeks from kick-off. Design is signed off before build starts, so there are no expensive reversals later.</p>
+      <div class="kicker">06 — Timeline</div>
+      <h2 class="display">Week by<br>week</h2>
+      <p>Working weeks from kick-off. Design is signed off before the build starts, so there are no expensive reversals later. Weeks marked <span class="you">Your sign-off</span> need a decision from you before we continue.</p>
     </div>
-    <div class="tbl-wrap rv"><table class="tbl">
-      <tr><th>Phase</th><th>Essential</th><th>Growth</th><th>Signature</th></tr>
-      <tr><td>Discovery and technical spec</td><td>Week 1</td><td>Week 1</td><td>Weeks 1–2</td></tr>
-      <tr><td>Brand identity</td><td>—</td><td>—</td><td>Weeks 2–4</td></tr>
-      <tr><td>UI design and sign-off</td><td>Weeks 2–3</td><td>Weeks 2–4</td><td>Weeks 3–6</td></tr>
-      <tr><td>Build — API, website, admin panel</td><td>Weeks 3–8</td><td>Weeks 4–12</td><td>Weeks 6–15</td></tr>
-      <tr><td>Testing, staff training, go-live</td><td>Weeks 8–10</td><td>Weeks 13–15</td><td>Weeks 16–18</td></tr>
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-plan="essential">Essential</button>
+      <button class="tab" data-plan="growth">Growth</button>
+      <button class="tab" data-plan="signature">Signature</button>
+    </div>
+    <div class="rv">
+    <div class="plan" id="plan-essential">
+    <div class="sub">Essential · 10 weeks</div>
+    <div class="tbl-wrap"><table class="tbl wk">
+      <tr><th>Week</th><th>Phase</th><th>What happens</th></tr>
+      <tr><td>Week 1</td><td><span class="ph-tag">Discovery</span></td><td>Kick-off call. Collect menu, prices, options and photos. Agree sitemap and technical spec. Set up code repository and server.</td></tr>
+      <tr><td>Week 2</td><td><span class="ph-tag">Discovery</span></td><td>Wireframes of every key screen. Laravel project set up, database schema drafted.</td></tr>
+      <tr><td>Week 3</td><td><span class="ph-tag">Design</span></td><td>UI design for the storefront and admin panel. Real menu loaded into the database. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 4</td><td><span class="ph-tag">Build</span></td><td>Menu, category and item pages with size and add-on options. Customer sign-up, login and password reset.</td></tr>
+      <tr><td>Week 5</td><td><span class="ph-tag">Build</span></td><td>Basket and checkout, delivery or takeaway, saved addresses. Razorpay connected in test mode.</td></tr>
+      <tr><td>Week 6</td><td><span class="ph-tag">Build</span></td><td>Payment webhooks, cash on delivery, order confirmation and status page. Admin: items, categories, prices, photos.</td></tr>
+      <tr><td>Week 7</td><td><span class="ph-tag">Build</span></td><td>Admin order queue with live sound alert, accept / reject / status, sold-out switch, daily sales. Order emails.</td></tr>
+      <tr><td>Week 8</td><td><span class="ph-tag">Testing</span></td><td>Internal testing on real phones, speed pass, bug fixing. Demo on the staging site.</td></tr>
+      <tr><td>Week 9</td><td><span class="ph-tag">Testing</span></td><td>Your team tests end to end; we fix what they find. Live Razorpay keys, production server, domain and SSL. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 10</td><td><span class="ph-tag">Launch</span></td><td>Staff training on the admin panel. Go-live. First-week support on call.</td></tr>
     </table></div>
+    </div>
+    <div class="plan" id="plan-growth">
+    <div class="sub">Growth · 15 weeks</div>
+    <div class="tbl-wrap"><table class="tbl wk">
+      <tr><th>Week</th><th>Phase</th><th>What happens</th></tr>
+      <tr><td>Week 1</td><td><span class="ph-tag">Discovery</span></td><td>Kick-off call. Collect menu, prices, options and photos. Agree sitemap and technical spec. Repository and server set up.</td></tr>
+      <tr><td>Week 2</td><td><span class="ph-tag">Discovery</span></td><td>Wireframes of every key screen. Laravel project set up, database schema drafted.</td></tr>
+      <tr><td>Week 3</td><td><span class="ph-tag">Design</span></td><td>Two creative directions presented for the storefront.</td></tr>
+      <tr><td>Week 4</td><td><span class="ph-tag">Design</span></td><td>Chosen direction taken through every screen, including admin. Menu model with modifiers and combos. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 5</td><td><span class="ph-tag">Build</span></td><td>Menu and item pages, burger customiser, pizza builder, combo meals.</td></tr>
+      <tr><td>Week 6</td><td><span class="ph-tag">Build</span></td><td>Customer accounts, SMS and WhatsApp OTP login, saved addresses, basket.</td></tr>
+      <tr><td>Week 7</td><td><span class="ph-tag">Build</span></td><td>Checkout, Razorpay, cash on delivery, payment webhooks, order confirmation.</td></tr>
+      <tr><td>Week 8</td><td><span class="ph-tag">Build</span></td><td>Admin: menu and order management, live order alerts, kitchen screen, ticket printing.</td></tr>
+      <tr><td>Week 9</td><td><span class="ph-tag">Build</span></td><td>Coupons and offer engine: segments, first-order, win-back, referral, countdown deals.</td></tr>
+      <tr><td>Week 10</td><td><span class="ph-tag">Build</span></td><td>Loyalty: points earned and redeemed, ledger, daily reward streak, voucher wallet.</td></tr>
+      <tr><td>Week 11</td><td><span class="ph-tag">Build</span></td><td>Rider tips and round-up donation, star and per-item feedback, low-rating alerts, one-tap reorder.</td></tr>
+      <tr><td>Week 12</td><td><span class="ph-tag">Build</span></td><td>Admin: customer list, support tickets, full reporting, staff roles and audit log. Brand pages.</td></tr>
+      <tr><td>Week 13</td><td><span class="ph-tag">Testing</span></td><td>Internal testing on real phones, speed and accessibility pass. Demo on the staging site.</td></tr>
+      <tr><td>Week 14</td><td><span class="ph-tag">Testing</span></td><td>Your team tests end to end; fixes. Live payment keys, WhatsApp templates approved, production server. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 15</td><td><span class="ph-tag">Launch</span></td><td>Staff training on the admin panel and kitchen screen. Go-live. First-week support on call.</td></tr>
+    </table></div>
+    </div>
+    <div class="plan" id="plan-signature">
+    <div class="sub">Signature · 18 weeks</div>
+    <div class="tbl-wrap"><table class="tbl wk">
+      <tr><th>Week</th><th>Phase</th><th>What happens</th></tr>
+      <tr><td>Week 1</td><td><span class="ph-tag">Discovery</span></td><td>Kick-off call. Collect menu, prices, options and photos. Agree sitemap and technical spec.</td></tr>
+      <tr><td>Week 2</td><td><span class="ph-tag">Brand</span></td><td>Brand workshop and mood boards. Repository and server set up.</td></tr>
+      <tr><td>Week 3</td><td><span class="ph-tag">Brand</span></td><td>Logo lockup, palette and typography concepts presented.</td></tr>
+      <tr><td>Week 4</td><td><span class="ph-tag">Brand</span></td><td>Identity refined into a brand book. Packaging and signage mockups. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 5</td><td><span class="ph-tag">Design</span></td><td>Two creative directions for the platform, built on the new brand.</td></tr>
+      <tr><td>Week 6</td><td><span class="ph-tag">Design</span></td><td>Chosen direction taken through every screen, including admin. Database schema and menu model. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 7</td><td><span class="ph-tag">Build</span></td><td>Menu and item pages, burger customiser, pizza builder, combo meals.</td></tr>
+      <tr><td>Week 8</td><td><span class="ph-tag">Build</span></td><td>Customer accounts, SMS and WhatsApp OTP login, saved addresses, basket.</td></tr>
+      <tr><td>Week 9</td><td><span class="ph-tag">Build</span></td><td>Checkout, Razorpay, cash on delivery, payment webhooks, order confirmation.</td></tr>
+      <tr><td>Week 10</td><td><span class="ph-tag">Build</span></td><td>Admin: menu and order management, live order alerts, kitchen screen, ticket printing.</td></tr>
+      <tr><td>Week 11</td><td><span class="ph-tag">Build</span></td><td>Coupons and offer engine: segments, first-order, win-back, referral, countdown deals.</td></tr>
+      <tr><td>Week 12</td><td><span class="ph-tag">Build</span></td><td>Loyalty: points, ledger, daily reward streak, voucher wallet.</td></tr>
+      <tr><td>Week 13</td><td><span class="ph-tag">Build</span></td><td>Live order tracking with WhatsApp status updates. One-tap reorder.</td></tr>
+      <tr><td>Week 14</td><td><span class="ph-tag">Build</span></td><td>Tips and round-up, feedback and alerts, customer list, support tickets, reporting, roles and audit log.</td></tr>
+      <tr><td>Week 15</td><td><span class="ph-tag">Build</span></td><td>Brand pages, food gallery, full performance pass.</td></tr>
+      <tr><td>Week 16</td><td><span class="ph-tag">Testing</span></td><td>Internal testing, load test for a launch-campaign spike, accessibility review. Staging demo.</td></tr>
+      <tr><td>Week 17</td><td><span class="ph-tag">Testing</span></td><td>Your team tests end to end; fixes. Live payment keys, WhatsApp templates, production server. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 18</td><td><span class="ph-tag">Launch</span></td><td>Staff training. Go-live. First-week support on call.</td></tr>
+    </table></div>
+    </div>
+    </div>
+    <p class="rv" style="margin-top:18px;font-size:.9rem"><strong>Secure / Secure Pro</strong> set-up runs alongside the last two weeks of any plan. <strong>Dine-in QR</strong>, if added, extends the build by about three weeks.</p>
   </div>
 </section>
 
@@ -617,7 +872,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="needs" style="background:var(--ink-2)">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">06 — From Your Side</div>
+      <div class="kicker">07 — From Your Side</div>
       <h2 class="display">What we<br>need from you</h2>
     </div>
     <div class="chk rv">
@@ -634,7 +889,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="risk">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">07 — Risks</div>
+      <div class="kicker">08 — Risks</div>
       <h2 class="display">Things to<br>plan for</h2>
     </div>
     <div class="grid g-3 rv">
@@ -661,10 +916,10 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section class="cta">
   <div class="wrap">
     <div class="rv" style="max-width:34ch">
-      <div class="kicker">08 — Next Step</div>
+      <div class="kicker">09 — Next Step</div>
       <h2 class="display">Pick a<br><span class="grad">package</span></h2>
     </div>
-    <p class="rv" style="margin-top:26px">Pricing for each package, the milestone schedule and support options are in the accompanying document. Once you choose a package, discovery starts within a week.</p>
+    <p class="rv" style="margin-top:26px">Prices are fixed for the scope shown and exclude GST and third-party running costs. Payment: 40% on signing, 30% on design sign-off, 30% on go-live. Once you choose a package, discovery starts within a week.</p>
     <div class="rv">
       <a class="btn" href="./demo/">See the homepage concept</a>
       <a class="btn btn-2" href="mailto:admin@skillbeeglobal.com?subject=Burger%20Mafia%20%E2%80%94%20Proposal">Approve &amp; start discovery</a>
@@ -680,6 +935,15 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 
 <script>
 (function(){
+
+  document.documentElement.classList.add('js');
+  var tabs=document.querySelectorAll('.tab');
+  function show(k){
+    tabs.forEach(function(t){ t.classList.toggle('on', t.dataset.plan===k); });
+    document.querySelectorAll('.plan').forEach(function(pl){ pl.classList.toggle('on', pl.id==='plan-'+k); });
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.plan); }); });
+  show('essential');
   var nav=document.getElementById('nav'), prog=document.getElementById('prog');
   function onScroll(){
     var y=window.scrollY||document.documentElement.scrollTop;
