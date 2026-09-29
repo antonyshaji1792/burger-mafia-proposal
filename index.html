@@ -263,6 +263,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 .fl .a{stroke:var(--muted-2);stroke-width:1.4;fill:none}
 .fl .d{stroke-dasharray:4 4}
 .fl .ah{fill:var(--muted-2)}
+.fl .dm{fill:rgba(245,196,81,.07);stroke:var(--gold)}
+.fl .lb{fill:var(--gold);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
 .fl .note{fill:var(--muted);font-size:11px;font-style:italic}
 
 /* ---------- week plan ---------- */
@@ -390,6 +392,12 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
           <li>Incoming orders with sound alert — accept, reject, update status</li>
           <li>Order list with daily sales total</li>
         </ul>
+        <p class="plus">Analytics</p>
+        <ul>
+          <li><strong>Google Analytics 4</strong> on every customer-facing page (not the admin)</li>
+          <li>Sales funnel tracked: item viewed, added to cart, checkout started, purchase with value</li>
+          <li>Cookie consent banner — analytics loads only after the customer agrees</li>
+        </ul>
         <div class="out"><b>Not included:</b> OTP sign-in, customisers and combos, live tracking, coupons, loyalty, brand identity.</div>
       </div>
       <div class="card pkg hot">
@@ -503,7 +511,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="head rv">
       <div class="kicker">03 — Sitemap &amp; Flow</div>
       <h2 class="display">Pages and<br>order flow</h2>
-      <p>Every page in the platform, who can open it, and how an order moves from the customer&rsquo;s phone to your kitchen. Pages without a tag are in every package.</p>
+      <p>Every page in the platform, who can open it, and the full workflow from the customer&rsquo;s phone to your kitchen. Pages without a tag are in every package.</p>
     </div>
     <div class="sub rv">Sitemap</div>
     <div class="sm-grid rv">
@@ -598,38 +606,76 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       </div>
     </div>
 
-    <div class="sub rv">Order flow</div>
+    <div class="sub rv">Site workflow</div>
     <div class="fl-wrap rv">
-      <svg class="fl" viewBox="0 0 1080 400" role="img" aria-label="Order flow: customer browses the menu, chooses item options, reviews the cart, checks out and pays; the payment is verified by webhook, the admin panel raises a new-order alert, staff accept and update the status, and the customer status page updates live.">
-  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ah"/></marker></defs>
-  <rect class="lane" x="6" y="30" width="1068" height="140" rx="14"/><text class="ln" x="22" y="54">CUSTOMER — ORDERING WEBSITE</text>
-  <rect class="lane" x="6" y="240" width="1068" height="140" rx="14"/><text class="ln" x="22" y="264">RESTAURANT — ADMIN PANEL</text>
-  <rect class="n" x="20" y="78" width="130" height="74" rx="10"/><text x="85" y="111.2" text-anchor="middle"><tspan x="85" dy="0">Browse</tspan><tspan x="85" dy="1.25em">menu</tspan></text>
-  <rect class="n" x="170" y="78" width="130" height="74" rx="10"/><text x="235" y="111.2" text-anchor="middle"><tspan x="235" dy="0">Item page</tspan><tspan x="235" dy="1.25em">choose options</tspan></text>
-  <rect class="n" x="320" y="78" width="130" height="74" rx="10"/><text x="385" y="111.2" text-anchor="middle"><tspan x="385" dy="0">Cart</tspan><tspan x="385" dy="1.25em">review bill</tspan></text>
-  <rect class="n" x="470" y="78" width="130" height="74" rx="10"/><text x="535" y="103.4" text-anchor="middle"><tspan x="535" dy="0">Checkout</tspan><tspan x="535" dy="1.25em">login or guest,</tspan><tspan x="535" dy="1.25em">address</tspan></text>
-  <rect class="n k" x="620" y="78" width="130" height="74" rx="10"/><text x="685" y="111.2" text-anchor="middle"><tspan x="685" dy="0">Pay</tspan><tspan x="685" dy="1.25em">Razorpay or COD</tspan></text>
-  <rect class="n" x="770" y="78" width="130" height="74" rx="10"/><text x="835" y="111.2" text-anchor="middle"><tspan x="835" dy="0">Order</tspan><tspan x="835" dy="1.25em">confirmed</tspan></text>
-  <rect class="n" x="920" y="78" width="130" height="74" rx="10"/><text x="985" y="111.2" text-anchor="middle"><tspan x="985" dy="0">Status page</tspan><tspan x="985" dy="1.25em">updates live</tspan></text>
-  <path class="a" d="M150 115 L166 115" marker-end="url(#ah)"/>
-  <path class="a" d="M300 115 L316 115" marker-end="url(#ah)"/>
-  <path class="a" d="M450 115 L466 115" marker-end="url(#ah)"/>
-  <path class="a" d="M600 115 L616 115" marker-end="url(#ah)"/>
-  <path class="a" d="M750 115 L766 115" marker-end="url(#ah)"/>
-  <path class="a" d="M900 115 L916 115" marker-end="url(#ah)"/>
-  <rect class="n" x="620" y="288" width="130" height="74" rx="10"/><text x="685" y="313.4" text-anchor="middle"><tspan x="685" dy="0">Payment</tspan><tspan x="685" dy="1.25em">verified</tspan><tspan x="685" dy="1.25em">(webhook)</tspan></text>
-  <rect class="n k" x="770" y="288" width="130" height="74" rx="10"/><text x="835" y="321.2" text-anchor="middle"><tspan x="835" dy="0">New-order</tspan><tspan x="835" dy="1.25em">alert + sound</tspan></text>
-  <rect class="n" x="920" y="288" width="130" height="74" rx="10"/><text x="985" y="313.4" text-anchor="middle"><tspan x="985" dy="0">Accept / reject</tspan><tspan x="985" dy="1.25em">preparing → ready</tspan><tspan x="985" dy="1.25em">→ delivered</tspan></text>
-  <path class="a" d="M685 152 L685 284" marker-end="url(#ah)"/>
-  <path class="a" d="M750 325 L766 325" marker-end="url(#ah)"/>
-  <path class="a" d="M900 325 L916 325" marker-end="url(#ah)"/>
-  <path class="a" d="M740 288 L790 156" marker-end="url(#ah)"/>
-  <path class="a d" d="M985 288 L985 156" marker-end="url(#ah)"/>
-  <text class="note" x="612" y="192" text-anchor="end">payment failed → retry, basket kept</text>
-  <text class="note" x="993" y="212">status updates</text>
+      <svg class="fl wf" viewBox="0 0 1076 756" role="img" aria-label="Site workflow. Customer: visit site, home, menu, item page, cart; if not logged in, log in, sign up or continue as guest; checkout; choose online payment through Razorpay or cash on delivery; failed payments retry with the basket kept; order confirmed, receipt email, live status page, and order history in the account. Restaurant: staff log in, dashboard, new-order alert with sound, accept or reject; accepted orders go to preparing then ready or out for delivery; rejected paid orders are refunded automatically. Managers edit menu and prices, which go live instantly.">
+  <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ah"/></marker></defs>
+  <rect class="lane" x="6" y="14" width="1064" height="436" rx="14"/><text class="ln" x="22" y="38">CUSTOMER — ORDERING WEBSITE</text>
+  <rect class="lane" x="6" y="486" width="1064" height="262" rx="14"/><text class="ln" x="22" y="510">RESTAURANT — ADMIN PANEL</text>
+  <rect class="n" x="20" y="68" width="140" height="64" rx="10"/><text x="90" y="96.6" text-anchor="middle"><tspan x="90" dy="0">Visit site</tspan><tspan x="90" dy="1.25em">Google, Instagram</tspan></text>
+  <rect class="n" x="190" y="68" width="140" height="64" rx="10"/><text x="260" y="104.4" text-anchor="middle"><tspan x="260" dy="0">Home</tspan></text>
+  <rect class="n" x="360" y="68" width="140" height="64" rx="10"/><text x="430" y="96.6" text-anchor="middle"><tspan x="430" dy="0">Menu</tspan><tspan x="430" dy="1.25em">category, search</tspan></text>
+  <rect class="n" x="530" y="68" width="140" height="64" rx="10"/><text x="600" y="96.6" text-anchor="middle"><tspan x="600" dy="0">Item page</tspan><tspan x="600" dy="1.25em">size, add-ons</tspan></text>
+  <rect class="n" x="700" y="68" width="140" height="64" rx="10"/><text x="770" y="96.6" text-anchor="middle"><tspan x="770" dy="0">Cart</tspan><tspan x="770" dy="1.25em">review bill</tspan></text>
+  <polygon class="dm" points="940,58 1010,100 940,142 870,100"/><text x="940" y="96.7" text-anchor="middle"><tspan x="940" dy="0">Logged</tspan><tspan x="940" dy="1.25em">in?</tspan></text>
+  <path class="a" d="M160 100 L186 100" marker-end="url(#ah2)"/>
+  <path class="a" d="M330 100 L356 100" marker-end="url(#ah2)"/>
+  <path class="a" d="M500 100 L526 100" marker-end="url(#ah2)"/>
+  <path class="a" d="M670 100 L696 100" marker-end="url(#ah2)"/>
+  <path class="a" d="M840 100 L866 100" marker-end="url(#ah2)"/>
+  <path class="a" d="M1010 100 L1040 100 L1040 240 L1014 240" marker-end="url(#ah2)"/>
+  <text class="lb" x="1046" y="170" text-anchor="start">No</text>
+  <rect class="n" x="870" y="208" width="140" height="64" rx="10"/><text x="940" y="236.6" text-anchor="middle"><tspan x="940" dy="0">Log in · Sign up</tspan><tspan x="940" dy="1.25em">or continue as guest</tspan></text>
+  <path class="a" d="M910 134 L800 204" marker-end="url(#ah2)"/>
+  <text class="lb" x="880" y="164" text-anchor="end">Yes</text>
+  <rect class="n" x="700" y="208" width="140" height="64" rx="10"/><text x="770" y="228.8" text-anchor="middle"><tspan x="770" dy="0">Checkout</tspan><tspan x="770" dy="1.25em">delivery / takeaway,</tspan><tspan x="770" dy="1.25em">address</tspan></text>
+  <path class="a" d="M870 240 L844 240" marker-end="url(#ah2)"/>
+  <polygon class="dm" points="600,198 670,240 600,282 530,240"/><text x="600" y="236.7" text-anchor="middle"><tspan x="600" dy="0">Payment</tspan><tspan x="600" dy="1.25em">method?</tspan></text>
+  <path class="a" d="M700 240 L674 240" marker-end="url(#ah2)"/>
+  <rect class="n k" x="360" y="208" width="140" height="64" rx="10"/><text x="430" y="236.6" text-anchor="middle"><tspan x="430" dy="0">Razorpay</tspan><tspan x="430" dy="1.25em">UPI, card, netbanking</tspan></text>
+  <path class="a" d="M530 240 L504 240" marker-end="url(#ah2)"/>
+  <text class="lb" x="515" y="222" text-anchor="middle">Online</text>
+  <polygon class="dm" points="260,198 330,240 260,282 190,240"/><text x="260" y="244.2" text-anchor="middle"><tspan x="260" dy="0">Paid?</tspan></text>
+  <path class="a" d="M360 240 L334 240" marker-end="url(#ah2)"/>
+  <path class="a d" d="M260 198 L260 172 L430 172 L430 204" marker-end="url(#ah2)"/>
+  <text class="lb" x="345" y="164" text-anchor="middle">No — retry, basket kept</text>
+  <path class="a" d="M260 282 L260 344" marker-end="url(#ah2)"/>
+  <text class="lb" x="252" y="306" text-anchor="end">Yes</text>
+  <path class="a" d="M600 282 L600 312 L300 312 L300 344" marker-end="url(#ah2)"/>
+  <text class="lb" x="450" y="305" text-anchor="middle">Cash on delivery</text>
+  <rect class="n k" x="190" y="348" width="140" height="64" rx="10"/><text x="260" y="384.4" text-anchor="middle"><tspan x="260" dy="0">Order confirmed</tspan></text>
+  <rect class="n" x="360" y="348" width="140" height="64" rx="10"/><text x="430" y="384.4" text-anchor="middle"><tspan x="430" dy="0">Receipt email</tspan></text>
+  <rect class="n" x="530" y="348" width="140" height="64" rx="10"/><text x="600" y="376.6" text-anchor="middle"><tspan x="600" dy="0">Status page</tspan><tspan x="600" dy="1.25em">updates live</tspan></text>
+  <rect class="n" x="700" y="348" width="140" height="64" rx="10"/><text x="770" y="376.6" text-anchor="middle"><tspan x="770" dy="0">My account</tspan><tspan x="770" dy="1.25em">order history</tspan></text>
+  <path class="a" d="M330 380 L356 380" marker-end="url(#ah2)"/>
+  <path class="a" d="M500 380 L526 380" marker-end="url(#ah2)"/>
+  <path class="a" d="M670 380 L696 380" marker-end="url(#ah2)"/>
+  <text class="lb" x="685" y="340" text-anchor="middle">if logged in</text>
+  <rect class="n" x="20" y="538" width="140" height="64" rx="10"/><text x="90" y="574.4" text-anchor="middle"><tspan x="90" dy="0">Staff login</tspan></text>
+  <rect class="n" x="190" y="538" width="140" height="64" rx="10"/><text x="260" y="566.6" text-anchor="middle"><tspan x="260" dy="0">Dashboard</tspan><tspan x="260" dy="1.25em">today’s orders</tspan></text>
+  <rect class="n k" x="360" y="538" width="140" height="64" rx="10"/><text x="430" y="566.6" text-anchor="middle"><tspan x="430" dy="0">New-order alert</tspan><tspan x="430" dy="1.25em">with sound</tspan></text>
+  <polygon class="dm" points="600,528 670,570 600,612 530,570"/><text x="600" y="574.2" text-anchor="middle"><tspan x="600" dy="0">Accept?</tspan></text>
+  <rect class="n" x="700" y="538" width="140" height="64" rx="10"/><text x="770" y="574.4" text-anchor="middle"><tspan x="770" dy="0">Preparing</tspan></text>
+  <rect class="n" x="870" y="538" width="140" height="64" rx="10"/><text x="940" y="566.6" text-anchor="middle"><tspan x="940" dy="0">Ready / out for</tspan><tspan x="940" dy="1.25em">delivery → done</tspan></text>
+  <path class="a" d="M160 570 L186 570" marker-end="url(#ah2)"/>
+  <path class="a" d="M330 570 L356 570" marker-end="url(#ah2)"/>
+  <path class="a" d="M500 570 L526 570" marker-end="url(#ah2)"/>
+  <path class="a" d="M670 570 L696 570" marker-end="url(#ah2)"/>
+  <text class="lb" x="685" y="562" text-anchor="middle">Yes</text>
+  <path class="a" d="M840 570 L866 570" marker-end="url(#ah2)"/>
+  <path class="a" d="M600 612 L600 654" marker-end="url(#ah2)"/>
+  <text class="lb" x="608" y="636" text-anchor="start">No</text>
+  <rect class="n" x="530" y="658" width="140" height="64" rx="10"/><text x="600" y="686.6" text-anchor="middle"><tspan x="600" dy="0">Rejected</tspan><tspan x="600" dy="1.25em">auto refund if paid</tspan></text>
+  <rect class="n" x="20" y="658" width="140" height="64" rx="10"/><text x="90" y="686.6" text-anchor="middle"><tspan x="90" dy="0">Manager</tspan><tspan x="90" dy="1.25em">edits menu, prices</tspan></text>
+  <rect class="n" x="190" y="658" width="140" height="64" rx="10"/><text x="260" y="686.6" text-anchor="middle"><tspan x="260" dy="0">Live on site</tspan><tspan x="260" dy="1.25em">instantly</tspan></text>
+  <path class="a" d="M160 690 L186 690" marker-end="url(#ah2)"/>
+  <path class="a d" d="M260 412 L260 466 L430 466 L430 534" marker-end="url(#ah2)"/>
+  <text class="lb" x="345" y="460" text-anchor="middle">real-time</text>
+  <path class="a d" d="M770 538 L770 472 L600 472 L600 416" marker-end="url(#ah2)"/>
+  <text class="lb" x="685" y="486" text-anchor="middle">status updates</text>
 </svg>
     </div>
-    <p class="rv" style="margin-top:14px;font-size:.88rem">The price is always recalculated on the server, and an order is only confirmed after Razorpay&rsquo;s webhook is verified. Cash-on-delivery orders go straight to the admin alert.</p>
+    <p class="rv" style="margin-top:14px;font-size:.88rem">The price is always recalculated on the server, and an online order is only confirmed after Razorpay&rsquo;s webhook is verified. Diamonds are decisions; dashed lines are real-time updates between the website and the admin panel.</p>
   </div>
 </section>
 
@@ -664,6 +710,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <div class="box"><b>Razorpay</b><i>Payments, refunds, webhooks</i></div>
         <div class="box"><b>MSG91 / WhatsApp</b><i>OTP and order messages (Growth+)</i></div>
         <div class="box"><b>Google Maps</b><i>Address autocomplete, delivery radius</i></div>
+        <div class="box"><b>Google Analytics 4</b><i>Visits and sales funnel, customer pages only</i></div>
       </div></div>
     </div>
     <p class="rv" style="margin-top:16px;font-size:.9rem">All of it runs on <strong>one server</strong>. There is no separate API or frontend deployment — React is compiled at build time and served by Laravel.</p>
@@ -744,6 +791,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <tr><td>Domain</td><td>~₹1,000–1,500 / year</td><td>All</td></tr>
       <tr><td>Email sending (AWS SES) — password resets, receipts</td><td>~₹10 per 1,000 emails</td><td>All</td></tr>
       <tr><td>Google Maps</td><td>Free tier covers launch volume; ~₹0–2,000 / month</td><td>All</td></tr>
+      <tr><td>Google Analytics 4</td><td>Free</td><td>All</td></tr>
       <tr><td>SMS OTP (MSG91)</td><td>~₹0.15–0.25 per OTP</td><td>Growth+</td></tr>
       <tr><td>WhatsApp Business API</td><td>~₹0.12 per order update · ~₹0.80 per promotional message</td><td>Growth+</td></tr>
     </table></div>
@@ -757,7 +805,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="head rv">
       <div class="kicker">05 — Full Scope</div>
       <h2 class="display">The full<br>scope</h2>
-      <p>The complete build, area by area. <strong>147 features across nineteen areas</strong> &mdash; the guest-facing platform and the back office that runs your kitchen. This is the complete Signature build. The packages above show which parts each tier includes.</p>
+      <p>The complete build, area by area. <strong>149 features across nineteen areas</strong> &mdash; the guest-facing platform and the back office that runs your kitchen. This is the complete Signature build. The packages above show which parts each tier includes.</p>
     </div>
     <div class="spec rv">
       <div class="sp"><h4><i>01</i> Accounts &amp; access</h4><ul><li>Sign up and log in with mobile number and OTP by SMS or WhatsApp</li><li>Browse the full menu as a guest, no account needed</li><li>Identify only at checkout</li><li>Sessions that persist across visits and devices</li><li>Profile: name, date of birth, email, phone</li><li>Delete account and data on request</li></ul></div>
@@ -778,7 +826,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="sp"><h4><i>16</i> Admin — customers &amp; support</h4><ul><li><strong>Customer list you own</strong>, with order history</li><li>Search and segment customers</li><li>Support tickets and replies</li><li>Issue a refund or a goodwill voucher</li><li>Block abusive accounts</li><li>Export your customer list</li></ul></div>
       <div class="sp"><h4><i>17</i> Admin — reporting</h4><ul><li>Sales by day, week and month</li><li>Average order value</li><li>Item mix and best sellers</li><li>Delivery vs takeaway split</li><li>Coupon and discount cost</li><li>Repeat customer rate</li><li>Peak hour view for staffing</li><li>Export to spreadsheet</li></ul></div>
       <div class="sp"><h4><i>18</i> Admin — settings &amp; staff</h4><ul><li>Outlet details, hours and service radius</li><li>Delivery fees and minimum order</li><li>Tax and packaging charge configuration</li><li>Banner and home feed control</li><li>Staff accounts with roles and permissions</li><li>Activity log of who changed what</li><li><strong>Ready for a second outlet</strong> without a rebuild</li></ul></div>
-      <div class="sp"><h4><i>19</i> Platform foundations</h4><ul><li>Mobile-first, built for a mid-range Android phone</li><li>Real-time updates between storefront and kitchen</li><li>Secure sessions and encrypted traffic</li><li>Automated backups with restore</li><li>Error monitoring and uptime alerting</li><li>Staging environment for safe changes</li><li>Documented handover and staff training</li><li><strong>Source code and data are yours</strong></li></ul></div>
+      <div class="sp"><h4><i>19</i> Platform foundations</h4><ul><li><strong>Google Analytics 4</strong> with e-commerce funnel tracking</li><li>Cookie consent before analytics loads</li><li>Mobile-first, built for a mid-range Android phone</li><li>Real-time updates between storefront and kitchen</li><li>Secure sessions and encrypted traffic</li><li>Automated backups with restore</li><li>Error monitoring and uptime alerting</li><li>Staging environment for safe changes</li><li>Documented handover and staff training</li><li><strong>Source code and data are yours</strong></li></ul></div>
     </div>
     <div class="spec-note rv">
       <span><b>Signature also includes</b> Brand identity &middot; Design &middot; Build &middot; Testing &middot; Training</span>
@@ -813,7 +861,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <tr><td>Week 5</td><td><span class="ph-tag">Build</span></td><td>Basket and checkout, delivery or takeaway, saved addresses. Razorpay connected in test mode.</td></tr>
       <tr><td>Week 6</td><td><span class="ph-tag">Build</span></td><td>Payment webhooks, cash on delivery, order confirmation and status page. Admin: items, categories, prices, photos.</td></tr>
       <tr><td>Week 7</td><td><span class="ph-tag">Build</span></td><td>Admin order queue with live sound alert, accept / reject / status, sold-out switch, daily sales. Order emails.</td></tr>
-      <tr><td>Week 8</td><td><span class="ph-tag">Testing</span></td><td>Internal testing on real phones, speed pass, bug fixing. Demo on the staging site.</td></tr>
+      <tr><td>Week 8</td><td><span class="ph-tag">Testing</span></td><td>Internal testing on real phones, speed pass, bug fixing. Google Analytics and funnel events set up and verified. Demo on the staging site.</td></tr>
       <tr><td>Week 9</td><td><span class="ph-tag">Testing</span></td><td>Your team tests end to end; we fix what they find. Live Razorpay keys, production server, domain and SSL. <span class="you">Your sign-off</span></td></tr>
       <tr><td>Week 10</td><td><span class="ph-tag">Launch</span></td><td>Staff training on the admin panel. Go-live. First-week support on call.</td></tr>
     </table></div>
@@ -834,7 +882,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <tr><td>Week 10</td><td><span class="ph-tag">Build</span></td><td>Loyalty: points earned and redeemed, ledger, daily reward streak, voucher wallet.</td></tr>
       <tr><td>Week 11</td><td><span class="ph-tag">Build</span></td><td>Rider tips and round-up donation, star and per-item feedback, low-rating alerts, one-tap reorder.</td></tr>
       <tr><td>Week 12</td><td><span class="ph-tag">Build</span></td><td>Admin: customer list, support tickets, full reporting, staff roles and audit log. Brand pages.</td></tr>
-      <tr><td>Week 13</td><td><span class="ph-tag">Testing</span></td><td>Internal testing on real phones, speed and accessibility pass. Demo on the staging site.</td></tr>
+      <tr><td>Week 13</td><td><span class="ph-tag">Testing</span></td><td>Internal testing on real phones, speed and accessibility pass. Google Analytics and funnel events verified. Demo on the staging site.</td></tr>
       <tr><td>Week 14</td><td><span class="ph-tag">Testing</span></td><td>Your team tests end to end; fixes. Live payment keys, WhatsApp templates approved, production server. <span class="you">Your sign-off</span></td></tr>
       <tr><td>Week 15</td><td><span class="ph-tag">Launch</span></td><td>Staff training on the admin panel and kitchen screen. Go-live. First-week support on call.</td></tr>
     </table></div>
@@ -858,7 +906,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <tr><td>Week 13</td><td><span class="ph-tag">Build</span></td><td>Live order tracking with WhatsApp status updates. One-tap reorder.</td></tr>
       <tr><td>Week 14</td><td><span class="ph-tag">Build</span></td><td>Tips and round-up, feedback and alerts, customer list, support tickets, reporting, roles and audit log.</td></tr>
       <tr><td>Week 15</td><td><span class="ph-tag">Build</span></td><td>Brand pages, food gallery, full performance pass.</td></tr>
-      <tr><td>Week 16</td><td><span class="ph-tag">Testing</span></td><td>Internal testing, load test for a launch-campaign spike, accessibility review. Staging demo.</td></tr>
+      <tr><td>Week 16</td><td><span class="ph-tag">Testing</span></td><td>Internal testing, load test for a launch-campaign spike, accessibility review. Google Analytics and funnel events verified. Staging demo.</td></tr>
       <tr><td>Week 17</td><td><span class="ph-tag">Testing</span></td><td>Your team tests end to end; fixes. Live payment keys, WhatsApp templates, production server. <span class="you">Your sign-off</span></td></tr>
       <tr><td>Week 18</td><td><span class="ph-tag">Launch</span></td><td>Staff training. Go-live. First-week support on call.</td></tr>
     </table></div>
