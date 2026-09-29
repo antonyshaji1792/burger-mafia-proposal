@@ -139,6 +139,7 @@ nav.on{background:rgba(10,10,11,.86);backdrop-filter:blur(14px) saturate(140%);b
 
 /* ---------- packages ---------- */
 .pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(14px,2vw,22px);align-items:stretch}
+.pkgs.four{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .pkg{display:flex;flex-direction:column}
 .pkg.hot{border-color:rgba(232,50,30,.55);background:linear-gradient(165deg,#1d0d09,var(--ink) 70%);box-shadow:0 20px 60px rgba(232,50,30,.12)}
 .pkg .badge{position:absolute;top:22px;right:22px;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
@@ -240,6 +241,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 .sm>li>span{color:var(--cream);font-weight:500}
 .lv{font-style:normal;font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:2px 7px;margin-left:5px;vertical-align:1px;white-space:nowrap}
 .lv.g{color:var(--gold);border:1px solid rgba(245,196,81,.4)}
+.lv.e{color:#7FD69A;border:1px solid rgba(127,214,154,.45)}
 .lv.s{color:var(--ember);border:1px solid rgba(255,107,53,.45)}
 .acc{display:grid;gap:22px}
 .acc-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
@@ -312,7 +314,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="kicker">Proposal · Online Ordering Platform</div>
     <h1 class="display">Burger<br><em class="grad">Mafia</em></h1>
     <div class="hero-sub">
-      <p class="lede">A food ordering website that takes payment, and an admin panel to run the restaurant. Three packages, one Laravel application, and the code is yours.</p>
+      <p class="lede">A food ordering website that takes payment, and an admin panel to run the restaurant. Four packages, one Laravel application, and the code is yours.</p>
       <div class="hero-meta">
         <div>Prepared for<br><b>Burger Mafia · KR Puram</b></div>
         <div>Prepared by<br><b>Green Banana Software</b></div>
@@ -358,15 +360,42 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
   <div class="wrap">
     <div class="head rv">
       <div class="kicker">02 — Packages</div>
-      <h2 class="display">Three ways<br><span class="grad">to start</span></h2>
-      <p>Every package ends with a working platform you own outright — code, data and customer list. They differ in how much of the growth engine and the brand we build on day one. Anything not taken now can be added later without a rebuild.</p>
+      <h2 class="display">Four ways<br><span class="grad">to start</span></h2>
+      <p>Every package ends with a working website you own outright — code and data. Basic puts your menu online; Essential and above add ordering and payment. They differ in how much of the growth engine and the brand we build on day one. Anything not taken now can be added later without a rebuild.</p>
     </div>
-    <div class="pkgs rv">
+    <div class="pkgs four rv">
       <div class="card pkg">
         <span class="n">PACKAGE 01</span>
+        <h3>Basic</h3>
+        <p class="for">A clean restaurant website with your full menu. No online ordering.</p>
+        <div class="price">₹30,000<small>+ GST</small></div>
+        <div class="meta"><div>Timeline<b>4 weeks</b></div><div>Best for<b>Getting online</b></div></div>
+        <p class="plus">Website</p>
+        <ul>
+          <li>Home page with banners and featured items</li>
+          <li>Menu with categories, photos, prices and veg / non-veg marks</li>
+          <li>Call, WhatsApp, Zomato and Swiggy buttons to place orders</li>
+          <li>About page</li>
+          <li>Contact page — map, hours, contact form to your email</li>
+          <li>Privacy policy, cookie policy, terms of service</li>
+          <li>Mobile-first custom design on your existing logo</li>
+        </ul>
+        <p class="plus">Admin panel</p>
+        <ul>
+          <li>Update categories, items, prices, photos and availability</li>
+          <li>Edit home banners, hours and contact details</li>
+        </ul>
+        <p class="plus">Analytics</p>
+        <ul>
+          <li>Google Analytics 4 with cookie consent</li>
+        </ul>
+        <div class="out"><b>Not included:</b> online ordering, cart, payments, customer sign-up or login, and every feature in the higher packages.</div>
+      </div>
+      <div class="card pkg">
+        <span class="n">PACKAGE 02</span>
         <h3>Essential</h3>
         <p class="for">A food ordering website that takes payment, and an admin panel to run it.</p>
-        <div class="price">₹3,60,000<small>+ GST</small></div>
+        <div class="price">₹60,000<small>+ GST</small></div>
         <div class="meta"><div>Timeline<b>10 weeks</b></div><div>Best for<b>Launching lean</b></div></div>
         <p class="plus">Ordering website</p>
         <ul>
@@ -398,18 +427,29 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
           <li>Sales funnel tracked: item viewed, added to cart, checkout started, purchase with value</li>
           <li>Cookie consent banner — analytics loads only after the customer agrees</li>
         </ul>
+        <p class="plus">Contact page</p>
+        <ul>
+          <li>Phone, WhatsApp link, email, address, opening hours and Google map</li>
+          <li>Contact form sent to your email, with spam protection</li>
+        </ul>
+        <p class="plus">Legal pages</p>
+        <ul>
+          <li>Privacy policy, refund and cancellation policy, cookie policy, terms of service</li>
+          <li>Drafted for Indian law (DPDP Act) and Razorpay&rsquo;s activation checklist — for your review</li>
+        </ul>
         <div class="out"><b>Not included:</b> OTP sign-in, customisers and combos, live tracking, coupons, loyalty, brand identity.</div>
       </div>
       <div class="card pkg hot">
         <span class="badge">Recommended</span>
-        <span class="n">PACKAGE 02</span>
+        <span class="n">PACKAGE 03</span>
         <h3>Growth</h3>
         <p class="for">Own the repeat customer.</p>
-        <div class="price">₹8,40,000<small>+ GST</small></div>
+        <div class="price">₹1,00,000<small>+ GST</small></div>
         <div class="meta"><div>Timeline<b>15 weeks</b></div><div>Best for<b>Building regulars</b></div></div>
         <p class="plus">Everything in Essential, plus</p>
         <ul>
           <li><strong>SMS and WhatsApp OTP</strong> — passwordless phone login and verified numbers</li>
+          <li><strong>Sign in with Google</strong> — one-tap login, no password</li>
           <li>Burger customiser, pizza builder and combo meals</li>
           <li>One-tap reorder of a past order</li>
           <li>Kitchen screen and ticket printing</li>
@@ -428,10 +468,10 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <div class="out"><b>Not included:</b> live order tracking, brand identity.</div>
       </div>
       <div class="card pkg">
-        <span class="n">PACKAGE 03</span>
+        <span class="n">PACKAGE 04</span>
         <h3>Signature</h3>
         <p class="for">The whole brand, built as one piece.</p>
-        <div class="price">₹10,30,000<small>+ GST</small></div>
+        <div class="price">₹1,20,000<small>+ GST</small></div>
         <div class="meta"><div>Timeline<b>18 weeks</b></div><div>Best for<b>A brand that scales</b></div></div>
         <p class="plus">Everything in Growth, plus</p>
         <ul>
@@ -449,10 +489,10 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <p class="rv" style="margin:-6px 0 22px;font-size:.94rem">Logging, monitoring and security set-up for the live server. Because the admin panel is also your till, we strongly recommend at least Secure.</p>
     <div class="pkgs rv">
       <div class="card pkg">
-        <span class="n">PACKAGE 04</span>
+        <span class="n">PACKAGE 05</span>
         <h3>Secure</h3>
         <p class="for">A hardened server that tells us when something breaks.</p>
-        <div class="price">₹25,000<small>one-time + GST</small></div>
+        <div class="price">₹8,000<small>one-time + GST</small></div>
         <div class="meta"><div>Set-up<b>~1 week</b></div><div>Tool costs<b>~₹0 / month</b></div></div>
         <p class="plus">Logging</p>
         <ul>
@@ -476,10 +516,10 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       </div>
       <div class="card pkg hot">
         <span class="badge">For the till</span>
-        <span class="n">PACKAGE 05</span>
+        <span class="n">PACKAGE 06</span>
         <h3>Secure Pro</h3>
         <p class="for">Full visibility, extra protection and monthly care.</p>
-        <div class="price">₹50,000<small>set-up + GST</small></div><p class="for" style="margin-top:-8px">then ₹15,000 / month for monitoring and care</p>
+        <div class="price">₹15,000<small>set-up + GST</small></div><p class="for" style="margin-top:-8px">then ₹5,000 / month for monitoring and care</p>
         <div class="meta"><div>Set-up<b>~2 weeks</b></div><div>Tool costs<b>~₹2,000–4,500 / month</b></div></div>
         <p class="plus">Everything in Secure, plus</p>
         <ul>
@@ -499,7 +539,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 
     <div class="addons rv">
       <div><span>All packages</span><b>Food images</b><i>We use the photos and creatives you give us. If none are supplied, we source royalty-free images from the internet. No photo shoots.</i></div>
-            <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. ₹90,000 + GST.</i></div>
+            <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. ₹20,000 + GST.</i></div>
       <div><span>Later phase</span><b>Native iOS and Android apps</b><i>Built on the same back end once the web platform is proven.</i></div>
     </div>
   </div>
@@ -511,21 +551,21 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="head rv">
       <div class="kicker">03 — Sitemap &amp; Flow</div>
       <h2 class="display">Pages and<br>order flow</h2>
-      <p>Every page in the platform, who can open it, and the full workflow from the customer&rsquo;s phone to your kitchen. Pages without a tag are in every package.</p>
+      <p>Every page in the platform, who can open it, and the full workflow from the customer&rsquo;s phone to your kitchen. Pages without a tag are in every package, including Basic.</p>
     </div>
     <div class="sub rv">Sitemap</div>
     <div class="sm-grid rv">
       <div class="sm-col">
-        <div class="sm-root"><b>Ordering website</b><code>/</code></div>
-        <ul class="sm"><li><span>Home</span><ul><li><span>Banners and top items</span></li><li><span>Delivery / takeaway switch</span></li></ul></li><li><span>Menu</span><ul><li><span>Category</span><ul><li><span>Item page — sizes, add-ons</span></li></ul></li><li><span>Search</span></li><li><span>Offers <em class="lv g">Growth+</em></span></li></ul></li><li><span>Cart</span><ul><li><span>Coupon <em class="lv g">Growth+</em></span></li><li><span>Bill summary</span></li></ul></li><li><span>Checkout</span><ul><li><span>Login or guest</span></li><li><span>Address</span></li><li><span>Payment — Razorpay or COD</span></li></ul></li><li><span>Order</span><ul><li><span>Confirmation</span></li><li><span>Status page</span></li><li><span>Live tracking <em class="lv s">Signature</em></span></li></ul></li><li><span>Info pages</span><ul><li><span>About, contact</span></li><li><span>Terms, privacy, refunds</span></li><li><span>Reviews <em class="lv g">Growth+</em></span></li><li><span>Brand story, gallery <em class="lv s">Signature</em></span></li></ul></li></ul>
+        <div class="sm-root"><b>Website</b><code>/</code></div>
+        <ul class="sm"><li><span>Home</span><ul><li><span>Banners and top items</span></li><li><span>Delivery / takeaway switch <em class="lv e">Essential+</em></span></li></ul></li><li><span>Menu</span><ul><li><span>Category</span><ul><li><span>Item page</span></li></ul></li><li><span>Search</span></li><li><span>Offers <em class="lv g">Growth+</em></span></li></ul></li><li><span>Cart <em class="lv e">Essential+</em></span><ul><li><span>Coupon <em class="lv g">Growth+</em></span></li><li><span>Bill summary</span></li></ul></li><li><span>Checkout <em class="lv e">Essential+</em></span><ul><li><span>Login or guest</span></li><li><span>Address</span></li><li><span>Payment — Razorpay or COD</span></li></ul></li><li><span>Order <em class="lv e">Essential+</em></span><ul><li><span>Confirmation</span></li><li><span>Status page</span></li><li><span>Live tracking <em class="lv s">Signature</em></span></li></ul></li><li><span>Info pages</span><ul><li><span>About</span></li><li><span>Contact — map, form</span></li><li><span>Privacy, refund, cookie policies</span></li><li><span>Terms of service</span></li><li><span>Reviews <em class="lv g">Growth+</em></span></li><li><span>Brand story, gallery <em class="lv s">Signature</em></span></li></ul></li></ul>
       </div>
       <div class="sm-col">
-        <div class="sm-root"><b>Customer account</b><code>/account</code></div>
-        <ul class="sm"><li><span>Access</span><ul><li><span>Sign up</span></li><li><span>Log in</span></li><li><span>Forgot password</span></li><li><span>OTP login <em class="lv g">Growth+</em></span></li></ul></li><li><span>Profile</span></li><li><span>Saved addresses</span></li><li><span>Orders</span><ul><li><span>Order history</span></li><li><span>Reorder <em class="lv g">Growth+</em></span></li><li><span>Rate an order <em class="lv g">Growth+</em></span></li></ul></li><li><span>Rewards <em class="lv g">Growth+</em></span><ul><li><span>Points and ledger</span></li><li><span>Voucher wallet</span></li><li><span>Daily streak</span></li></ul></li></ul>
+        <div class="sm-root"><b>Customer account <em class="lv e">Essential+</em></b><code>/account</code></div>
+        <ul class="sm"><li><span>Access</span><ul><li><span>Sign up</span></li><li><span>Log in</span></li><li><span>Forgot password</span></li><li><span>OTP login <em class="lv g">Growth+</em></span></li><li><span>Sign in with Google <em class="lv g">Growth+</em></span></li></ul></li><li><span>Profile</span></li><li><span>Saved addresses</span></li><li><span>Orders</span><ul><li><span>Order history</span></li><li><span>Reorder <em class="lv g">Growth+</em></span></li><li><span>Rate an order <em class="lv g">Growth+</em></span></li></ul></li><li><span>Rewards <em class="lv g">Growth+</em></span><ul><li><span>Points and ledger</span></li><li><span>Voucher wallet</span></li><li><span>Daily streak</span></li></ul></li></ul>
       </div>
       <div class="sm-col">
         <div class="sm-root"><b>Admin panel</b><code>/admin</code></div>
-        <ul class="sm"><li><span>Dashboard — today&rsquo;s orders and sales</span></li><li><span>Orders</span><ul><li><span>Live queue with sound alert</span></li><li><span>Order detail — accept, reject, status</span></li><li><span>Kitchen screen, ticket print <em class="lv g">Growth+</em></span></li></ul></li><li><span>Menu</span><ul><li><span>Categories</span></li><li><span>Items — price, photo, availability</span></li><li><span>Options — sizes, add-ons</span></li></ul></li><li><span>Customers</span></li><li><span>Marketing <em class="lv g">Growth+</em></span><ul><li><span>Coupons and offers</span></li><li><span>Loyalty rules</span></li><li><span>Banners</span></li></ul></li><li><span>Reports <em class="lv g">Growth+</em></span><ul><li><span>Sales, item mix</span></li><li><span>Repeat rate, peak hours</span></li></ul></li><li><span>Settings</span><ul><li><span>Outlet, hours, delivery radius, fees</span></li><li><span>Staff and roles</span></li></ul></li></ul>
+        <ul class="sm"><li><span>Dashboard</span></li><li><span>Orders <em class="lv e">Essential+</em></span><ul><li><span>Live queue with sound alert</span></li><li><span>Order detail — accept, reject, status</span></li><li><span>Kitchen screen, ticket print <em class="lv g">Growth+</em></span></li></ul></li><li><span>Menu</span><ul><li><span>Categories</span></li><li><span>Items — price, photo, availability</span></li><li><span>Options — sizes, add-ons <em class="lv e">Essential+</em></span></li></ul></li><li><span>Customers <em class="lv e">Essential+</em></span></li><li><span>Marketing <em class="lv g">Growth+</em></span><ul><li><span>Coupons and offers</span></li><li><span>Loyalty rules</span></li><li><span>Banners</span></li></ul></li><li><span>Reports <em class="lv g">Growth+</em></span><ul><li><span>Sales, item mix</span></li><li><span>Repeat rate, peak hours</span></li></ul></li><li><span>Settings</span><ul><li><span>Outlet, hours, delivery radius, fees</span></li><li><span>Staff and roles</span></li></ul></li></ul>
       </div>
     </div>
     <div class="sub rv">Page access</div>
@@ -541,14 +581,18 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <tr><td>Item page</td><td><code>/items/{item}</code></td><td>All</td></tr>
         <tr><td>Search</td><td><code>/search</code></td><td>All</td></tr>
         <tr><td>Offers</td><td><code>/offers</code></td><td><em class="lv g">Growth+</em></td></tr>
-        <tr><td>Cart</td><td><code>/cart</code></td><td>All</td></tr>
-        <tr><td>Checkout (guest or logged in)</td><td><code>/checkout</code></td><td>All</td></tr>
-        <tr><td>Payment</td><td><code>/checkout/pay</code></td><td>All</td></tr>
-        <tr><td>Order confirmation</td><td><code>/orders/{code}</code></td><td>All</td></tr>
-        <tr><td>Order status</td><td><code>/orders/{code}/status</code></td><td>All</td></tr>
+        <tr><td>Cart</td><td><code>/cart</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Checkout (guest or logged in)</td><td><code>/checkout</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Payment</td><td><code>/checkout/pay</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Order confirmation</td><td><code>/orders/{code}</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Order status</td><td><code>/orders/{code}/status</code></td><td><em class="lv e">Essential+</em></td></tr>
         <tr><td>Live tracking</td><td><code>/orders/{code}/track</code></td><td><em class="lv s">Signature</em></td></tr>
-        <tr><td>About, contact</td><td><code>/about · /contact</code></td><td>All</td></tr>
-        <tr><td>Terms, privacy, refund policy</td><td><code>/legal/{page}</code></td><td>All</td></tr>
+        <tr><td>About</td><td><code>/about</code></td><td>All</td></tr>
+        <tr><td>Contact — details, map, contact form</td><td><code>/contact</code></td><td>All</td></tr>
+        <tr><td>Privacy policy</td><td><code>/privacy-policy</code></td><td>All</td></tr>
+        <tr><td>Refund and cancellation policy</td><td><code>/refund-policy</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Cookie policy</td><td><code>/cookie-policy</code></td><td>All</td></tr>
+        <tr><td>Terms of service</td><td><code>/terms</code></td><td>All</td></tr>
         <tr><td>Reviews</td><td><code>/reviews</code></td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Brand story, gallery</td><td><code>/story · /gallery</code></td><td><em class="lv s">Signature</em></td></tr>
         </table></div>
@@ -557,27 +601,28 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <div class="acc-h"><b>Guest-only — shown only when logged out</b><span>Logged-in customers are redirected to their account.</span></div>
         <div class="tbl-wrap"><table class="tbl">
         <tr><th>Page</th><th>URL</th><th>Package</th></tr>
-        <tr><td>Sign up</td><td><code>/register</code></td><td>All</td></tr>
-        <tr><td>Log in</td><td><code>/login</code></td><td>All</td></tr>
-        <tr><td>Forgot password</td><td><code>/forgot-password</code></td><td>All</td></tr>
-        <tr><td>Reset password (link from email)</td><td><code>/reset-password/{token}</code></td><td>All</td></tr>
+        <tr><td>Sign up</td><td><code>/register</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Log in</td><td><code>/login</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Forgot password</td><td><code>/forgot-password</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Reset password (link from email)</td><td><code>/reset-password/{token}</code></td><td><em class="lv e">Essential+</em></td></tr>
         <tr><td>OTP login — SMS / WhatsApp</td><td><code>/login/otp</code></td><td><em class="lv g">Growth+</em></td></tr>
+        <tr><td>Sign in with Google</td><td><code>/auth/google</code></td><td><em class="lv g">Growth+</em></td></tr>
         </table></div>
       </div>
       <div class="acc-grp customer">
         <div class="acc-h"><b>Customer — login required</b><span>Each customer sees only their own data.</span></div>
         <div class="tbl-wrap"><table class="tbl">
         <tr><th>Page</th><th>URL</th><th>Package</th></tr>
-        <tr><td>Account overview</td><td><code>/account</code></td><td>All</td></tr>
-        <tr><td>Profile</td><td><code>/account/profile</code></td><td>All</td></tr>
-        <tr><td>Saved addresses</td><td><code>/account/addresses</code></td><td>All</td></tr>
-        <tr><td>Order history</td><td><code>/account/orders</code></td><td>All</td></tr>
-        <tr><td>Order detail</td><td><code>/account/orders/{id}</code></td><td>All</td></tr>
+        <tr><td>Account overview</td><td><code>/account</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Profile</td><td><code>/account/profile</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Saved addresses</td><td><code>/account/addresses</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Order history</td><td><code>/account/orders</code></td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Order detail</td><td><code>/account/orders/{id}</code></td><td><em class="lv e">Essential+</em></td></tr>
         <tr><td>Reorder</td><td><code>/account/orders/{id}/reorder</code></td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Rate an order</td><td><code>/account/orders/{id}/rate</code></td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Rewards — points and ledger</td><td><code>/account/rewards</code></td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Voucher wallet</td><td><code>/account/vouchers</code></td><td><em class="lv g">Growth+</em></td></tr>
-        <tr><td>Log out</td><td><code>/logout</code></td><td>All</td></tr>
+        <tr><td>Log out</td><td><code>/logout</code></td><td><em class="lv e">Essential+</em></td></tr>
         </table></div>
       </div>
       <div class="acc-grp admin">
@@ -586,13 +631,13 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <tr><th>Page</th><th>URL</th><th>Who</th><th>Package</th></tr>
         <tr><td>Admin login</td><td><code>/admin/login</code></td><td>Logged-out staff</td><td>All</td></tr>
         <tr><td>Dashboard</td><td><code>/admin</code></td><td>All staff</td><td>All</td></tr>
-        <tr><td>Orders — live queue</td><td><code>/admin/orders</code></td><td>All staff</td><td>All</td></tr>
-        <tr><td>Order detail — accept, reject, status</td><td><code>/admin/orders/{id}</code></td><td>All staff</td><td>All</td></tr>
+        <tr><td>Orders — live queue</td><td><code>/admin/orders</code></td><td>All staff</td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Order detail — accept, reject, status</td><td><code>/admin/orders/{id}</code></td><td>All staff</td><td><em class="lv e">Essential+</em></td></tr>
         <tr><td>Kitchen screen</td><td><code>/admin/kitchen</code></td><td>All staff</td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Categories</td><td><code>/admin/categories</code></td><td>Manager, owner</td><td>All</td></tr>
         <tr><td>Items</td><td><code>/admin/items</code></td><td>Manager, owner</td><td>All</td></tr>
-        <tr><td>Options — sizes, add-ons</td><td><code>/admin/option-groups</code></td><td>Manager, owner</td><td>All</td></tr>
-        <tr><td>Customers</td><td><code>/admin/customers</code></td><td>Manager, owner</td><td>All</td></tr>
+        <tr><td>Options — sizes, add-ons</td><td><code>/admin/option-groups</code></td><td>Manager, owner</td><td><em class="lv e">Essential+</em></td></tr>
+        <tr><td>Customers</td><td><code>/admin/customers</code></td><td>Manager, owner</td><td><em class="lv e">Essential+</em></td></tr>
         <tr><td>Coupons and offers</td><td><code>/admin/coupons</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Loyalty rules</td><td><code>/admin/loyalty</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
         <tr><td>Banners</td><td><code>/admin/banners</code></td><td>Manager, owner</td><td><em class="lv g">Growth+</em></td></tr>
@@ -625,7 +670,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
   <path class="a" d="M840 100 L866 100" marker-end="url(#ah2)"/>
   <path class="a" d="M1010 100 L1040 100 L1040 240 L1014 240" marker-end="url(#ah2)"/>
   <text class="lb" x="1046" y="170" text-anchor="start">No</text>
-  <rect class="n" x="870" y="208" width="140" height="64" rx="10"/><text x="940" y="236.6" text-anchor="middle"><tspan x="940" dy="0">Log in · Sign up</tspan><tspan x="940" dy="1.25em">or continue as guest</tspan></text>
+  <rect class="n" x="870" y="208" width="140" height="64" rx="10"/><text x="940" y="236.6" text-anchor="middle"><tspan x="940" dy="0">Log in · Sign up</tspan><tspan x="940" dy="1.25em">Google, or guest</tspan></text>
   <path class="a" d="M910 134 L800 204" marker-end="url(#ah2)"/>
   <text class="lb" x="880" y="164" text-anchor="end">Yes</text>
   <rect class="n" x="700" y="208" width="140" height="64" rx="10"/><text x="770" y="228.8" text-anchor="middle"><tspan x="770" dy="0">Checkout</tspan><tspan x="770" dy="1.25em">delivery / takeaway,</tspan><tspan x="770" dy="1.25em">address</tspan></text>
@@ -675,7 +720,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
   <text class="lb" x="685" y="486" text-anchor="middle">status updates</text>
 </svg>
     </div>
-    <p class="rv" style="margin-top:14px;font-size:.88rem">The price is always recalculated on the server, and an online order is only confirmed after Razorpay&rsquo;s webhook is verified. Diamonds are decisions; dashed lines are real-time updates between the website and the admin panel.</p>
+    <p class="rv" style="margin-top:14px;font-size:.88rem">The price is always recalculated on the server, and an online order is only confirmed after Razorpay&rsquo;s webhook is verified. Diamonds are decisions; dashed lines are real-time updates between the website and the admin panel. The ordering workflow applies from Essential upwards — Basic sends customers to call, WhatsApp, Zomato or Swiggy.</p>
   </div>
 </section>
 
@@ -734,12 +779,12 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <tr><th>Table</th><th>Holds</th><th>Package</th></tr>
       <tr><td>outlets</td><td>Address, trading hours, delivery radius, fees, tax settings</td><td>All</td></tr>
       <tr><td>categories · items</td><td>Name, description, image, price, veg flag, availability, sort order</td><td>All</td></tr>
-      <tr><td>option_groups · options</td><td>Sizes and add-ons with price changes, min / max selection rules</td><td>All</td></tr>
-      <tr><td>carts · cart_items</td><td>Server-side basket tied to the session, survives refresh</td><td>All</td></tr>
-      <tr><td>orders · order_items</td><td>Snapshot of items, prices, taxes, mode, address, status history</td><td>All</td></tr>
-      <tr><td>payments</td><td>Razorpay order and payment IDs, status, signature, refunds</td><td>All</td></tr>
+      <tr><td>option_groups · options</td><td>Sizes and add-ons with price changes, min / max selection rules</td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>carts · cart_items</td><td>Server-side basket tied to the session, survives refresh</td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>orders · order_items</td><td>Snapshot of items, prices, taxes, mode, address, status history</td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>payments</td><td>Razorpay order and payment IDs, status, signature, refunds</td><td><em class="lv e">Essential+</em></td></tr>
       <tr><td>users · roles</td><td>Staff logins and permissions</td><td>All</td></tr>
-      <tr><td>customers · addresses</td><td>Email, hashed password, phone, profile, saved addresses</td><td>All</td></tr>
+      <tr><td>customers · addresses</td><td>Email, hashed password, phone, Google ID, profile, saved addresses</td><td><em class="lv e">Essential+</em></td></tr>
       <tr><td>coupons · redemptions</td><td>Rules, caps, validity, per-customer usage</td><td>Growth+</td></tr>
       <tr><td>loyalty_ledger</td><td>Every points earn and burn, linked to its order</td><td>Growth+</td></tr>
       <tr><td>feedback</td><td>Order and per-item ratings, comments</td><td>Growth+</td></tr>
@@ -749,12 +794,14 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="tbl-wrap rv"><table class="tbl">
       <tr><th>Area</th><th>Routes</th><th>Package</th></tr>
       <tr><td>Menu</td><td><code>GET /menu</code> <code>GET /items/{item}</code></td><td>All</td></tr>
-      <tr><td>Cart</td><td><code>GET /cart</code> <code>POST /cart/items</code> <code>PATCH /cart/items/{id}</code></td><td>All</td></tr>
-      <tr><td>Checkout</td><td><code>POST /checkout</code> <code>GET /orders/{order}</code></td><td>All</td></tr>
-      <tr><td>Payments</td><td><code>POST /payments/razorpay</code> <code>POST /webhooks/razorpay</code></td><td>All</td></tr>
-      <tr><td>Admin</td><td><code>/admin/items</code> <code>/admin/categories</code> <code>/admin/orders</code> (Filament)</td><td>All</td></tr>
-      <tr><td>Accounts</td><td><code>POST /register</code> <code>POST /login</code> <code>POST /forgot-password</code> <code>GET /account/orders</code></td><td>All</td></tr>
+      <tr><td>Cart</td><td><code>GET /cart</code> <code>POST /cart/items</code> <code>PATCH /cart/items/{id}</code></td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>Checkout</td><td><code>POST /checkout</code> <code>GET /orders/{order}</code></td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>Payments</td><td><code>POST /payments/razorpay</code> <code>POST /webhooks/razorpay</code></td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>Admin — menu</td><td><code>/admin/items</code> <code>/admin/categories</code> (Filament)</td><td>All</td></tr>
+      <tr><td>Admin — orders</td><td><code>/admin/orders</code> (Filament)</td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>Accounts</td><td><code>POST /register</code> <code>POST /login</code> <code>POST /forgot-password</code> <code>GET /account/orders</code></td><td><em class="lv e">Essential+</em></td></tr>
       <tr><td>OTP login</td><td><code>POST /login/otp</code> <code>POST /login/verify</code></td><td>Growth+</td></tr>
+      <tr><td>Google sign-in</td><td><code>GET /auth/google</code> <code>GET /auth/google/callback</code> (Laravel Socialite)</td><td>Growth+</td></tr>
       <tr><td>Offers &amp; loyalty</td><td><code>POST /cart/coupon</code> <code>GET /account/points</code> <code>GET /account/vouchers</code></td><td>Growth+</td></tr>
       <tr><td>Tracking</td><td>Reverb channel <code>orders.{id}</code> + WhatsApp status templates</td><td>Signature</td></tr>
     </table></div>
@@ -785,17 +832,18 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="sub rv">Monthly running costs — paid by you, directly to providers</div>
     <div class="tbl-wrap rv"><table class="tbl">
       <tr><th>Service</th><th>Cost</th><th>Needed for</th></tr>
-      <tr><td>AWS Lightsail server, Mumbai (2 vCPU, 4 GB)</td><td>~₹2,100 / month</td><td>All</td></tr>
+      <tr><td>AWS Lightsail server, Mumbai (2 vCPU, 4 GB)</td><td>~₹2,100 / month</td><td><em class="lv e">Essential+</em></td></tr>
+      <tr><td>AWS Lightsail server, Mumbai (1 vCPU, 2 GB)</td><td>~₹1,050 / month</td><td>Basic</td></tr>
       <tr><td>Automatic daily snapshots</td><td>~₹300–400 / month</td><td>All</td></tr>
-      <tr><td>Razorpay</td><td>~2% per online transaction</td><td>All</td></tr>
+      <tr><td>Razorpay</td><td>~2% per online transaction</td><td><em class="lv e">Essential+</em></td></tr>
       <tr><td>Domain</td><td>~₹1,000–1,500 / year</td><td>All</td></tr>
-      <tr><td>Email sending (AWS SES) — password resets, receipts</td><td>~₹10 per 1,000 emails</td><td>All</td></tr>
-      <tr><td>Google Maps</td><td>Free tier covers launch volume; ~₹0–2,000 / month</td><td>All</td></tr>
+      <tr><td>Email sending (AWS SES) — contact form, password resets, receipts</td><td>~₹10 per 1,000 emails</td><td>All</td></tr>
+      <tr><td>Google Maps</td><td>Free tier covers launch volume; ~₹0–2,000 / month</td><td><em class="lv e">Essential+</em></td></tr>
       <tr><td>Google Analytics 4</td><td>Free</td><td>All</td></tr>
       <tr><td>SMS OTP (MSG91)</td><td>~₹0.15–0.25 per OTP</td><td>Growth+</td></tr>
       <tr><td>WhatsApp Business API</td><td>~₹0.12 per order update · ~₹0.80 per promotional message</td><td>Growth+</td></tr>
     </table></div>
-    <p class="rv" style="margin-top:16px;font-size:.9rem">Roughly <strong>₹2,500–5,000 a month</strong> at launch volume, plus Razorpay fees and message usage. All accounts are opened in your name.</p>
+    <p class="rv" style="margin-top:16px;font-size:.9rem">Roughly <strong>₹1,500 a month for Basic</strong>, and <strong>₹2,500–5,000 a month</strong> for Essential and above at launch volume, plus Razorpay fees and message usage. All accounts are opened in your name.</p>
   </div>
 </section>
 
@@ -805,10 +853,10 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="head rv">
       <div class="kicker">05 — Full Scope</div>
       <h2 class="display">The full<br>scope</h2>
-      <p>The complete build, area by area. <strong>149 features across nineteen areas</strong> &mdash; the guest-facing platform and the back office that runs your kitchen. This is the complete Signature build. The packages above show which parts each tier includes.</p>
+      <p>The complete build, area by area. <strong>151 features across nineteen areas</strong> &mdash; the guest-facing platform and the back office that runs your kitchen. This is the complete Signature build. The packages above show which parts each tier includes.</p>
     </div>
     <div class="spec rv">
-      <div class="sp"><h4><i>01</i> Accounts &amp; access</h4><ul><li>Sign up and log in with mobile number and OTP by SMS or WhatsApp</li><li>Browse the full menu as a guest, no account needed</li><li>Identify only at checkout</li><li>Sessions that persist across visits and devices</li><li>Profile: name, date of birth, email, phone</li><li>Delete account and data on request</li></ul></div>
+      <div class="sp"><h4><i>01</i> Accounts &amp; access</h4><ul><li>Sign up and log in with mobile number and OTP by SMS or WhatsApp</li><li>Sign in with Google</li><li>Browse the full menu as a guest, no account needed</li><li>Identify only at checkout</li><li>Sessions that persist across visits and devices</li><li>Profile: name, date of birth, email, phone</li><li>Delete account and data on request</li></ul></div>
       <div class="sp"><h4><i>02</i> Location &amp; service modes</h4><ul><li><strong>Delivery and takeaway</strong> mode switch</li><li>Detect location, or search an address</li><li>Address autocomplete while typing</li><li>Saved addresses labelled home, work or other</li><li>Add, edit and delete saved addresses</li><li>Delivery radius enforced with a clear message</li><li>Trading hours with live open and closed state</li><li>Holiday and temporary closure handling</li></ul></div>
       <div class="sp"><h4><i>03</i> Menu &amp; catalogue</h4><ul><li>Merchandised home feed with banners</li><li>Top deals and limited-time rails</li><li>Categories and sub-categories</li><li>Veg and non-veg filtering, with the standard marks</li><li>Item pages with photography and description</li><li>Nutrition and allergen information per item</li><li>Price and availability driven per outlet</li><li>Sold-out and temporarily unavailable states</li><li>Recommended and most-ordered rails</li></ul></div>
       <div class="sp"><h4><i>04</i> Item customisation</h4><ul><li><strong>Burger customiser</strong> — add, remove, upgrade</li><li>Portion and size options</li><li><strong>Pizza builder</strong> — crust, size, toppings</li><li>Half-and-half pizza selection</li><li>Combo and meal builder: main, side and drink</li><li>Add-ons with their own pricing rules</li><li>Upsell prompts at add-to-cart and at basket</li><li>Per-item cooking notes and instructions</li></ul></div>
@@ -819,7 +867,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="sp"><h4><i>09</i> Order lifecycle</h4><ul><li>Order confirmation with an itemised summary</li><li><strong>Live status</strong>: accepted, preparing, ready, on the way, delivered</li><li>Estimated time, updated as it changes</li><li>Contact the outlet or the rider</li><li>Cancel within a defined window</li><li>Full order history</li><li><strong>One-tap reorder</strong> of any past order</li><li>Repeat a favourite as a saved basket</li><li>Download or share an invoice</li></ul></div>
       <div class="sp"><h4><i>10</i> Notifications &amp; messaging</h4><ul><li><strong>WhatsApp order updates</strong></li><li>Browser and push notifications</li><li>OTP by SMS and WhatsApp</li><li>Order confirmation and receipt by email</li><li>Offer and campaign messages</li><li>Per-channel notification preferences</li><li>Notification centre in the account</li></ul></div>
       <div class="sp"><h4><i>11</i> Feedback &amp; reputation</h4><ul><li>Star rating after every order</li><li>Per-item rating and tags</li><li>Free-text comments</li><li>Low-rating alert routed to the manager</li><li>Your best reviews displayed on the site</li><li>Help and support with a ticket trail</li></ul></div>
-      <div class="sp"><h4><i>12</i> Brand &amp; content pages</h4><ul><li>Home, story and sourcing pages</li><li>Food gallery</li><li>Outlet page with map, hours and directions</li><li>Careers and contact</li><li>Terms, privacy and promotional terms</li><li>FSSAI licence and statutory notices</li><li>Installable, app-like on a phone</li><li>Works on weak connections</li><li>Built to meet accessibility standards</li></ul></div>
+      <div class="sp"><h4><i>12</i> Brand &amp; content pages</h4><ul><li>Home, story and sourcing pages</li><li>Food gallery</li><li>Outlet page with map, hours and directions</li><li>Careers and contact</li><li>Privacy, refund and cookie policies</li><li>Terms of service and promotional terms</li><li>FSSAI licence and statutory notices</li><li>Installable, app-like on a phone</li><li>Works on weak connections</li><li>Built to meet accessibility standards</li></ul></div>
       <div class="sp"><h4><i>13</i> Admin — orders &amp; kitchen</h4><ul><li><strong>Live order queue</strong> with sound alert</li><li>Accept, reject and set status</li><li>Kitchen display for the line</li><li>Ticket printing</li><li>Preparation time control per order</li><li>Rush mode and pause-new-orders</li><li>Mark items sold out in one tap</li><li>Cancel and refund an order</li></ul></div>
       <div class="sp"><h4><i>14</i> Admin — menu management</h4><ul><li>Create and edit categories and items</li><li>Upload and crop item photography</li><li>Prices per item and per mode</li><li>Modifiers, add-ons and combo rules</li><li>Nutrition and allergen fields</li><li>Availability by day and time</li><li>Reorder the menu by drag</li><li>Bulk enable and disable</li></ul></div>
       <div class="sp"><h4><i>15</i> Admin — offers &amp; pricing</h4><ul><li>Build coupons with type, value and caps</li><li>Usage limits: per customer and overall</li><li>Validity windows and day-part rules</li><li>Customer segments and eligibility</li><li>Stacking rules</li><li>Configure points earn and burn rates</li><li>Schedule a campaign in advance</li></ul></div>
@@ -845,11 +893,22 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <p>Working weeks from kick-off. Design is signed off before the build starts, so there are no expensive reversals later. Weeks marked <span class="you">Your sign-off</span> need a decision from you before we continue.</p>
     </div>
     <div class="tabs rv" role="tablist">
-      <button class="tab on" data-plan="essential">Essential</button>
+      <button class="tab on" data-plan="basic">Basic</button>
+      <button class="tab" data-plan="essential">Essential</button>
       <button class="tab" data-plan="growth">Growth</button>
       <button class="tab" data-plan="signature">Signature</button>
     </div>
     <div class="rv">
+    <div class="plan" id="plan-basic">
+    <div class="sub">Basic · 4 weeks</div>
+    <div class="tbl-wrap"><table class="tbl wk">
+      <tr><th>Week</th><th>Phase</th><th>What happens</th></tr>
+      <tr><td>Week 1</td><td><span class="ph-tag">Discovery</span></td><td>Kick-off call. Collect menu, prices, photos and page content. Agree sitemap. Server and domain set up.</td></tr>
+      <tr><td>Week 2</td><td><span class="ph-tag">Design</span></td><td>Home, menu and contact page designs on your logo. <span class="you">Your sign-off</span></td></tr>
+      <tr><td>Week 3</td><td><span class="ph-tag">Build</span></td><td>Pages built, menu loaded, admin panel for menu and banners, contact form, legal pages, Google Analytics.</td></tr>
+      <tr><td>Week 4</td><td><span class="ph-tag">Launch</span></td><td>Testing on real phones, your review and fixes, SSL, go-live and a short admin training. <span class="you">Your sign-off</span></td></tr>
+    </table></div>
+    </div>
     <div class="plan" id="plan-essential">
     <div class="sub">Essential · 10 weeks</div>
     <div class="tbl-wrap"><table class="tbl wk">
@@ -991,7 +1050,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     document.querySelectorAll('.plan').forEach(function(pl){ pl.classList.toggle('on', pl.id==='plan-'+k); });
   }
   tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.plan); }); });
-  show('essential');
+  show('basic');
   var nav=document.getElementById('nav'), prog=document.getElementById('prog');
   function onScroll(){
     var y=window.scrollY||document.documentElement.scrollTop;
