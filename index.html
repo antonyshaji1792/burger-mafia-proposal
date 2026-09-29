@@ -149,7 +149,7 @@ nav.on{background:rgba(10,10,11,.86);backdrop-filter:blur(14px) saturate(140%);b
   letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
 .pkg .meta b{display:block;color:var(--gold);font-weight:500;font-size:.8rem;margin-top:4px}
 .pkg .plus{margin-top:18px;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
-.pkg ul{flex:1}
+.pkg ul:last-of-type{flex:1}
 .pkg .out{margin-top:20px;padding-top:14px;border-top:1px dashed var(--line-2);font-size:.82rem;color:var(--muted-2);line-height:1.5}
 .pkg .out b{color:var(--muted);font-weight:500}
 .addons{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -260,7 +260,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="hero-meta">
         <div>Prepared for<br><b>Burger Mafia · KR Puram</b></div>
         <div>Prepared by<br><b>Green Banana Software</b></div>
-        <div>Scope<br><b>Platform, Brand &amp; Photography</b></div>
+        <div>Scope<br><b>Platform &amp; Brand</b></div>
       </div>
     </div>
     <div class="scroll"><i></i> Scroll</div>
@@ -376,8 +376,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="card">
         <span class="n">MODULE 01</span>
         <h3>Sign-in built for Indian customers</h3>
-        <p>Mobile number and a one-time code on WhatsApp — no passwords to forget. Guests browse the full menu freely and only identify themselves at checkout, so nothing stands between hunger and the basket.</p>
-        <ul><li>WhatsApp OTP login and registration</li><li>Guest browsing with no barrier</li><li>Secure sessions that survive a returning visit</li></ul>
+        <p>Mobile number and a one-time code by SMS or WhatsApp — no passwords to forget. Guests browse the full menu freely and only identify themselves at checkout, so nothing stands between hunger and the basket.</p>
+        <ul><li>SMS and WhatsApp OTP login and registration</li><li>Guest browsing with no barrier</li><li>Secure sessions that survive a returning visit</li></ul>
       </div>
       <div class="card">
         <span class="n">MODULE 02</span>
@@ -433,7 +433,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <span class="n">MODULE 10</span>
         <h3>Brand pages and storytelling</h3>
         <p>Where the kitchen gets to explain itself. The part of the site that turns a one-off delivery into someone who knows whose food they are eating.</p>
-        <ul><li>Story, sourcing, careers and contact pages</li><li><strong>Your 4.9 rating and best reviews shown on the site</strong></li><li>Gallery for the food photography once shot</li><li>Installable, app-like, works on weak connections</li><li>Loads fast on a mid-range phone over mobile data</li><li>Built to meet accessibility standards</li></ul>
+        <ul><li>Story, sourcing, careers and contact pages</li><li><strong>Your 4.9 rating and best reviews shown on the site</strong></li><li>Food gallery using your photos</li><li>Installable, app-like, works on weak connections</li><li>Loads fast on a mid-range phone over mobile data</li><li>Built to meet accessibility standards</li></ul>
       </div>
     </div>
   </div>
@@ -450,7 +450,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="cmp rv">
       <div class="cmp-row h"><div>Capability</div><div>Burger King India</div><div>Burger Mafia</div></div>
       <div class="cmp-row"><div>Dine-in ordering</div><div>Not offered</div><div>QR table ordering available as a feature request</div></div>
-      <div class="cmp-row"><div>Design language</div><div>Dated, modal-heavy, app-in-a-browser</div><div>Purpose-built brand identity with cinematic food photography</div></div>
+      <div class="cmp-row"><div>Design language</div><div>Dated, modal-heavy, app-in-a-browser</div><div>Purpose-built brand identity with food imagery given room to sell</div></div>
       <div class="cmp-row"><div>Order updates</div><div>SMS and push notifications</div><div>WhatsApp — where Indian customers actually read</div></div>
       <div class="cmp-row"><div>Accessibility</div><div>Fails basic standards</div><div>Built to WCAG from the first component</div></div>
       <div class="cmp-row"><div>Point of sale</div><div>Separate enterprise systems, stitched together</div><div>One system — storefront, kitchen and reporting in the same place</div></div>
@@ -470,7 +470,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <p>The complete build, area by area. <strong>147 features across nineteen areas</strong> &mdash; the guest-facing platform and the back office that runs your kitchen. This is the complete Signature build; the packages that follow show what each tier includes.</p>
     </div>
     <div class="spec rv">
-      <div class="sp"><h4><i>01</i> Accounts &amp; access</h4><ul><li>Sign up and log in with mobile number and WhatsApp OTP</li><li>Browse the full menu as a guest, no account needed</li><li>Identify only at checkout</li><li>Sessions that persist across visits and devices</li><li>Profile: name, date of birth, email, phone</li><li>Delete account and data on request</li></ul></div>
+      <div class="sp"><h4><i>01</i> Accounts &amp; access</h4><ul><li>Sign up and log in with mobile number and OTP by SMS or WhatsApp</li><li>Browse the full menu as a guest, no account needed</li><li>Identify only at checkout</li><li>Sessions that persist across visits and devices</li><li>Profile: name, date of birth, email, phone</li><li>Delete account and data on request</li></ul></div>
       <div class="sp"><h4><i>02</i> Location &amp; service modes</h4><ul><li><strong>Delivery and takeaway</strong> mode switch</li><li>Detect location, or search an address</li><li>Address autocomplete while typing</li><li>Saved addresses labelled home, work or other</li><li>Add, edit and delete saved addresses</li><li>Delivery radius enforced with a clear message</li><li>Trading hours with live open and closed state</li><li>Holiday and temporary closure handling</li></ul></div>
       <div class="sp"><h4><i>03</i> Menu &amp; catalogue</h4><ul><li>Merchandised home feed with banners</li><li>Top deals and limited-time rails</li><li>Categories and sub-categories</li><li>Veg and non-veg filtering, with the standard marks</li><li>Item pages with photography and description</li><li>Nutrition and allergen information per item</li><li>Price and availability driven per outlet</li><li>Sold-out and temporarily unavailable states</li><li>Recommended and most-ordered rails</li></ul></div>
       <div class="sp"><h4><i>04</i> Item customisation</h4><ul><li><strong>Burger customiser</strong> — add, remove, upgrade</li><li>Portion and size options</li><li><strong>Pizza builder</strong> — crust, size, toppings</li><li>Half-and-half pizza selection</li><li>Combo and meal builder: main, side and drink</li><li>Add-ons with their own pricing rules</li><li>Upsell prompts at add-to-cart and at basket</li><li>Per-item cooking notes and instructions</li></ul></div>
@@ -479,9 +479,9 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="sp"><h4><i>07</i> Offers, coupons &amp; loyalty</h4><ul><li>Offers listing with segments and tabs</li><li>Coupon codes with caps, limits and validity windows</li><li>First-order and win-back offers</li><li>Limited-time deals with live countdown</li><li>Personal voucher and coupon wallet</li><li><strong>Points earned on every order</strong></li><li>Points redeemed against the basket</li><li>Full, transparent points ledger</li><li>Daily reward streak to drive repeat visits</li><li>Corporate and staff discounts, OTP verified</li><li>Referral rewards</li></ul></div>
       <div class="sp"><h4><i>08</i> Checkout &amp; payments</h4><ul><li><strong>UPI</strong>, cards, netbanking and wallets</li><li>Cash on delivery</li><li>Saved payment preference</li><li>Automatic reconciliation of interrupted payments</li><li>Retry a failed payment without rebuilding the basket</li><li>GST-compliant invoice per order</li><li>Card details never touch our servers</li></ul></div>
       <div class="sp"><h4><i>09</i> Order lifecycle</h4><ul><li>Order confirmation with an itemised summary</li><li><strong>Live status</strong>: accepted, preparing, ready, on the way, delivered</li><li>Estimated time, updated as it changes</li><li>Contact the outlet or the rider</li><li>Cancel within a defined window</li><li>Full order history</li><li><strong>One-tap reorder</strong> of any past order</li><li>Repeat a favourite as a saved basket</li><li>Download or share an invoice</li></ul></div>
-      <div class="sp"><h4><i>10</i> Notifications &amp; messaging</h4><ul><li><strong>WhatsApp order updates</strong></li><li>Browser and push notifications</li><li>OTP by WhatsApp</li><li>Order confirmation and receipt by email</li><li>Offer and campaign messages</li><li>Per-channel notification preferences</li><li>Notification centre in the account</li></ul></div>
+      <div class="sp"><h4><i>10</i> Notifications &amp; messaging</h4><ul><li><strong>WhatsApp order updates</strong></li><li>Browser and push notifications</li><li>OTP by SMS and WhatsApp</li><li>Order confirmation and receipt by email</li><li>Offer and campaign messages</li><li>Per-channel notification preferences</li><li>Notification centre in the account</li></ul></div>
       <div class="sp"><h4><i>11</i> Feedback &amp; reputation</h4><ul><li>Star rating after every order</li><li>Per-item rating and tags</li><li>Free-text comments</li><li>Low-rating alert routed to the manager</li><li>Your best reviews displayed on the site</li><li>Help and support with a ticket trail</li></ul></div>
-      <div class="sp"><h4><i>12</i> Brand &amp; content pages</h4><ul><li>Home, story and sourcing pages</li><li>Food photography gallery</li><li>Outlet page with map, hours and directions</li><li>Careers and contact</li><li>Terms, privacy and promotional terms</li><li>FSSAI licence and statutory notices</li><li>Installable, app-like on a phone</li><li>Works on weak connections</li><li>Built to meet accessibility standards</li></ul></div>
+      <div class="sp"><h4><i>12</i> Brand &amp; content pages</h4><ul><li>Home, story and sourcing pages</li><li>Food gallery</li><li>Outlet page with map, hours and directions</li><li>Careers and contact</li><li>Terms, privacy and promotional terms</li><li>FSSAI licence and statutory notices</li><li>Installable, app-like on a phone</li><li>Works on weak connections</li><li>Built to meet accessibility standards</li></ul></div>
       <div class="sp"><h4><i>13</i> Admin — orders &amp; kitchen</h4><ul><li><strong>Live order queue</strong> with sound alert</li><li>Accept, reject and set status</li><li>Kitchen display for the line</li><li>Ticket printing</li><li>Preparation time control per order</li><li>Rush mode and pause-new-orders</li><li>Mark items sold out in one tap</li><li>Cancel and refund an order</li></ul></div>
       <div class="sp"><h4><i>14</i> Admin — menu management</h4><ul><li>Create and edit categories and items</li><li>Upload and crop item photography</li><li>Prices per item and per mode</li><li>Modifiers, add-ons and combo rules</li><li>Nutrition and allergen fields</li><li>Availability by day and time</li><li>Reorder the menu by drag</li><li>Bulk enable and disable</li></ul></div>
       <div class="sp"><h4><i>15</i> Admin — offers &amp; pricing</h4><ul><li>Build coupons with type, value and caps</li><li>Usage limits: per customer and overall</li><li>Validity windows and day-part rules</li><li>Customer segments and eligibility</li><li>Stacking rules</li><li>Configure points earn and burn rates</li><li>Schedule a campaign in advance</li></ul></div>
@@ -491,8 +491,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="sp"><h4><i>19</i> Platform foundations</h4><ul><li>Mobile-first, built for a mid-range Android phone</li><li>Real-time updates between storefront and kitchen</li><li>Secure sessions and encrypted traffic</li><li>Automated backups with restore</li><li>Error monitoring and uptime alerting</li><li>Staging environment for safe changes</li><li>Documented handover and staff training</li><li><strong>Source code and data are yours</strong></li></ul></div>
     </div>
     <div class="spec-note rv">
-      <span><b>Signature also includes</b> Brand identity &middot; Photography &middot; Design &middot; Build &middot; Testing &middot; Training</span>
-      <span><b>Feature requests</b> SMS OTP configuration &middot; Dine-in QR ordering &mdash; quoted separately</span>
+      <span><b>Signature also includes</b> Brand identity &middot; Design &middot; Build &middot; Testing &middot; Training</span>
+      <span><b>Feature request</b> Dine-in QR ordering &mdash; quoted separately</span>
       <span><b>Not in v1</b> Native iOS and Android apps &middot; Multi-language &middot; Aggregator sync</span>
     </div>
   </div>
@@ -510,21 +510,30 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="card pkg">
         <span class="n">PACKAGE 01</span>
         <h3>Essential</h3>
-        <p class="for">Get direct ordering live, fast.</p>
-        <div class="meta"><div>Timeline<b>11–12 weeks</b></div><div>Best for<b>Launching lean</b></div></div>
+        <p class="for">A food ordering website that takes payment, and an admin panel to run it.</p>
+        <div class="meta"><div>Timeline<b>8–10 weeks</b></div><div>Best for<b>Launching lean</b></div></div>
+        <p class="plus">Ordering website</p>
         <ul>
-          <li>Delivery and takeaway ordering</li>
-          <li>WhatsApp OTP sign-in, guest browsing</li>
-          <li>Full menu, burger customiser, pizza builder, combos</li>
-          <li>Server-side basket, coupon codes, transparent bill</li>
-          <li>UPI, cards, netbanking, wallets and cash on delivery</li>
-          <li>Live order tracking with WhatsApp updates</li>
-          <li>Order history and one-tap reorder</li>
-          <li>Back office and till: order queue, kitchen screen, ticket printing, menu manager</li>
-          <li>Sales and item-mix reporting</li>
-          <li>Custom UI design on your existing logo — one direction</li>
+          <li>Menu with categories, photos, prices and veg / non-veg marks</li>
+          <li>Item options — size and add-ons</li>
+          <li>Delivery and takeaway</li>
+          <li>Basket and checkout with a clear bill</li>
+          <li>Guest checkout with name and mobile number</li>
+          <li>Order confirmation and status page</li>
         </ul>
-        <div class="out"><b>Not included:</b> loyalty and rewards, brand identity, food photography (you supply images).</div>
+        <p class="plus">Online payment</p>
+        <ul>
+          <li>UPI, cards, netbanking and wallets via Razorpay</li>
+          <li>Cash on delivery</li>
+        </ul>
+        <p class="plus">Admin panel</p>
+        <ul>
+          <li>Manage categories, items, prices, photos and availability</li>
+          <li>Mark items sold out</li>
+          <li>Incoming orders with sound alert — accept, reject, update status</li>
+          <li>Order list with daily sales total</li>
+        </ul>
+        <div class="out"><b>Not included:</b> OTP sign-in and accounts, customisers and combos, live tracking, coupons, loyalty, brand identity.</div>
       </div>
       <div class="card pkg hot">
         <span class="badge">Recommended</span>
@@ -534,18 +543,23 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <div class="meta"><div>Timeline<b>14–15 weeks</b></div><div>Best for<b>Building regulars</b></div></div>
         <p class="plus">Everything in Essential, plus</p>
         <ul>
+          <li><strong>SMS and WhatsApp OTP</strong> — configured sign-in and customer accounts</li>
+          <li>Burger customiser, pizza builder and combo meals</li>
+          <li>Order history and one-tap reorder</li>
+          <li>Kitchen screen and ticket printing</li>
+          <li>Coupon codes with caps and validity windows</li>
           <li><strong>Loyalty</strong> — points earned and redeemed, full ledger</li>
           <li>Daily reward streak and personal voucher wallet</li>
           <li>Offer engine: segments, first-order, win-back, referral, countdown deals</li>
           <li>Tip the rider and round up to donate</li>
           <li>Star and per-item feedback, low-rating alerts to the manager</li>
           <li>Customer list, segments, support tickets and export</li>
-          <li>Full reporting: repeat rate, peak hours, discount cost</li>
+          <li>Full reporting: item mix, repeat rate, peak hours, discount cost</li>
           <li>Staff roles, permissions and activity log</li>
           <li>Brand pages with your 4.9 rating and best reviews</li>
           <li>Two creative directions to choose from</li>
         </ul>
-        <div class="out"><b>Not included:</b> brand identity, food photography (you supply images).</div>
+        <div class="out"><b>Not included:</b> live order tracking, brand identity.</div>
       </div>
       <div class="card pkg">
         <span class="n">PACKAGE 03</span>
@@ -554,19 +568,19 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
         <div class="meta"><div>Timeline<b>16–18 weeks</b></div><div>Best for<b>A brand that scales</b></div></div>
         <p class="plus">Everything in Growth, plus</p>
         <ul>
+          <li>Live order tracking with WhatsApp updates</li>
           <li><strong>Brand identity</strong> — logo lockup, palette, typography, tone of voice</li>
           <li>Brand book your suppliers can follow</li>
           <li>Packaging, signage and in-store mockups</li>
-          <li><strong>Art-directed food photography</strong> — every menu item plus hero shots</li>
-          <li>Photography gallery on the site</li>
+          <li>Food gallery on the site</li>
           <li>Launch-campaign load testing and a full performance pass</li>
         </ul>
-        <div class="out"><b>Note:</b> studio, stylist and props for the shoot are billed at cost, with your approval.</div>
+        <div class="out"><b>Note:</b> we don&rsquo;t do photo shoots on any package.</div>
       </div>
     </div>
     <div class="addons rv">
-      <div><span>Feature request</span><b>SMS OTP configuration</b><i>Sign-in codes by SMS alongside WhatsApp. Available on any package, quoted separately.</i></div>
-      <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. Quoted separately.</i></div>
+      <div><span>All packages</span><b>Food images</b><i>We use the photos and creatives you give us. If none are supplied, we source royalty-free images from the internet. No photo shoots.</i></div>
+            <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. Quoted separately.</i></div>
       <div><span>Later phase</span><b>Native iOS and Android apps</b><i>Built on the same back end once the web platform is proven.</i></div>
     </div>
   </div>
@@ -578,7 +592,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="head rv">
       <div class="kicker">07 — Design &amp; Brand</div>
       <h2 class="display">We build the<br><span class="grad">whole identity</span></h2>
-      <p>The kitchen has a reputation; the brand doesn't yet have a system. There is no logo standard, no palette, no photography library and nothing that looks the same twice across a menu board, a delivery box and a listing photo. We build all of it — identity, food photography and platform — as one coherent piece of work.</p>
+      <p>The kitchen has a reputation; the brand doesn't yet have a system. There is no logo standard, no palette, no consistent visual system and nothing that looks the same twice across a menu board, a delivery box and a listing photo. We build the identity and the platform as one coherent piece of work.</p>
     </div>
     <div class="grid g-3 rv">
       <div class="card">
@@ -588,8 +602,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       </div>
       <div class="card">
         <span class="n">DELIVERABLE 02</span>
-        <h3>Food photography</h3>
-        <p>Art-directed studio shoot with a food stylist, covering every menu item plus hero imagery for the home page and campaigns. In a food business, the photography is the product page.</p>
+        <h3>Food imagery</h3>
+        <p>We use the photos and creatives you give us. If you don&rsquo;t supply photos, we source royalty-free images from the internet and fit them to the brand. We do not run photo shoots.</p>
       </div>
       <div class="card">
         <span class="n">DELIVERABLE 03</span>
@@ -600,7 +614,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="grid g-2 rv" style="margin-top:22px">
       <div class="card">
         <h3>The look we're aiming for</h3>
-        <p>Dark, confident and high contrast. Oversized display type, one loud accent colour, and food photography given room to do the selling. Closer to a premium streetwear drop than a fast-food menu board.</p>
+        <p>Dark, confident and high contrast. Oversized display type, one loud accent colour, and food imagery given room to do the selling. Closer to a premium streetwear drop than a fast-food menu board.</p>
       </div>
       <div class="card">
         <h3>How it should feel</h3>
@@ -626,7 +640,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="st"><span>Real time</span><b>Sockets + Redis</b><i>Live order status and a kitchen screen that never lags</i></div>
       <div class="st"><span>Payments</span><b>Razorpay</b><i>UPI, cards, netbanking, wallets, plus cash on delivery</i></div>
       <div class="st"><span>Location</span><b>Google Maps Platform</b><i>Address autocomplete and delivery radius</i></div>
-      <div class="st"><span>Messaging</span><b>WhatsApp API</b><i>Sign-in codes and order updates, read where customers live</i></div>
+      <div class="st"><span>Messaging</span><b>WhatsApp API + SMS OTP</b><i>Sign-in codes and order updates, read where customers live</i></div>
       <div class="st"><span>Hosting</span><b>Global edge network</b><i>Fast nationwide, scales through campaign spikes</i></div>
       <div class="st"><span>Reliability</span><b>Error &amp; uptime monitoring</b><i>We know it broke before a customer tells you</i></div>
       <div class="st"><span>Future</span><b>Mobile-app ready</b><i>iOS and Android can reuse this same back end</i></div>
@@ -653,14 +667,14 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <p>Brand and design come first and get signed off before production begins, so there are no expensive reversals later. Indicative working weeks from project kick-off, shown for the Signature package — Essential and Growth run shorter.</p>
     </div>
     <div class="tl">
-      <div class="ph rv"><span class="w">Weeks 1–2</span><h3>Discovery and definition</h3><p>Menu and content audit, information architecture, technical specification, and agreement on exactly what launch day includes. The photography shoot is booked in this window.</p></div>
+      <div class="ph rv"><span class="w">Weeks 1–2</span><h3>Discovery and definition</h3><p>Menu and content audit, information architecture, technical specification, and agreement on exactly what launch day includes.</p></div>
       <div class="ph rv"><span class="w">Weeks 2–4</span><h3>Brand identity</h3><p>Logo and name lockup, palette, typography and tone of voice, presented as complete directions and refined to a signed-off brand book.</p></div>
-      <div class="ph rv"><span class="w">Weeks 3–6</span><h3>Photography and design system</h3><p>Studio shoot and retouching, alongside two creative directions for the platform. One is chosen and taken through to every finished screen — storefront and back office.</p></div>
+      <div class="ph rv"><span class="w">Weeks 3–6</span><h3>Imagery and design system</h3><p>Your photos collected, or royalty-free images sourced where there are gaps, alongside two creative directions for the platform. One is chosen and taken through to every finished screen — storefront and back office.</p></div>
       <div class="ph rv"><span class="w">Weeks 5–9</span><h3>Platform foundations</h3><p>Accounts and OTP sign-in, addresses, outlet and trading hours, the full menu model with modifiers and combos, and the first working version of your back office.</p></div>
       <div class="ph rv"><span class="w">Weeks 7–12</span><h3>The ordering experience</h3><p>Home feed, categories, product pages, customiser, search, basket, coupons, checkout and live payments. By the end of this block an order can be placed end to end.</p></div>
       <div class="ph rv"><span class="w">Weeks 11–14</span><h3>Tracking and loyalty</h3><p>Real-time order tracking, WhatsApp updates, history and reorder, feedback capture, and the points and rewards programme.</p></div>
       <div class="ph rv"><span class="w">Weeks 13–16</span><h3>Back office hardening</h3><p>Kitchen display and ticket printing, offer engine, reporting, staff roles and permissions — tested in your actual restaurant, on your actual hardware.</p></div>
-      <div class="ph rv"><span class="w">Weeks 15–17</span><h3>Content and speed</h3><p>Brand pages, the photography gallery, and a performance pass targeting top-tier scores on a mid-range phone over mobile data.</p></div>
+      <div class="ph rv"><span class="w">Weeks 15–17</span><h3>Content and speed</h3><p>Brand pages, the food gallery, and a performance pass targeting top-tier scores on a mid-range phone over mobile data.</p></div>
       <div class="ph rv"><span class="w">Weeks 16–18</span><h3>Testing, training and launch</h3><p>Cross-device testing, accessibility review, load testing against a launch-campaign spike, your team's own acceptance testing, staff training on the till, then go-live.</p></div>
     </div>
   </div>
@@ -676,7 +690,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     </div>
     <div class="chk rv">
       <div class="ck"><em>1</em><div><b>The menu, complete</b><span>Every item, description, price, and any nutrition or allergen information you hold — by the end of week three.</span></div></div>
-      <div class="ck"><em>2</em><div><b>Food for the shoot</b><span>Prepared to final spec, in your restaurant or at the studio, on the booked shoot day.</span></div></div>
+      <div class="ck"><em>2</em><div><b>Your photos and creatives</b><span>Any food photos, logos or artwork you have, by the end of week two. If you don&rsquo;t supply photos, we source royalty-free images from the internet.</span></div></div>
       <div class="ck"><em>3</em><div><b>Trading accounts in your name</b><span>Payment gateway, maps and messaging accounts opened by you, so revenue and data are yours from day one. We handle the setup.</span></div></div>
       <div class="ck"><em>4</em><div><b>One decision maker</b><span>A single person who can sign off brand and design. Committee reviews are the most common cause of slipped launches.</span></div></div>
       <div class="ck"><em>5</em><div><b>Access to the restaurant</b><span>Two site visits to test the kitchen screen and ticket printing on your real hardware and network.</span></div></div>
@@ -701,8 +715,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       </div>
       <div class="card">
         <span class="n">RISK 02</span>
-        <h3>Photography gates the design</h3>
-        <p>Menu design can't be finished around placeholder images. If the shoot slips, the build waits — so the shoot is booked in week two, before design begins in earnest.</p>
+        <h3>Stock images aren&rsquo;t your food</h3>
+        <p>Royalty-free images fill the gaps, but they won&rsquo;t show your actual burgers. Your own photos sell better, so send what you have early — images can be swapped in the admin panel any time after launch.</p>
       </div>
       <div class="card">
         <span class="n">RISK 03</span>
