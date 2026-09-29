@@ -12,8 +12,11 @@
 <link rel="preconnect" href="https://images.pexels.com" crossorigin>
 <link rel="dns-prefetch" href="https://images.pexels.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="https://images.pexels.com/photos/15010292/pexels-photo-15010292.jpeg?auto=compress&cs=tinysrgb&w=1400" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.pexels.com/photos/18126715/pexels-photo-18126715.jpeg?auto=compress&cs=tinysrgb&w=1600" fetchpriority="high">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.min.js"}}
+</script>
 <style>
 :root{
   --ink:#0A0A0B; --ink-2:#111113; --ink-3:#18181C;
@@ -68,24 +71,32 @@ header.nav.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(16px) satura
 .navlinks{display:flex;gap:24px;font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .navlinks a{transition:color .25s}.navlinks a:hover{color:var(--cream)}
 @media(max-width:900px){.navlinks{display:none}}
+@media(max-width:560px){
+  header.nav{padding:12px 14px}
+  .brand{font-size:.88rem;gap:7px}
+  .brand i{width:23px;height:23px;font-size:.6rem}
+  .navcta{padding:9px 14px;font-size:.68rem;gap:7px}
+}
 .navcta{display:flex;align-items:center;gap:9px;background:var(--flame);color:#fff;font-size:.76rem;font-weight:600;
   letter-spacing:.05em;text-transform:uppercase;padding:11px 20px;border-radius:100px;transition:transform .3s,box-shadow .3s}
 .navcta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,50,30,.4)}
 .navcta b{width:6px;height:6px;border-radius:50%;background:#7CFFA0;box-shadow:0 0 8px #7CFFA0}
 
 /* ---------- hero ---------- */
-.hero{height:100svh;min-height:600px;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero{height:100svh;min-height:600px;position:relative;overflow:hidden;display:grid;grid-template-rows:1fr auto;
+  padding-block:clamp(84px,11vh,120px) clamp(20px,3vh,32px)}
 .hero-media{position:absolute;inset:0;z-index:0}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;transform:scale(1.12)}
 .hero-media::after{content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(10,10,11,.86) 0%,rgba(10,10,11,.5) 35%,rgba(10,10,11,.72) 72%,var(--ink) 100%),
              radial-gradient(70% 60% at 50% 45%,transparent,rgba(10,10,11,.6))}
-.hero .wrap{position:relative;z-index:2;width:100%}
-.hero h1{font-size:clamp(3.4rem,15.5vw,13rem);margin-bottom:0}
-.hero h1 .ln{display:block;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;width:100%;align-self:center}
+.hero h1{font-size:clamp(2.9rem,12.4vw,10.2rem);margin-bottom:0}
+.hero h1 .ln{display:block;overflow:hidden;white-space:nowrap}
 .hero h1 .ch{display:inline-block;transform:translateY(102%)}
+.hero h1 .ln.grad{background:none;-webkit-text-fill-color:currentColor;color:var(--cream)}
 .hero-tag{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:26px;color:var(--muted);font-size:.95rem}
-.hero-tag span{display:flex;align-items:center;gap:8px}
+.hero-tag span{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
 .hero-tag em{font-style:normal;color:var(--gold);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:100px;font-weight:600;font-size:.95rem;
@@ -93,8 +104,8 @@ header.nav.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(16px) satura
 .btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(232,50,30,.45)}
 .btn.ghost{background:rgba(247,243,236,.05);border:1px solid var(--line-2);box-shadow:none;backdrop-filter:blur(6px)}
 .btn.ghost:hover{background:rgba(247,243,236,.1);box-shadow:none}
-.hero-foot{position:absolute;left:0;right:0;bottom:22px;z-index:2;display:flex;justify-content:space-between;
-  align-items:flex-end;padding-inline:var(--gutter);color:var(--muted-2);gap:16px}
+.hero-foot{position:relative;z-index:2;display:flex;justify-content:space-between;
+  align-items:flex-end;padding-inline:var(--gutter);color:var(--muted-2);gap:16px;padding-top:20px}
 .rating{display:flex;align-items:center;gap:10px;color:var(--cream)}
 .rating b{font-family:var(--display);font-size:1.7rem;color:var(--gold);line-height:1}
 .rating u{text-decoration:none;font-size:.76rem;color:var(--muted);display:block;line-height:1.3}
@@ -195,12 +206,66 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
   display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;color:var(--muted-2)}
 
 /* ---------- demo badge ---------- */
-.demo-note{position:fixed;left:var(--gutter);bottom:16px;z-index:310;display:flex;align-items:center;gap:9px;
+.demo-note{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:310;display:flex;align-items:center;gap:9px;
   background:rgba(10,10,11,.86);backdrop-filter:blur(10px);border:1px solid var(--line-2);border-radius:100px;
   padding:9px 16px;color:var(--muted);font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;max-width:calc(100vw - 2*var(--gutter))}
 .demo-note b{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
 .demo-note span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:560px){.demo-note{display:none}}
+
+/* ---------- kinetic typography takeover ---------- */
+.kin{height:100svh;min-height:560px;display:grid;place-items:center;overflow:hidden;background:var(--ink);position:relative}
+.kin-in{text-align:center;padding-inline:var(--gutter);position:relative;z-index:2;perspective:900px}
+.kin-line{display:block;font-family:var(--display);text-transform:uppercase;line-height:.82;
+  font-size:clamp(2.6rem,13vw,10.5rem);will-change:transform,opacity}
+.kin-line.stroke{color:transparent;-webkit-text-stroke:clamp(1px,.16vw,2px) rgba(247,243,236,.55)}
+.kin-sub{margin-top:26px;color:var(--muted);font-size:clamp(.95rem,1.7vw,1.15rem);max-width:40ch;margin-inline:auto}
+.kin-bg{position:absolute;inset:0;z-index:1;opacity:.16;pointer-events:none}
+.kin-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
+
+/* ---------- 3D burger build ---------- */
+.b3d{background:var(--ink-2);position:relative;overflow:hidden}
+.b3d-stage{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(20px,4vw,56px);align-items:center;min-height:86svh}
+@media(max-width:940px){.b3d-stage{grid-template-columns:1fr;min-height:0;gap:26px;padding-block:20px}}
+.b3d-canvas{position:relative;aspect-ratio:1/1;max-height:74svh;width:100%}
+.b3d-canvas canvas{width:100%;height:100%;display:block;touch-action:pan-y}
+.b3d-fallback{position:absolute;inset:0;display:none;place-items:center;border-radius:16px;overflow:hidden;
+  border:1px solid var(--line);background:var(--ink-3)}
+.b3d-fallback img{width:100%;height:100%;object-fit:cover}
+.b3d.nogl .b3d-canvas canvas{display:none}
+.b3d.nogl .b3d-fallback{display:grid}
+.b3d-glow{position:absolute;width:56%;aspect-ratio:1;border-radius:50%;filter:blur(90px);
+  background:rgba(232,50,30,.28);top:18%;left:4%;pointer-events:none;z-index:0}
+.b3d-copy{position:relative;z-index:2}
+.ing{opacity:.22;transition:opacity .45s;padding-block:clamp(9px,1.3vw,15px);display:flex;gap:16px;align-items:baseline}
+.ing.on{opacity:1}
+.ing b{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--flame);flex:none;width:26px}
+.ing h4{font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.9rem);text-transform:uppercase;line-height:1;margin-bottom:4px}
+.ing p{color:var(--muted);font-size:.87rem;line-height:1.45;max-width:36ch}
+.b3d-hint{display:flex;align-items:center;gap:10px;color:var(--muted-2);margin-top:20px}
+.b3d-hint i{display:block;width:34px;height:1px;background:var(--line-2)}
+
+/* ---------- whip-cut sequence ---------- */
+.whip{height:100svh;min-height:560px;position:relative;overflow:hidden;background:#000}
+.whip-frame{position:absolute;inset:0;clip-path:inset(50% 0 50% 0);will-change:clip-path,transform}
+.whip-frame:first-child{clip-path:inset(0 0 0 0)}
+.whip-frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);will-change:transform}
+.whip-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.5),rgba(10,10,11,.2) 45%,rgba(10,10,11,.85))}
+.whip-cap{position:absolute;z-index:3;left:0;right:0;bottom:12%;text-align:center;padding-inline:var(--gutter);display:grid}
+.whip-cap span{grid-area:1/1;font-family:var(--display);text-transform:uppercase;font-size:clamp(2rem,9vw,7rem);
+  line-height:.86;opacity:0;will-change:transform,opacity}
+.whip-cap span:first-child{opacity:1}
+.whip-count{position:absolute;z-index:3;top:calc(var(--gutter) + 46px);right:var(--gutter);color:var(--gold)}
+
+/* ---------- liquid / goo ---------- */
+.goo-wrap{position:absolute;inset:0;z-index:0;pointer-events:none;filter:url(#goo);opacity:.5}
+.blob{position:absolute;border-radius:50%;background:var(--flame);will-change:transform}
+.blob.b1{width:24vmax;height:24vmax;left:6%;top:14%;background:var(--flame)}
+.blob.b2{width:18vmax;height:18vmax;right:10%;top:44%;background:var(--ember)}
+.blob.b3{width:14vmax;height:14vmax;left:38%;bottom:6%;background:var(--gold)}
+.wave{display:block;width:100%;height:clamp(60px,9vw,130px);margin-bottom:-6px}
+.wave path{fill:var(--ink-2)}
+.wave.up path{fill:var(--ink)}
 
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(28px)}
@@ -212,10 +277,27 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
   .rv{opacity:1!important;transform:none!important}
   .lineMask>span,.hero h1 .ch,#pre .pm span{transform:none!important}
   .mq-in{transform:none!important}
+  .kin-line{opacity:1!important;transform:none!important}
+  .whip-cap span:first-child{opacity:1!important;transform:none!important}
+  .whip-cap span:not(:first-child){display:none}
+  .whip-frame{clip-path:none!important}
+  .whip-frame:not(:first-child){display:none}
+  .goo-wrap{display:none}
+  .ing{opacity:1}
 }
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22" result="b"/>
+      <feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -12" result="g"/>
+      <feBlend in="SourceGraphic" in2="g"/>
+    </filter>
+  </defs>
+</svg>
 
 <!-- PRELOADER -->
 <div id="pre">
@@ -231,6 +313,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
   <a class="brand" href="#top"><i>BM</i> Burger Mafia</a>
   <nav class="navlinks">
     <a href="#menu">Menu</a>
+    <a href="#build">Build</a>
     <a href="#craft">The Craft</a>
     <a href="#modes">Order</a>
     <a href="#find">Find Us</a>
@@ -241,14 +324,14 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-media">
-    <img id="heroImg" src="https://images.pexels.com/photos/15010292/pexels-photo-15010292.jpeg?auto=compress&cs=tinysrgb&w=1400"
-         alt="Flame-grilled double cheeseburger" width="1400" height="933" fetchpriority="high" decoding="async">
+    <img id="heroImg" src="https://images.pexels.com/photos/18126715/pexels-photo-18126715.jpeg?auto=compress&cs=tinysrgb&w=1600"
+         alt="Open flame in the Burger Mafia kitchen" width="1600" height="1067" fetchpriority="high" decoding="async">
   </div>
   <div class="wrap">
     <h1 class="display" id="heroTitle">
       <span class="ln" data-line>Flame</span>
       <span class="ln" data-line>Grilled</span>
-      <span class="ln grad" data-line>Since Day</span>
+      <span class="ln grad" data-line>Daily</span>
     </h1>
     <div class="hero-tag">
       <span><em>KR Puram</em> Hoodi Main Road, Bangalore</span>
@@ -275,6 +358,61 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
   </div>
 </div>
 
+<!-- KINETIC TYPOGRAPHY TAKEOVER -->
+<section class="kin" id="kin">
+  <div class="kin-bg"><img src="https://images.pexels.com/photos/11220676/pexels-photo-11220676.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" aria-hidden="true" width="1200" height="800" loading="lazy" decoding="async"></div>
+  <div class="kin-in">
+    <span class="kin-line" data-kin>No</span>
+    <span class="kin-line stroke" data-kin>Freezer.</span>
+    <span class="kin-line" data-kin>No</span>
+    <span class="kin-line stroke" data-kin>Excuses.</span>
+    <p class="kin-sub" data-kin-sub>Everything is cooked after you order it. That is the whole trick, and it is the reason the queue exists.</p>
+  </div>
+</section>
+
+<!-- 3D BURGER BUILD -->
+<section class="sec b3d" id="build">
+  <div class="b3d-glow"></div>
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker mono">Built To Order</div>
+      <h2 class="display">Six layers.<br><span class="grad">Zero shortcuts.</span></h2>
+    </div>
+    <div class="b3d-stage" id="b3dStage">
+      <div class="b3d-canvas" id="b3dCanvas">
+        <canvas id="burgerGL" aria-label="Rotating 3D model of a Burger Mafia burger" role="img"></canvas>
+        <div class="b3d-fallback">
+          <img src="https://images.pexels.com/photos/18987002/pexels-photo-18987002.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Stacked flame-grilled burgers" width="900" height="600" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="b3d-copy">
+        <div class="ing" data-ing="0"><b>01</b><div><h4>Toasted Base</h4><p>Brioche, buttered and seared on the flat top so it never goes soft under the sauce.</p></div></div>
+        <div class="ing" data-ing="1"><b>02</b><div><h4>Flame-Grilled Patty</h4><p>Cooked over open flame to order. Char you can taste, not a griddle stripe.</p></div></div>
+        <div class="ing" data-ing="2"><b>03</b><div><h4>Real Cheddar</h4><p>A full square slice, laid on hot so it melts over the edge instead of sitting on top.</p></div></div>
+        <div class="ing" data-ing="3"><b>04</b><div><h4>Crisp Lettuce</h4><p>Shredded to order. Cold against the patty — the contrast is the point.</p></div></div>
+        <div class="ing" data-ing="4"><b>05</b><div><h4>Beef Tomato</h4><p>Thick cut, seeds in, seasoned. Not the watery disc you get elsewhere.</p></div></div>
+        <div class="ing" data-ing="5"><b>06</b><div><h4>Sesame Crown</h4><p>Domed, seeded, steamed for ninety seconds so it gives when you bite.</p></div></div>
+        <div class="b3d-hint mono"><i></i> <span id="b3dHint">Scroll to build · drag to spin</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHIP-CUT SEQUENCE -->
+<section class="whip" id="whip">
+  <div class="whip-frame" data-whip><img src="https://images.pexels.com/photos/18987002/pexels-photo-18987002.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Stacked flame-grilled burgers" width="1600" height="1067" loading="lazy" decoding="async"></div>
+  <div class="whip-frame" data-whip><img src="https://images.pexels.com/photos/18832949/pexels-photo-18832949.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Stone-baked pizza" width="1600" height="1067" loading="lazy" decoding="async"></div>
+  <div class="whip-frame" data-whip><img src="https://images.pexels.com/photos/14678844/pexels-photo-14678844.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Cheese poured over loaded fries" width="1600" height="1067" loading="lazy" decoding="async"></div>
+  <div class="whip-frame" data-whip><img src="https://images.pexels.com/photos/14373648/pexels-photo-14373648.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Loaded thick shake" width="1600" height="1067" loading="lazy" decoding="async"></div>
+  <div class="whip-cap">
+    <span data-whipcap>Grilled</span>
+    <span data-whipcap>Stone Baked</span>
+    <span data-whipcap>Loaded</span>
+    <span data-whipcap>Iced</span>
+  </div>
+  <div class="whip-count mono" id="whipCount">01 / 04</div>
+</section>
+
 <!-- CRAFT (pinned, scroll-scrubbed) -->
 <section class="sec craft" id="craft">
   <div class="wrap">
@@ -285,10 +423,10 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
     </div>
     <div class="craft-stage" id="craftStage">
       <div class="craft-visual">
-        <img class="on" data-step="0" src="https://images.pexels.com/photos/15146667/pexels-photo-15146667.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Melted cheese over a flame-grilled patty" width="900" height="1125" loading="lazy" decoding="async">
-        <img data-step="1" src="https://images.pexels.com/photos/16203831/pexels-photo-16203831.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Stone-baked pizza" width="900" height="1125" loading="lazy" decoding="async">
-        <img data-step="2" src="https://images.pexels.com/photos/17035135/pexels-photo-17035135.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Loaded cheese fries" width="900" height="1125" loading="lazy" decoding="async">
-        <img data-step="3" src="https://images.pexels.com/photos/11584168/pexels-photo-11584168.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Finished burger" width="900" height="1125" loading="lazy" decoding="async">
+        <img class="on" data-step="0" src="https://images.pexels.com/photos/15146667/pexels-photo-15146667.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Melted cheese over a flame-grilled patty" width="900" height="600" loading="lazy" decoding="async">
+        <img data-step="1" src="https://images.pexels.com/photos/16203831/pexels-photo-16203831.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Stone-baked pizza" width="900" height="600" loading="lazy" decoding="async">
+        <img data-step="2" src="https://images.pexels.com/photos/17035135/pexels-photo-17035135.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Loaded cheese fries" width="900" height="1350" loading="lazy" decoding="async">
+        <img data-step="3" src="https://images.pexels.com/photos/11584168/pexels-photo-11584168.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Finished burger" width="900" height="1602" loading="lazy" decoding="async">
       </div>
       <div class="craft-steps">
         <div class="cstep on" data-cs="0"><span class="no">01 / Grill</span><h3>Open flame,<br>never a griddle</h3><p>Patties hit a live flame grill. That is where the char comes from — and it is the one thing a griddle can never fake.</p></div>
@@ -314,7 +452,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
       <article class="dish">
         <div class="dish-img"><span class="veg nv"></span>
-          <img src="https://images.pexels.com/photos/15010292/pexels-photo-15010292.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Double cheeseburger" width="640" height="480" loading="lazy" decoding="async"></div>
+          <img src="https://images.pexels.com/photos/13573664/pexels-photo-13573664.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Crispy chicken double burger" width="640" height="853" loading="lazy" decoding="async"></div>
         <div class="dish-body">
           <h3>The Don — Double Patty</h3>
           <p>Two flame-grilled chicken patties, double cheddar, smoked mayo, pickles, toasted brioche.</p>
@@ -324,7 +462,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
       <article class="dish">
         <div class="dish-img"><span class="veg"></span>
-          <img src="https://images.pexels.com/photos/16605109/pexels-photo-16605109.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Paneer burger" width="640" height="480" loading="lazy" decoding="async"></div>
+          <img src="https://images.pexels.com/photos/16605109/pexels-photo-16605109.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Paneer burger" width="640" height="973" loading="lazy" decoding="async"></div>
         <div class="dish-body">
           <h3>Paneer Capo</h3>
           <p>Thick-cut paneer, tandoori glaze, mint aioli, crisp lettuce, sesame bun.</p>
@@ -334,7 +472,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
       <article class="dish">
         <div class="dish-img"><span class="veg"></span>
-          <img src="https://images.pexels.com/photos/16203831/pexels-photo-16203831.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Veggie pizza" width="640" height="480" loading="lazy" decoding="async"></div>
+          <img src="https://images.pexels.com/photos/16203831/pexels-photo-16203831.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Veggie pizza" width="640" height="427" loading="lazy" decoding="async"></div>
         <div class="dish-body">
           <h3>Veggie Corn Pizza</h3>
           <p>Stone-baked 10", sweet corn, peppers, red onion, mozzarella, house red sauce.</p>
@@ -344,7 +482,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
       <article class="dish">
         <div class="dish-img"><span class="veg"></span>
-          <img src="https://images.pexels.com/photos/17035135/pexels-photo-17035135.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Loaded cheese fries" width="640" height="480" loading="lazy" decoding="async"></div>
+          <img src="https://images.pexels.com/photos/17035135/pexels-photo-17035135.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Loaded cheese fries" width="640" height="960" loading="lazy" decoding="async"></div>
         <div class="dish-body">
           <h3>Veg Cheesy Fries</h3>
           <p>Thick-cut fries drowned in real cheddar sauce, jalapeño, crushed chilli.</p>
@@ -354,7 +492,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
       <article class="dish">
         <div class="dish-img"><span class="veg nv"></span>
-          <img src="https://images.pexels.com/photos/15146667/pexels-photo-15146667.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Chicken cheese ball" width="640" height="480" loading="lazy" decoding="async"></div>
+          <img src="https://images.pexels.com/photos/15146667/pexels-photo-15146667.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Chicken cheese ball" width="640" height="427" loading="lazy" decoding="async"></div>
         <div class="dish-body">
           <h3>Chicken Cheese Balls</h3>
           <p>Six molten cheese and chicken spheres, panko crust, smoked dip.</p>
@@ -364,7 +502,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
       <article class="dish">
         <div class="dish-img"><span class="veg"></span>
-          <img src="https://images.pexels.com/photos/1146758/pexels-photo-1146758.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Loaded thick shake" width="640" height="480" loading="lazy" decoding="async"></div>
+          <img src="https://images.pexels.com/photos/1146758/pexels-photo-1146758.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Loaded thick shake" width="640" height="960" loading="lazy" decoding="async"></div>
         <div class="dish-body">
           <h3>Loaded Thick Shake</h3>
           <p>Belgian chocolate, brownie chunks, whipped top. Built to be photographed.</p>
@@ -384,6 +522,8 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
   </div>
 </div>
 
+<svg class="wave up" id="wave1" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,66 C240,46 480,86 720,66 C960,46 1200,86 1440,66 L1440,120 Z"/></svg>
+
 <!-- MODES -->
 <section class="sec" id="modes">
   <div class="wrap">
@@ -394,14 +534,14 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
     </div>
     <div class="modes">
       <a class="mode rv" href="#">
-        <img src="https://images.pexels.com/photos/11584168/pexels-photo-11584168.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Burger ready for delivery" width="760" height="1000" loading="lazy" decoding="async">
+        <img src="https://images.pexels.com/photos/11584168/pexels-photo-11584168.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Burger ready for delivery" width="760" height="1353" loading="lazy" decoding="async">
         <span class="mno">01 / Delivery</span>
         <h3>To your<br>door</h3>
         <p>Live tracking from grill to gate, with updates on WhatsApp instead of a silent wait.</p>
         <span class="tagx">Start an order</span>
       </a>
       <a class="mode rv" href="#">
-        <img src="https://images.pexels.com/photos/15754939/pexels-photo-15754939.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Fries ready for takeaway" width="760" height="1000" loading="lazy" decoding="async">
+        <img src="https://images.pexels.com/photos/15754939/pexels-photo-15754939.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Fries ready for takeaway" width="760" height="1140" loading="lazy" decoding="async">
         <span class="mno">02 / Takeaway</span>
         <h3>Ready<br>when you are</h3>
         <p>Order ahead, pick a time, walk past the queue. We start cooking to hit your slot.</p>
@@ -409,7 +549,7 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
       </a>
       <a class="mode feat rv" href="#">
         <span class="new mono">New</span>
-        <img src="https://images.pexels.com/photos/14498734/pexels-photo-14498734.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Dining room at Burger Mafia" width="760" height="1000" loading="lazy" decoding="async">
+        <img src="https://images.pexels.com/photos/14498734/pexels-photo-14498734.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Dining room at Burger Mafia" width="760" height="1140" loading="lazy" decoding="async">
         <span class="mno">03 / Dine-In</span>
         <h3>Scan at<br>your table</h3>
         <p>Point your camera at the QR. Browse, order and pay without waiting for anyone to notice you.</p>
@@ -437,7 +577,8 @@ footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutte
 
 <!-- FINAL CTA -->
 <section class="sec final">
-  <div class="wrap">
+  <div class="goo-wrap" id="goo"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
+  <div class="wrap" style="position:relative;z-index:2">
     <h2 class="display rv">Hungry<br><span class="grad">yet?</span></h2>
     <p class="sub rv">Order direct from the kitchen that cooked it. Same food, better price, and the points stay with you.</p>
     <div class="hero-cta rv">
@@ -483,12 +624,36 @@ window.addEventListener('load', function () {
   var pre = document.getElementById('pre'), pct = document.getElementById('pct'),
       pbar = document.querySelector('#pre .pbar i'), pmask = document.querySelector('#pre .pm span');
 
+  var started = false;
+
+  /* Reveals the page. Safe to call more than once. */
   function startSite() {
+    if (started) return;
+    started = true;
     document.body.style.removeProperty('overflow');
     if (hasGSAP && !reduce) heroIn();
-    else document.querySelectorAll('.hero h1 .ch, .rv, .lineMask>span')
-      .forEach(function (n) { n.style.opacity = 1; n.style.transform = 'none'; });
+    else forceVisible();
   }
+
+  function forceVisible() {
+    document.querySelectorAll('.hero h1 .ch, .rv, .lineMask>span, [data-kin], [data-kin-sub]')
+      .forEach(function (n) { n.style.opacity = 1; n.style.transform = 'none'; });
+    /* counters animate from 0, so without GSAP they would read "0" forever */
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var d = parseInt(el.dataset.dec || 0, 10);
+      el.textContent = (el.dataset.prefix || '') +
+        parseFloat(el.dataset.count).toFixed(d) + (el.dataset.suffix || '');
+    });
+  }
+
+  /* Failsafe: if the intro has not handed over within 3.5s — GSAP hiccup, a stalled
+     tween, a throttled background tab — drop the curtain and show the page anyway.
+     Content must never depend on an animation completing. */
+  setTimeout(function () {
+    var p = document.getElementById('pre');
+    if (p) p.remove();
+    if (!started) { startSite(); forceVisible(); }
+  }, 3500);
 
   if (!hasGSAP || reduce) {
     pre.remove(); startSite();
@@ -535,6 +700,21 @@ window.addEventListener('load', function () {
       s.textContent = c === ' ' ? ' ' : c;
       line.appendChild(s);
     });
+    /* A gradient set on the line breaks once the glyphs move into child spans,
+       so re-apply it per character and slide each one's background into place
+       — the line still reads as a single continuous gradient. */
+    if (line.classList.contains('grad')) {
+      var lw = line.offsetWidth;
+      Array.prototype.forEach.call(line.children, function (c) {
+        c.style.backgroundImage = 'linear-gradient(100deg,#F5C451,#FF6B35 52%,#E8321E)';
+        c.style.backgroundSize = lw + 'px 100%';
+        c.style.backgroundPositionX = (-c.offsetLeft) + 'px';
+        c.style.webkitBackgroundClip = 'text';
+        c.style.backgroundClip = 'text';
+        c.style.color = 'transparent';
+        c.style.webkitTextFillColor = 'transparent';
+      });
+    }
   });
 
   function heroIn() {
@@ -677,6 +857,212 @@ window.addEventListener('load', function () {
       });
     });
   }
+
+  /* ---------- kinetic typography takeover ---------- */
+  (function () {
+    var lines = gsap.utils.toArray('[data-kin]');
+    gsap.set(lines, { opacity: 0, scale: .55, y: 70, rotateX: -55 });
+    gsap.set('[data-kin-sub]', { opacity: 0, y: 26 });
+
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: '#kin', start: 'top 70%', end: 'bottom 60%', toggleActions: 'play none none reverse' }
+    });
+    lines.forEach(function (l, i) {
+      tl.to(l, { opacity: 1, scale: 1, y: 0, rotateX: 0, duration: .52, ease: 'back.out(2.2)' }, i * .1)
+        .to(l, { scale: 1.04, duration: .18, ease: 'power2.out' }, i * .1 + .52)
+        .to(l, { scale: 1, duration: .3, ease: 'elastic.out(1,.5)' }, i * .1 + .7);
+    });
+    tl.to('[data-kin-sub]', { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, '-=.3');
+
+    /* type drifts apart and the backdrop pushes in as the section leaves */
+    gsap.to(lines, {
+      yPercent: function (i) { return (i % 2 ? 1 : -1) * 34; }, opacity: .1, ease: 'none',
+      scrollTrigger: { trigger: '#kin', start: 'center center', end: 'bottom top', scrub: .5 }
+    });
+    gsap.fromTo('.kin-bg img', { scale: 1.32 }, {
+      scale: 1.05, ease: 'none',
+      scrollTrigger: { trigger: '#kin', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+  })();
+
+  /* ---------- whip-cut sequence ---------- */
+  mm.add('(min-width: 701px)', function () {
+    var frames = gsap.utils.toArray('[data-whip]');
+    var caps = gsap.utils.toArray('[data-whipcap]');
+    var counter = document.getElementById('whipCount');
+
+    gsap.set(frames, { clipPath: 'inset(50% 0 50% 0)' });
+    gsap.set(frames[0], { clipPath: 'inset(0% 0 0% 0)' });
+    gsap.set(caps, { opacity: 0, yPercent: 60, skewY: 6 });
+    gsap.set(caps[0], { opacity: 1, yPercent: 0, skewY: 0 });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#whip', start: 'top top', end: '+=' + (frames.length * 620),
+        pin: true, scrub: .45,
+        onUpdate: function (self) {
+          var i = Math.min(frames.length - 1, Math.floor(self.progress * frames.length));
+          counter.textContent = '0' + (i + 1) + ' / 0' + frames.length;
+        }
+      }
+    });
+
+    for (var i = 1; i < frames.length; i++) {
+      var prev = i - 1;
+      tl.to(frames[prev], { scale: 1.06, duration: .34, ease: 'power2.in' }, i - 1 + .55)
+        .to(caps[prev], { opacity: 0, yPercent: -55, skewY: -6, duration: .3, ease: 'power3.in' }, i - 1 + .55)
+        .to(frames[i], { clipPath: 'inset(0% 0 0% 0)', duration: .42, ease: 'expo.inOut' }, i - 1 + .68)
+        .fromTo(frames[i].querySelector('img'), { scale: 1.3 }, { scale: 1.14, duration: .6, ease: 'power2.out' }, i - 1 + .68)
+        .to(caps[i], { opacity: 1, yPercent: 0, skewY: 0, duration: .34, ease: 'back.out(1.8)' }, i - 1 + .82);
+    }
+    return function () { tl.scrollTrigger && tl.scrollTrigger.kill(); tl.kill(); };
+  });
+
+  /* mobile: plain crossfade, no pinning */
+  mm.add('(max-width: 700px)', function () {
+    var frames = gsap.utils.toArray('[data-whip]');
+    var caps = gsap.utils.toArray('[data-whipcap]');
+    gsap.set(frames, { clipPath: 'inset(0% 0 0% 0)', opacity: 0 });
+    gsap.set(caps, { opacity: 0 });
+    var idx = 0;
+    gsap.set([frames[0], caps[0]], { opacity: 1 });
+    var st = ScrollTrigger.create({
+      trigger: '#whip', start: 'top bottom', end: 'bottom top', scrub: true,
+      onUpdate: function (self) {
+        var i = Math.min(frames.length - 1, Math.floor(self.progress * frames.length));
+        if (i === idx) return;
+        gsap.to([frames[idx], caps[idx]], { opacity: 0, duration: .25 });
+        gsap.to([frames[i], caps[i]], { opacity: 1, duration: .35 });
+        document.getElementById('whipCount').textContent = '0' + (i + 1) + ' / 0' + frames.length;
+        idx = i;
+      }
+    });
+    return function () { st.kill(); };
+  });
+
+  /* ---------- liquid wave divider ---------- */
+  (function () {
+    var svg = document.getElementById('wave1');
+    if (!svg) return;
+    var path = svg.querySelector('path'), W = 1440, H = 120, amp = 0, phase = 0, live = false;
+
+    function draw() {
+      var d = 'M0,' + H + ' L0,' + (H * .55);
+      for (var x = 0; x <= W; x += 40) {
+        var y = H * .55
+          + Math.sin(x / 200 + phase) * amp
+          + Math.sin(x / 90 - phase * 1.6) * amp * .45;
+        d += ' L' + x + ',' + y.toFixed(1);
+      }
+      d += ' L' + W + ',' + H + ' Z';
+      path.setAttribute('d', d);
+    }
+    draw();
+
+    gsap.ticker.add(function () {
+      if (!live) return;
+      phase += .018;
+      draw();
+    });
+    ScrollTrigger.create({
+      trigger: svg, start: 'top bottom', end: 'bottom top',
+      onToggle: function (s) { live = s.isActive; }
+    });
+    gsap.to({ a: 0 }, {
+      a: 26, ease: 'none',
+      scrollTrigger: { trigger: svg, start: 'top bottom', end: 'bottom center', scrub: .6 },
+      onUpdate: function () { amp = this.targets()[0].a; }
+    });
+  })();
+
+  /* ---------- goo blobs ---------- */
+  if (!lowPower) {
+    gsap.to('.blob.b1', { x: 90, y: -70, scale: 1.18, duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    gsap.to('.blob.b2', { x: -110, y: 60, scale: .84, duration: 11, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    gsap.to('.blob.b3', { x: 70, y: -95, scale: 1.25, duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  } else {
+    var goo = document.getElementById('goo');
+    if (goo) goo.style.display = 'none';
+  }
+
+  /* ---------- 3D burger build ---------- */
+  (function () {
+    var sec = document.getElementById('build');
+    var canvas = document.getElementById('burgerGL');
+    var ings = gsap.utils.toArray('.ing');
+
+    function highlight(i) {
+      ings.forEach(function (n, k) { n.classList.toggle('on', k === i); });
+    }
+    highlight(0);
+
+    function webglOK() {
+      try {
+        var c = document.createElement('canvas');
+        return !!(c.getContext('webgl2') || c.getContext('webgl'));
+      } catch (e) { return false; }
+    }
+    var capable = !reduce && !lowPower && webglOK() &&
+      !(navigator.deviceMemory && navigator.deviceMemory < 4) &&
+      typeof HTMLScriptElement !== 'undefined' && HTMLScriptElement.supports &&
+      HTMLScriptElement.supports('importmap');
+
+    if (!capable) {
+      sec.classList.add('nogl');
+      document.getElementById('b3dHint').textContent = 'Scroll to explore';
+      /* still drive the ingredient copy on scroll */
+      ScrollTrigger.create({
+        trigger: sec, start: 'top 70%', end: 'bottom 40%', scrub: true,
+        onUpdate: function (s) { highlight(Math.min(ings.length - 1, Math.floor(s.progress * ings.length))); }
+      });
+      return;
+    }
+
+    var api = null, pending = { build: 0, spin: 0 };
+
+    /* only fetch three.js once the section is close */
+    ScrollTrigger.create({
+      trigger: sec, start: 'top bottom+=400', once: true,
+      onEnter: function () {
+        import('./burger3d.js')
+          .then(function (m) { return m.mountBurger(canvas, {}); })
+          .then(function (inst) { api = inst; api.set(pending.build, pending.spin); })
+          .catch(function () {
+            sec.classList.add('nogl');
+            document.getElementById('b3dHint').textContent = 'Scroll to explore';
+          });
+      }
+    });
+
+    mm.add('(min-width: 941px)', function () {
+      var st = ScrollTrigger.create({
+        trigger: '#b3dStage', start: 'center center', end: '+=' + (ings.length * 380),
+        pin: true, scrub: .6,
+        onUpdate: function (self) {
+          var p = self.progress;
+          pending.build = gsap.utils.clamp(0, 1, p * 1.25);
+          pending.spin = p * Math.PI * 1.6;
+          if (api) api.set(pending.build, pending.spin);
+          highlight(Math.min(ings.length - 1, Math.floor(p * ings.length)));
+        }
+      });
+      return function () { st.kill(); };
+    });
+
+    mm.add('(max-width: 940px)', function () {
+      var st = ScrollTrigger.create({
+        trigger: sec, start: 'top 80%', end: 'bottom 30%', scrub: .5,
+        onUpdate: function (self) {
+          var p = self.progress;
+          pending.build = gsap.utils.clamp(0, 1, p * 1.3);
+          pending.spin = p * Math.PI;
+          if (api) api.set(pending.build, pending.spin);
+          highlight(Math.min(ings.length - 1, Math.floor(p * ings.length)));
+        }
+      });
+      return function () { st.kill(); };
+    });
+  })();
 
   /* ---------- anchor links through Lenis ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
