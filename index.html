@@ -155,6 +155,12 @@ nav.on{background:rgba(10,10,11,.86);backdrop-filter:blur(14px) saturate(140%);b
 .pkg ul:last-of-type{flex:1}
 .pkg .out{margin-top:20px;padding-top:14px;border-top:1px dashed var(--line-2);font-size:.82rem;color:var(--muted-2);line-height:1.5}
 .pkg .out b{color:var(--muted);font-weight:500}
+.paynote{margin-top:22px;border:1px solid rgba(232,50,30,.45);background:rgba(232,50,30,.05);border-radius:14px;padding:22px 24px}
+.paynote b{display:block;color:var(--cream);font-weight:600;margin-bottom:8px}
+.paynote p{font-size:.9rem;max-width:none}
+.paynote ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 24px;margin:14px 0}
+.paynote li{font-size:.88rem;color:var(--muted);padding-left:16px;position:relative}
+.paynote li::before{content:'';position:absolute;left:0;top:.65em;width:6px;height:1px;background:var(--flame)}
 .addons{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .addons>div{background:var(--ink-2);padding:22px 24px}
 .addons span{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
@@ -542,6 +548,21 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
             <div><span>Feature request</span><b>Dine-in QR ordering</b><i>Table QR codes, shared table basket, pay at table, call a server. Adds about three weeks. ₹20,000 + GST.</i></div>
       <div><span>Later phase</span><b>Native iOS and Android apps</b><i>Built on the same back end once the web platform is proven.</i></div>
     </div>
+    <div class="paynote rv">
+      <b>Not included in the package price — paid by you</b>
+      <p>Our prices cover design, development, testing and training only. All purchases, subscriptions and registrations are paid by you, directly to the provider, and held in your name:</p>
+      <ul>
+        <li>Server and hosting, backups and snapshots</li>
+        <li>Domain name and its yearly renewal</li>
+        <li>Razorpay transaction fees and account KYC</li>
+        <li>SMS OTP, WhatsApp Business API and email sending usage</li>
+        <li>Google Maps and any other paid API usage</li>
+        <li>Paid stock images, fonts or plugins, if chosen</li>
+        <li>Business registrations — GST, FSSAI, trademark</li>
+        <li>WhatsApp Business and Meta verification</li>
+      </ul>
+      <p>We set up and configure these accounts for you. Estimated monthly amounts are in the Technical section.</p>
+    </div>
   </div>
 </section>
 
@@ -829,7 +850,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       </div>
     </div>
 
-    <div class="sub rv">Monthly running costs — paid by you, directly to providers</div>
+    <div class="sub rv">Monthly running costs — paid by you, directly to providers, not included in package prices</div>
     <div class="tbl-wrap rv"><table class="tbl">
       <tr><th>Service</th><th>Cost</th><th>Needed for</th></tr>
       <tr><td>AWS Lightsail server, Mumbai (2 vCPU, 4 GB)</td><td>~₹2,100 / month</td><td><em class="lv e">Essential+</em></td></tr>
@@ -1026,7 +1047,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="kicker">09 — Next Step</div>
       <h2 class="display">Pick a<br><span class="grad">package</span></h2>
     </div>
-    <p class="rv" style="margin-top:26px">Prices are fixed for the scope shown and exclude GST and third-party running costs. Payment: 40% on signing, 30% on design sign-off, 30% on go-live. Once you choose a package, discovery starts within a week.</p>
+    <p class="rv" style="margin-top:26px">Prices are fixed for the scope shown and cover our work only. They exclude GST, and all purchases, server costs, subscriptions and registrations are paid by you. Payment: 40% on signing, 30% on design sign-off, 30% on go-live. Once you choose a package, discovery starts within a week.</p>
     <div class="rv">
       <a class="btn" href="./demo/">See the homepage concept</a>
       <a class="btn btn-2" href="mailto:admin@skillbeeglobal.com?subject=Burger%20Mafia%20%E2%80%94%20Proposal">Approve &amp; start discovery</a>
