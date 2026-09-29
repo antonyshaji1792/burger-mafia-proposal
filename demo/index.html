@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Burger Mafia — Bangalore</title>
+<meta name="description" content="Burger Mafia, KR Puram. Flame-grilled burgers, stone-baked pizza. Order direct for delivery, takeaway or scan at your table.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.pexels.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://images.pexels.com/photos/15010292/pexels-photo-15010292.jpeg?auto=compress&cs=tinysrgb&w=1400" fetchpriority="high">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
+<style>
+:root{
+  --ink:#0A0A0B; --ink-2:#111113; --ink-3:#18181C;
+  --cream:#F7F3EC; --muted:#9B968E; --muted-2:#6C6862;
+  --flame:#E8321E; --gold:#F5C451; --ember:#FF6B35;
+  --line:rgba(247,243,236,.10); --line-2:rgba(247,243,236,.2);
+  --display:'Anton',Impact,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+  --gutter:clamp(16px,4.5vw,60px); --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+body{
+  background:var(--ink);color:var(--cream);font-family:var(--body);font-weight:300;
+  font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+body::after{
+  content:'';position:fixed;inset:0;z-index:400;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--flame);color:#fff}
+
+.display{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
+.mono{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+section{position:relative}
+.kicker{color:var(--flame);display:flex;align-items:center;gap:11px;margin-bottom:20px}
+.kicker::before{content:'';width:30px;height:1px;background:var(--flame)}
+.grad{background:linear-gradient(100deg,var(--gold),var(--ember) 52%,var(--flame));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- preloader ---------- */
+#pre{position:fixed;inset:0;z-index:500;background:var(--ink);display:grid;place-items:center}
+#pre .pw{text-align:center}
+#pre .pm{font-family:var(--display);font-size:clamp(2.2rem,8vw,5rem);text-transform:uppercase;line-height:.9;overflow:hidden}
+#pre .pm span{display:block;transform:translateY(105%)}
+#pre .pc{font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;color:var(--muted-2);margin-top:18px}
+#pre .pbar{width:min(240px,50vw);height:1px;background:var(--line);margin:16px auto 0;overflow:hidden}
+#pre .pbar i{display:block;height:100%;width:0;background:var(--flame)}
+
+/* ---------- nav ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;
+  justify-content:space-between;padding:16px var(--gutter);
+  transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent;
+}
+header.nav.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(16px) saturate(150%);border-bottom-color:var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.02rem;letter-spacing:.05em;text-transform:uppercase}
+.brand i{width:27px;height:27px;border-radius:50%;background:linear-gradient(140deg,var(--gold),var(--flame));display:grid;place-items:center;font-style:normal;font-size:.7rem;color:#170B05}
+.navlinks{display:flex;gap:24px;font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.navlinks a{transition:color .25s}.navlinks a:hover{color:var(--cream)}
+@media(max-width:900px){.navlinks{display:none}}
+.navcta{display:flex;align-items:center;gap:9px;background:var(--flame);color:#fff;font-size:.76rem;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;padding:11px 20px;border-radius:100px;transition:transform .3s,box-shadow .3s}
+.navcta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,50,30,.4)}
+.navcta b{width:6px;height:6px;border-radius:50%;background:#7CFFA0;box-shadow:0 0 8px #7CFFA0}
+
+/* ---------- hero ---------- */
+.hero{height:100svh;min-height:600px;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;transform:scale(1.12)}
+.hero-media::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,10,11,.86) 0%,rgba(10,10,11,.5) 35%,rgba(10,10,11,.72) 72%,var(--ink) 100%),
+             radial-gradient(70% 60% at 50% 45%,transparent,rgba(10,10,11,.6))}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(3.4rem,15.5vw,13rem);margin-bottom:0}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ch{display:inline-block;transform:translateY(102%)}
+.hero-tag{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:26px;color:var(--muted);font-size:.95rem}
+.hero-tag span{display:flex;align-items:center;gap:8px}
+.hero-tag em{font-style:normal;color:var(--gold);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:100px;font-weight:600;font-size:.95rem;
+  background:var(--flame);color:#fff;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;box-shadow:0 10px 30px rgba(232,50,30,.3)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(232,50,30,.45)}
+.btn.ghost{background:rgba(247,243,236,.05);border:1px solid var(--line-2);box-shadow:none;backdrop-filter:blur(6px)}
+.btn.ghost:hover{background:rgba(247,243,236,.1);box-shadow:none}
+.hero-foot{position:absolute;left:0;right:0;bottom:22px;z-index:2;display:flex;justify-content:space-between;
+  align-items:flex-end;padding-inline:var(--gutter);color:var(--muted-2);gap:16px}
+.rating{display:flex;align-items:center;gap:10px;color:var(--cream)}
+.rating b{font-family:var(--display);font-size:1.7rem;color:var(--gold);line-height:1}
+.rating u{text-decoration:none;font-size:.76rem;color:var(--muted);display:block;line-height:1.3}
+.sd{display:flex;align-items:center;gap:10px}
+.sd i{display:block;width:1px;height:34px;background:linear-gradient(var(--flame),transparent)}
+@media(max-width:700px){.hero-foot .sd{display:none}}
+
+/* ---------- marquee ---------- */
+.mq{overflow:hidden;border-block:1px solid var(--line);padding-block:16px;background:var(--ink-2);display:flex}
+.mq-in{display:flex;flex:none;gap:38px;padding-right:38px;align-items:center;will-change:transform}
+.mq b{font-family:var(--display);font-size:clamp(1.3rem,3.4vw,2.4rem);text-transform:uppercase;white-space:nowrap;color:var(--cream)}
+.mq i{font-style:normal;color:var(--flame);font-size:1.1rem}
+.mq b.hollow{color:transparent;-webkit-text-stroke:1px rgba(247,243,236,.35)}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(72px,10vw,140px)}
+.head{max-width:56ch;margin-bottom:clamp(40px,6vw,72px)}
+.head h2{font-size:clamp(2.1rem,6vw,4.6rem)}
+.head p{color:var(--muted);margin-top:18px;max-width:60ch}
+
+/* ---------- pinned craft ---------- */
+.craft{background:var(--ink-2)}
+.craft-stage{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:center;min-height:78svh}
+@media(max-width:900px){.craft-stage{grid-template-columns:1fr;min-height:0;gap:30px}}
+.craft-visual{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--ink-3);border:1px solid var(--line)}
+.craft-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.craft-visual img.on{opacity:1}
+.craft-steps{position:relative}
+.cstep{opacity:.25;transition:opacity .5s;padding-block:clamp(14px,2vw,22px);border-bottom:1px solid var(--line)}
+.cstep.on{opacity:1}
+.cstep .no{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--flame);display:block;margin-bottom:9px}
+.cstep h3{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.6rem);text-transform:uppercase;line-height:.95;margin-bottom:10px}
+.cstep p{color:var(--muted);font-size:.95rem;max-width:44ch}
+
+/* ---------- horizontal menu rail ---------- */
+.rail-sec{background:var(--ink)}
+.rail-wrap{overflow:hidden}
+.rail{display:flex;gap:clamp(14px,2vw,24px);padding-inline:var(--gutter);will-change:transform}
+.dish{flex:none;width:clamp(258px,28vw,370px);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  background:var(--ink-2);display:flex;flex-direction:column;transition:border-color .4s,transform .4s}
+.dish:hover{border-color:var(--line-2);transform:translateY(-6px)}
+.dish-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--ink-3)}
+.dish-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.dish:hover .dish-img img{transform:scale(1.07)}
+.veg{position:absolute;top:12px;left:12px;width:18px;height:18px;border:1.5px solid #3FBF62;border-radius:3px;
+  display:grid;place-items:center;background:rgba(10,10,11,.7)}
+.veg::after{content:'';width:8px;height:8px;border-radius:50%;background:#3FBF62}
+.veg.nv{border-color:#D63B2A}.veg.nv::after{background:#D63B2A}
+.dish-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:9px;flex:1}
+.dish-body h3{font-size:1.12rem;font-weight:600;letter-spacing:-.01em}
+.dish-body p{color:var(--muted);font-size:.88rem;line-height:1.5;flex:1}
+.dish-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.price{font-family:var(--display);font-size:1.5rem;color:var(--gold)}
+.price s{font-family:var(--body);font-size:.8rem;color:var(--muted-2);margin-left:7px;font-weight:400}
+.add{display:flex;align-items:center;gap:7px;border:1px solid var(--line-2);border-radius:100px;padding:9px 16px;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:background .3s,border-color .3s,color .3s}
+.add:hover{background:var(--flame);border-color:var(--flame);color:#fff}
+.rail-hint{display:flex;align-items:center;gap:10px;color:var(--muted-2);margin-top:26px}
+.rail-hint i{display:block;width:44px;height:1px;background:var(--line-2)}
+
+/* ---------- modes ---------- */
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:clamp(12px,1.6vw,18px)}
+.mode{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:clamp(300px,34vw,400px);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,2.6vw,30px);isolation:isolate}
+.mode img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.mode::after{content:'';position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(10,10,11,.25),rgba(10,10,11,.9) 72%)}
+.mode:hover img{transform:scale(1.07)}
+.mode .mno{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--gold);margin-bottom:auto}
+.mode h3{font-family:var(--display);font-size:clamp(1.7rem,3.4vw,2.5rem);text-transform:uppercase;line-height:.95;margin-bottom:9px}
+.mode p{color:#C9C4BB;font-size:.92rem;max-width:34ch}
+.mode .tagx{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:.76rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--cream)}
+.mode .tagx::after{content:'→';transition:transform .3s}
+.mode:hover .tagx::after{transform:translateX(5px)}
+.mode.feat{outline:1px solid rgba(245,196,81,.4)}
+.mode .new{position:absolute;top:18px;right:18px;background:var(--gold);color:#170B05;font-family:var(--mono);
+  font-size:.6rem;letter-spacing:.14em;padding:5px 10px;border-radius:100px;z-index:1}
+
+/* ---------- stats ---------- */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.num{background:var(--ink);padding:clamp(24px,3vw,34px)}
+.num b{display:block;font-family:var(--display);font-size:clamp(2.4rem,6vw,4rem);line-height:1;color:var(--gold)}
+.num span{display:block;color:var(--muted);font-size:.87rem;margin-top:10px;line-height:1.45}
+
+/* ---------- big cta ---------- */
+.final{background:linear-gradient(165deg,#1A0805,var(--ink) 60%);border-top:1px solid var(--line);overflow:hidden}
+.final h2{font-size:clamp(2.6rem,11vw,9rem);line-height:.84}
+.final .sub{color:var(--muted);margin-top:22px;max-width:44ch}
+
+footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,54px) var(--gutter) 34px}
+.fgrid{max-width:var(--max);margin-inline:auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}}
+.fgrid h4{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+.fgrid a,.fgrid p{display:block;color:var(--muted);font-size:.9rem;margin-bottom:8px;transition:color .25s}
+.fgrid a:hover{color:var(--cream)}
+.fbot{max-width:var(--max);margin:34px auto 0;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;color:var(--muted-2)}
+
+/* ---------- demo badge ---------- */
+.demo-note{position:fixed;left:var(--gutter);bottom:16px;z-index:310;display:flex;align-items:center;gap:9px;
+  background:rgba(10,10,11,.86);backdrop-filter:blur(10px);border:1px solid var(--line-2);border-radius:100px;
+  padding:9px 16px;color:var(--muted);font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;max-width:calc(100vw - 2*var(--gutter))}
+.demo-note b{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.demo-note span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:560px){.demo-note{display:none}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(28px)}
+.lineMask{display:block;overflow:hidden}
+.lineMask>span{display:block;transform:translateY(102%)}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1!important;transform:none!important}
+  .lineMask>span,.hero h1 .ch,#pre .pm span{transform:none!important}
+  .mq-in{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="pre">
+  <div class="pw">
+    <div class="pm"><span>Burger Mafia</span></div>
+    <div class="pbar"><i></i></div>
+    <div class="pc" id="pct">0%</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><i>BM</i> Burger Mafia</a>
+  <nav class="navlinks">
+    <a href="#menu">Menu</a>
+    <a href="#craft">The Craft</a>
+    <a href="#modes">Order</a>
+    <a href="#find">Find Us</a>
+  </nav>
+  <a class="navcta" href="#menu"><b></b> Order Now</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img id="heroImg" src="https://images.pexels.com/photos/15010292/pexels-photo-15010292.jpeg?auto=compress&cs=tinysrgb&w=1400"
+         alt="Flame-grilled double cheeseburger" width="1400" height="933" fetchpriority="high" decoding="async">
+  </div>
+  <div class="wrap">
+    <h1 class="display" id="heroTitle">
+      <span class="ln" data-line>Flame</span>
+      <span class="ln" data-line>Grilled</span>
+      <span class="ln grad" data-line>Since Day</span>
+    </h1>
+    <div class="hero-tag">
+      <span><em>KR Puram</em> Hoodi Main Road, Bangalore</span>
+      <span><em>Open</em> 10:45 — 23:00</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="#menu">Order Direct</a>
+      <a class="btn ghost" href="#modes">Scan at Table</a>
+    </div>
+  </div>
+  <div class="hero-foot wrap" style="max-width:none">
+    <div class="rating">
+      <b>4.9</b>
+      <u>Rated by 71 guests<br>in Bangalore</u>
+    </div>
+    <div class="sd mono"><i></i> Scroll</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq" id="mq1">
+  <div class="mq-in">
+    <b>Flame Grilled</b><i>◆</i><b class="hollow">Stone Baked</b><i>◆</i><b>No Freezer</b><i>◆</i><b class="hollow">Hoodi Main Road</b><i>◆</i>
+  </div>
+</div>
+
+<!-- CRAFT (pinned, scroll-scrubbed) -->
+<section class="sec craft" id="craft">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker mono">The Craft</div>
+      <h2 class="display">Four minutes<br>on open flame</h2>
+      <p>No conveyor, no heat lamp, no yesterday's patty. Every order starts when you press the button.</p>
+    </div>
+    <div class="craft-stage" id="craftStage">
+      <div class="craft-visual">
+        <img class="on" data-step="0" src="https://images.pexels.com/photos/15146667/pexels-photo-15146667.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Melted cheese over a flame-grilled patty" width="900" height="1125" loading="lazy" decoding="async">
+        <img data-step="1" src="https://images.pexels.com/photos/16203831/pexels-photo-16203831.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Stone-baked pizza" width="900" height="1125" loading="lazy" decoding="async">
+        <img data-step="2" src="https://images.pexels.com/photos/17035135/pexels-photo-17035135.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Loaded cheese fries" width="900" height="1125" loading="lazy" decoding="async">
+        <img data-step="3" src="https://images.pexels.com/photos/11584168/pexels-photo-11584168.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Finished burger" width="900" height="1125" loading="lazy" decoding="async">
+      </div>
+      <div class="craft-steps">
+        <div class="cstep on" data-cs="0"><span class="no">01 / Grill</span><h3>Open flame,<br>never a griddle</h3><p>Patties hit a live flame grill. That is where the char comes from — and it is the one thing a griddle can never fake.</p></div>
+        <div class="cstep" data-cs="1"><span class="no">02 / Stone</span><h3>Dough made<br>this morning</h3><p>Proved on site, stretched to order, finished on stone. Never a frozen base out of a box.</p></div>
+        <div class="cstep" data-cs="2"><span class="no">03 / Loaded</span><h3>Sides that<br>aren't an afterthought</h3><p>Real cheese sauce, not powder. Fries cut thick enough to survive the ride to Hoodi.</p></div>
+        <div class="cstep" data-cs="3"><span class="no">04 / Out</span><h3>Boxed hot,<br>out the door</h3><p>Sealed the second it is built. The clock from grill to doorstep is the number we actually manage.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU RAIL -->
+<section class="sec rail-sec" id="menu">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker mono">The Lineup</div>
+      <h2 class="display">Built to order.<br><span class="grad">Priced to repeat.</span></h2>
+      <p>Prices shown are direct-order prices — the same food, without the aggregator's cut on top.</p>
+    </div>
+  </div>
+  <div class="rail-wrap" id="railWrap">
+    <div class="rail" id="rail">
+
+      <article class="dish">
+        <div class="dish-img"><span class="veg nv"></span>
+          <img src="https://images.pexels.com/photos/15010292/pexels-photo-15010292.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Double cheeseburger" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="dish-body">
+          <h3>The Don — Double Patty</h3>
+          <p>Two flame-grilled chicken patties, double cheddar, smoked mayo, pickles, toasted brioche.</p>
+          <div class="dish-foot"><div class="price">₹249<s>₹299</s></div><button class="add">Add +</button></div>
+        </div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-img"><span class="veg"></span>
+          <img src="https://images.pexels.com/photos/16605109/pexels-photo-16605109.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Paneer burger" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="dish-body">
+          <h3>Paneer Capo</h3>
+          <p>Thick-cut paneer, tandoori glaze, mint aioli, crisp lettuce, sesame bun.</p>
+          <div class="dish-foot"><div class="price">₹189<s>₹229</s></div><button class="add">Add +</button></div>
+        </div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-img"><span class="veg"></span>
+          <img src="https://images.pexels.com/photos/16203831/pexels-photo-16203831.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Veggie pizza" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="dish-body">
+          <h3>Veggie Corn Pizza</h3>
+          <p>Stone-baked 10", sweet corn, peppers, red onion, mozzarella, house red sauce.</p>
+          <div class="dish-foot"><div class="price">₹279<s>₹339</s></div><button class="add">Add +</button></div>
+        </div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-img"><span class="veg"></span>
+          <img src="https://images.pexels.com/photos/17035135/pexels-photo-17035135.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Loaded cheese fries" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="dish-body">
+          <h3>Veg Cheesy Fries</h3>
+          <p>Thick-cut fries drowned in real cheddar sauce, jalapeño, crushed chilli.</p>
+          <div class="dish-foot"><div class="price">₹108<s>₹135</s></div><button class="add">Add +</button></div>
+        </div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-img"><span class="veg nv"></span>
+          <img src="https://images.pexels.com/photos/15146667/pexels-photo-15146667.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Chicken cheese ball" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="dish-body">
+          <h3>Chicken Cheese Balls</h3>
+          <p>Six molten cheese and chicken spheres, panko crust, smoked dip.</p>
+          <div class="dish-foot"><div class="price">₹127<s>₹159</s></div><button class="add">Add +</button></div>
+        </div>
+      </article>
+
+      <article class="dish">
+        <div class="dish-img"><span class="veg"></span>
+          <img src="https://images.pexels.com/photos/1146758/pexels-photo-1146758.jpeg?auto=compress&cs=tinysrgb&w=640" alt="Loaded thick shake" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="dish-body">
+          <h3>Loaded Thick Shake</h3>
+          <p>Belgian chocolate, brownie chunks, whipped top. Built to be photographed.</p>
+          <div class="dish-foot"><div class="price">₹179<s>₹219</s></div><button class="add">Add +</button></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <div class="wrap"><div class="rail-hint mono rv"><i></i> Drag or scroll to explore</div></div>
+</section>
+
+<!-- MARQUEE 2 -->
+<div class="mq" id="mq2">
+  <div class="mq-in">
+    <b class="hollow">Order Direct</b><i>◆</i><b>Keep The Margin</b><i>◆</i><b class="hollow">Earn Crowns</b><i>◆</i><b>Scan &amp; Eat</b><i>◆</i>
+  </div>
+</div>
+
+<!-- MODES -->
+<section class="sec" id="modes">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker mono">Three Ways</div>
+      <h2 class="display">However<br>you're eating</h2>
+      <p>One account, one basket, one points balance — whether it comes to your door or you're sitting in the room.</p>
+    </div>
+    <div class="modes">
+      <a class="mode rv" href="#">
+        <img src="https://images.pexels.com/photos/11584168/pexels-photo-11584168.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Burger ready for delivery" width="760" height="1000" loading="lazy" decoding="async">
+        <span class="mno">01 / Delivery</span>
+        <h3>To your<br>door</h3>
+        <p>Live tracking from grill to gate, with updates on WhatsApp instead of a silent wait.</p>
+        <span class="tagx">Start an order</span>
+      </a>
+      <a class="mode rv" href="#">
+        <img src="https://images.pexels.com/photos/15754939/pexels-photo-15754939.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Fries ready for takeaway" width="760" height="1000" loading="lazy" decoding="async">
+        <span class="mno">02 / Takeaway</span>
+        <h3>Ready<br>when you are</h3>
+        <p>Order ahead, pick a time, walk past the queue. We start cooking to hit your slot.</p>
+        <span class="tagx">Order ahead</span>
+      </a>
+      <a class="mode feat rv" href="#">
+        <span class="new mono">New</span>
+        <img src="https://images.pexels.com/photos/14498734/pexels-photo-14498734.jpeg?auto=compress&cs=tinysrgb&w=760" alt="Dining room at Burger Mafia" width="760" height="1000" loading="lazy" decoding="async">
+        <span class="mno">03 / Dine-In</span>
+        <h3>Scan at<br>your table</h3>
+        <p>Point your camera at the QR. Browse, order and pay without waiting for anyone to notice you.</p>
+        <span class="tagx">See how it works</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="sec" id="find" style="background:var(--ink-2)">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker mono">Hoodi Main Road</div>
+      <h2 class="display">One kitchen.<br>No shortcuts.</h2>
+    </div>
+    <div class="nums rv">
+      <div class="num"><b data-count="4.9" data-dec="1">0</b><span>Average guest rating across 71 reviews</span></div>
+      <div class="num"><b data-count="71">0</b><span>Reviews from the Hoodi and KR Puram neighbourhood</span></div>
+      <div class="num"><b data-count="400" data-prefix="₹">0</b><span>Typical spend for two, ordering direct</span></div>
+      <div class="num"><b data-count="12" data-suffix="h">0</b><span>Open daily, 10:45 in the morning until 23:00</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec final">
+  <div class="wrap">
+    <h2 class="display rv">Hungry<br><span class="grad">yet?</span></h2>
+    <p class="sub rv">Order direct from the kitchen that cooked it. Same food, better price, and the points stay with you.</p>
+    <div class="hero-cta rv">
+      <a class="btn" href="#menu">Order Now</a>
+      <a class="btn ghost" href="#modes">Book a Table</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div>
+      <a class="brand" href="#top" style="margin-bottom:14px"><i>BM</i> Burger Mafia</a>
+      <p style="max-width:32ch">348, Ground Floor, Gokul Mansion,<br>Ayyappanagar, Hoodi Main Road,<br>KR Puram, Bangalore</p>
+    </div>
+    <div>
+      <h4>Order</h4>
+      <a href="#menu">Menu</a><a href="#modes">Delivery</a><a href="#modes">Takeaway</a><a href="#modes">Dine-In QR</a>
+    </div>
+    <div>
+      <h4>Brand</h4>
+      <a href="#craft">The Craft</a><a href="#find">Find Us</a><a href="#">Careers</a><a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="fbot mono">
+    <span>© 2026 Burger Mafia</span>
+    <span>Concept design — Green Banana Software</span>
+  </div>
+</footer>
+
+<div class="demo-note"><b></b><span>Design concept · placeholder imagery</span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script>
+window.addEventListener('load', function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lowPower = (navigator.hardwareConcurrency || 8) <= 4;
+  var hasGSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+
+  /* ---------- preloader ---------- */
+  var pre = document.getElementById('pre'), pct = document.getElementById('pct'),
+      pbar = document.querySelector('#pre .pbar i'), pmask = document.querySelector('#pre .pm span');
+
+  function startSite() {
+    document.body.style.removeProperty('overflow');
+    if (hasGSAP && !reduce) heroIn();
+    else document.querySelectorAll('.hero h1 .ch, .rv, .lineMask>span')
+      .forEach(function (n) { n.style.opacity = 1; n.style.transform = 'none'; });
+  }
+
+  if (!hasGSAP || reduce) {
+    pre.remove(); startSite();
+  } else {
+    document.body.style.overflow = 'hidden';
+    var counter = { v: 0 };
+    gsap.timeline()
+      .to(pmask, { y: '0%', duration: .7, ease: 'power3.out' })
+      .to(counter, {
+        v: 100, duration: 1.1, ease: 'power2.inOut',
+        onUpdate: function () {
+          var n = Math.round(counter.v);
+          pct.textContent = n + '%';
+          pbar.style.width = n + '%';
+        }
+      }, '-=.35')
+      .to(pmask, { y: '-105%', duration: .5, ease: 'power3.in' }, '+=.1')
+      .to(pre, {
+        yPercent: -100, duration: .85, ease: 'expo.inOut',
+        onComplete: function () { pre.remove(); ScrollTrigger.refresh(); }
+      }, '-=.2')
+      .add(startSite, '-=.55');
+  }
+
+  if (!hasGSAP) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- smooth scroll (pointer devices only) ---------- */
+  var lenis = null;
+  if (typeof Lenis !== 'undefined' && !reduce && !lowPower && matchMedia('(hover:hover)').matches) {
+    lenis = new Lenis({ duration: 1.05, smoothWheel: true, syncTouch: false });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  /* ---------- split hero headline into chars ---------- */
+  document.querySelectorAll('#heroTitle [data-line]').forEach(function (line) {
+    var txt = line.textContent;
+    line.textContent = '';
+    txt.split('').forEach(function (c) {
+      var s = document.createElement('span');
+      s.className = 'ch';
+      s.textContent = c === ' ' ? ' ' : c;
+      line.appendChild(s);
+    });
+  });
+
+  function heroIn() {
+    gsap.timeline()
+      .to('#heroTitle .ch', { y: '0%', duration: 1, ease: 'expo.out', stagger: .022 })
+      .from('.hero-tag, .hero-cta, .hero-foot', { y: 24, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1 }, '-=.6');
+  }
+
+  /* ---------- nav ---------- */
+  ScrollTrigger.create({
+    start: 'top -60',
+    onUpdate: function (s) { document.getElementById('nav').classList.toggle('solid', s.progress > 0 || s.scroll() > 60); },
+    onToggle: function (s) { document.getElementById('nav').classList.toggle('solid', s.isActive); }
+  });
+
+  /* ---------- hero parallax ---------- */
+  gsap.to('#heroImg', {
+    yPercent: 14, scale: 1.02, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+  gsap.to('#heroTitle', {
+    yPercent: -18, opacity: .25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+
+  /* ---------- generic reveals ---------- */
+  gsap.utils.toArray('.rv').forEach(function (el) {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: .9, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+    });
+  });
+
+  /* ---------- marquees ---------- */
+  document.querySelectorAll('.mq').forEach(function (mq, i) {
+    var inner = mq.querySelector('.mq-in');
+    for (var k = 0; k < 3; k++) mq.appendChild(inner.cloneNode(true));
+    var tracks = mq.querySelectorAll('.mq-in');
+    var dir = i % 2 ? 1 : -1;
+    var tween = gsap.to(tracks, {
+      xPercent: -100 * dir, duration: 22, ease: 'none', repeat: -1,
+      modifiers: { xPercent: gsap.utils.unitize(function (x) { return parseFloat(x) % 100; }) }
+    });
+    if (dir > 0) gsap.set(tracks, { xPercent: -100 });
+    ScrollTrigger.create({
+      trigger: mq, start: 'top bottom', end: 'bottom top',
+      onToggle: function (s) { s.isActive ? tween.play() : tween.pause(); }
+    });
+  });
+
+  /* ---------- device-scoped heavy motion ---------- */
+  var mm = gsap.matchMedia();
+
+  /* pinned craft sequence — desktop only */
+  mm.add('(min-width: 901px) and (hover: hover)', function () {
+    var steps = gsap.utils.toArray('.cstep');
+    var imgs = gsap.utils.toArray('.craft-visual img');
+    function setStep(i) {
+      steps.forEach(function (s, n) { s.classList.toggle('on', n === i); });
+      imgs.forEach(function (im, n) { im.classList.toggle('on', n === i); });
+    }
+    var st = ScrollTrigger.create({
+      trigger: '#craftStage', start: 'center center', end: '+=' + (steps.length * 420),
+      pin: true, scrub: .6,
+      onUpdate: function (self) {
+        setStep(Math.min(steps.length - 1, Math.floor(self.progress * steps.length)));
+      }
+    });
+    return function () { st.kill(); setStep(0); };
+  });
+
+  /* horizontal rail — desktop pins, mobile swipes natively */
+  mm.add('(min-width: 901px)', function () {
+    var rail = document.getElementById('rail');
+    var dist = rail.scrollWidth - window.innerWidth + 80;
+    if (dist <= 0) return;
+    var tw = gsap.to(rail, {
+      x: -dist, ease: 'none',
+      scrollTrigger: { trigger: '#railWrap', start: 'center center', end: '+=' + dist, pin: true, scrub: .7, invalidateOnRefresh: true }
+    });
+    return function () { tw.scrollTrigger && tw.scrollTrigger.kill(); gsap.set(rail, { x: 0 }); };
+  });
+
+  mm.add('(max-width: 900px)', function () {
+    var wrap = document.getElementById('railWrap');
+    wrap.style.overflowX = 'auto';
+    wrap.style.scrollSnapType = 'x mandatory';
+    wrap.style.webkitOverflowScrolling = 'touch';
+    gsap.utils.toArray('.dish').forEach(function (d) { d.style.scrollSnapAlign = 'start'; });
+    return function () { wrap.style.overflowX = ''; wrap.style.scrollSnapType = ''; };
+  });
+
+  /* mobile craft: swap image as each step scrolls past */
+  mm.add('(max-width: 900px)', function () {
+    var trigs = gsap.utils.toArray('.cstep').map(function (s, i) {
+      return ScrollTrigger.create({
+        trigger: s, start: 'top 70%', end: 'bottom 40%',
+        onToggle: function (self) {
+          if (!self.isActive) return;
+          gsap.utils.toArray('.cstep').forEach(function (x, n) { x.classList.toggle('on', n === i); });
+          gsap.utils.toArray('.craft-visual img').forEach(function (im, n) { im.classList.toggle('on', n === i); });
+        }
+      });
+    });
+    return function () { trigs.forEach(function (t) { t.kill(); }); };
+  });
+
+  /* ---------- number counters ---------- */
+  gsap.utils.toArray('[data-count]').forEach(function (el) {
+    var target = parseFloat(el.dataset.count),
+        dec = parseInt(el.dataset.dec || 0, 10),
+        pre = el.dataset.prefix || '', suf = el.dataset.suffix || '',
+        obj = { v: 0 };
+    ScrollTrigger.create({
+      trigger: el, start: 'top 88%', once: true,
+      onEnter: function () {
+        gsap.to(obj, {
+          v: target, duration: 1.6, ease: 'power2.out',
+          onUpdate: function () { el.textContent = pre + obj.v.toFixed(dec) + suf; }
+        });
+      }
+    });
+  });
+
+  /* ---------- dish cards stagger in ---------- */
+  gsap.from('.dish', {
+    y: 40, opacity: 0, duration: .8, ease: 'power3.out', stagger: .08,
+    scrollTrigger: { trigger: '#railWrap', start: 'top 85%', once: true }
+  });
+
+  /* ---------- magnetic buttons (pointer only) ---------- */
+  if (matchMedia('(hover:hover)').matches && !reduce && !lowPower) {
+    document.querySelectorAll('.btn, .navcta').forEach(function (b) {
+      b.addEventListener('pointermove', function (e) {
+        var r = b.getBoundingClientRect();
+        gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .22, y: (e.clientY - r.top - r.height / 2) * .32, duration: .5, ease: 'power3.out' });
+      });
+      b.addEventListener('pointerleave', function () {
+        gsap.to(b, { x: 0, y: 0, duration: .6, ease: 'elastic.out(1,.4)' });
+      });
+    });
+  }
+
+  /* ---------- anchor links through Lenis ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(t, { offset: -70 });
+      else t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- add-to-cart feedback ---------- */
+  document.querySelectorAll('.add').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (btn.dataset.busy) return;
+      btn.dataset.busy = 1;
+      var label = btn.textContent;
+      gsap.timeline({ onComplete: function () { delete btn.dataset.busy; } })
+        .to(btn, { scale: .9, duration: .12, ease: 'power2.in' })
+        .add(function () { btn.textContent = 'Added ✓'; })
+        .to(btn, { scale: 1, duration: .5, ease: 'elastic.out(1,.45)' })
+        .add(function () { btn.textContent = label; }, '+=1.1');
+    });
+  });
+
+  ScrollTrigger.refresh();
+});
+</script>
+</body>
+</html>
