@@ -122,6 +122,21 @@ nav.on{background:rgba(10,10,11,.86);backdrop-filter:blur(14px) saturate(140%);b
 .tag{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--gold);border:1px solid rgba(245,196,81,.32);border-radius:100px;padding:5px 12px}
 
+
+/* ---------- full spec list ---------- */
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(296px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.sp{background:var(--ink);padding:26px 24px 28px}
+.sp h4{font-family:var(--mono);font-size:.63rem;letter-spacing:.17em;text-transform:uppercase;color:var(--flame);
+  margin-bottom:15px;display:flex;align-items:baseline;gap:9px}
+.sp h4 i{font-style:normal;color:var(--muted-2)}
+.sp ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.sp li{font-size:.86rem;color:var(--muted);line-height:1.45;padding-left:15px;position:relative}
+.sp li::before{content:'';position:absolute;left:0;top:.6em;width:6px;height:1px;background:var(--line-2)}
+.sp li strong{color:var(--cream);font-weight:500}
+.spec-note{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;color:var(--muted-2);
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase}
+.spec-note b{color:var(--gold);font-weight:500}
+
 /* ---------- comparison ---------- */
 .cmp{border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .cmp-row{display:grid;grid-template-columns:1.5fr 1fr 1.3fr;border-bottom:1px solid var(--line)}
@@ -205,6 +220,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <a href="#findings">Findings</a>
     <a href="#platform">Platform</a>
     <a href="#edge">Our Edge</a>
+    <a href="#features">Features</a>
     <a href="#design">Design</a>
     <a href="#tech">Technology</a>
     <a href="#roadmap">Roadmap</a>
@@ -288,8 +304,8 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     <div class="grid g-3 rv" style="margin-top:22px">
       <div class="card">
         <span class="n">FINDING 01</span>
-        <h3>Their web app is invisible to Google</h3>
-        <p>Every page renders in the browser after load, and the entire site shares one generic description. A national brand can absorb that cost because people already search its name. A new brand cannot.</p>
+        <h3>The page weighs more than the meal</h3>
+        <p>Their storefront ships well over a megabyte of JavaScript before a single burger appears, and nothing renders until all of it arrives. On a mid-range phone on mobile data, that is the gap where a hungry customer gives up.</p>
         <span class="tag">Opportunity</span>
       </div>
       <div class="card">
@@ -393,9 +409,9 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       </div>
       <div class="card">
         <span class="n">MODULE 10</span>
-        <h3>Brand pages and discoverability</h3>
-        <p>Where your story lives, and where new customers find you. Built to be indexed properly from the first day — the single biggest gap in the incumbent's platform.</p>
-        <ul><li>Story, sourcing, careers and contact pages</li><li>Pages served ready-rendered for search engines</li><li>Structured restaurant and menu data for Google</li><li><strong>Your 4.9 rating and best reviews shown on the site</strong></li><li>Google Business Profile wired to order directly from search and maps</li><li>Installable, app-like, works on weak connections</li><li>Built to meet accessibility standards</li></ul>
+        <h3>Brand pages and storytelling</h3>
+        <p>Where the kitchen gets to explain itself. The part of the site that turns a one-off delivery into someone who knows whose food they are eating.</p>
+        <ul><li>Story, sourcing, careers and contact pages</li><li><strong>Your 4.9 rating and best reviews shown on the site</strong></li><li>Gallery for the food photography once shot</li><li>Installable, app-like, works on weak connections</li><li>Loads fast on a mid-range phone over mobile data</li><li>Built to meet accessibility standards</li></ul>
       </div>
     </div>
   </div>
@@ -411,7 +427,6 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
     </div>
     <div class="cmp rv">
       <div class="cmp-row h"><div>Capability</div><div>Burger King India</div><div>Burger Mafia</div></div>
-      <div class="cmp-row"><div>Search visibility</div><div>Browser-rendered, one generic description sitewide</div><div>Server-rendered pages with structured menu data for Google</div></div>
       <div class="cmp-row"><div>Dine-in ordering</div><div>Not offered</div><div>QR at every table — order and pay without waiting</div></div>
       <div class="cmp-row"><div>Design language</div><div>Dated, modal-heavy, app-in-a-browser</div><div>Purpose-built brand identity with cinematic food photography</div></div>
       <div class="cmp-row"><div>Order updates</div><div>SMS and push notifications</div><div>WhatsApp — where Indian customers actually read</div></div>
@@ -424,11 +439,48 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
   </div>
 </section>
 
+<!-- FULL SPEC -->
+<section id="features" style="background:var(--ink)">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">05 &mdash; Full Scope</div>
+      <h2 class="display">Everything<br>included</h2>
+      <p>The complete build, area by area. <strong>159 features across twenty areas</strong> &mdash; the guest-facing platform, the dine-in flow, and the back office that runs your kitchen. Nothing on this list is an optional extra.</p>
+    </div>
+    <div class="spec rv">
+      <div class="sp"><h4><i>01</i> Accounts &amp; access</h4><ul><li>Sign up and log in with mobile number and OTP</li><li>Browse the full menu as a guest, no account needed</li><li>Identify only at checkout</li><li>Sessions that persist across visits and devices</li><li>Profile: name, date of birth, email, phone</li><li>Delete account and data on request</li></ul></div>
+      <div class="sp"><h4><i>02</i> Location &amp; service modes</h4><ul><li><strong>Delivery, takeaway and dine-in</strong> mode switch</li><li>Detect location, or search an address</li><li>Address autocomplete while typing</li><li>Saved addresses labelled home, work or other</li><li>Add, edit and delete saved addresses</li><li>Delivery radius enforced with a clear message</li><li>Trading hours with live open and closed state</li><li>Holiday and temporary closure handling</li></ul></div>
+      <div class="sp"><h4><i>03</i> Menu &amp; catalogue</h4><ul><li>Merchandised home feed with banners</li><li>Top deals and limited-time rails</li><li>Categories and sub-categories</li><li>Veg and non-veg filtering, with the standard marks</li><li>Item pages with photography and description</li><li>Nutrition and allergen information per item</li><li>Price and availability driven per outlet</li><li>Sold-out and temporarily unavailable states</li><li>Recommended and most-ordered rails</li></ul></div>
+      <div class="sp"><h4><i>04</i> Item customisation</h4><ul><li><strong>Burger customiser</strong> — add, remove, upgrade</li><li>Portion and size options</li><li><strong>Pizza builder</strong> — crust, size, toppings</li><li>Half-and-half pizza selection</li><li>Combo and meal builder: main, side and drink</li><li>Add-ons with their own pricing rules</li><li>Upsell prompts at add-to-cart and at basket</li><li>Per-item cooking notes and instructions</li></ul></div>
+      <div class="sp"><h4><i>05</i> On-site search</h4><ul><li>Search the menu by item name</li><li>Live suggestions as you type</li><li>Results grouped by category</li><li>Recent and popular searches</li><li>Graceful no-results state with alternatives</li></ul></div>
+      <div class="sp"><h4><i>06</i> Basket</h4><ul><li><strong>Server-side basket</strong> that follows the customer</li><li>Survives a closed browser or a switched device</li><li>Increase, decrease and remove lines</li><li>Edit a customised item after adding</li><li>Coupon entry with instant validation</li><li>Transparent bill: items, packaging, delivery, taxes, discount</li><li>Tip the rider with preset tiers</li><li>Round up to donate to charity</li><li>Minimum order value handling</li><li>Kitchen notes for the whole order</li></ul></div>
+      <div class="sp"><h4><i>07</i> Offers, coupons &amp; loyalty</h4><ul><li>Offers listing with segments and tabs</li><li>Coupon codes with caps, limits and validity windows</li><li>First-order and win-back offers</li><li>Limited-time deals with live countdown</li><li>Personal voucher and coupon wallet</li><li><strong>Points earned on every order</strong></li><li>Points redeemed against the basket</li><li>Full, transparent points ledger</li><li>Daily reward streak to drive repeat visits</li><li>Corporate and staff discounts, OTP verified</li><li>Referral rewards</li></ul></div>
+      <div class="sp"><h4><i>08</i> Checkout &amp; payments</h4><ul><li><strong>UPI</strong>, cards, netbanking and wallets</li><li>Cash on delivery</li><li>Pay at table for dine-in</li><li>Saved payment preference</li><li>Automatic reconciliation of interrupted payments</li><li>Retry a failed payment without rebuilding the basket</li><li>GST-compliant invoice per order</li><li>Card details never touch our servers</li></ul></div>
+      <div class="sp"><h4><i>09</i> Order lifecycle</h4><ul><li>Order confirmation with an itemised summary</li><li><strong>Live status</strong>: accepted, preparing, ready, on the way, delivered</li><li>Estimated time, updated as it changes</li><li>Contact the outlet or the rider</li><li>Cancel within a defined window</li><li>Full order history</li><li><strong>One-tap reorder</strong> of any past order</li><li>Repeat a favourite as a saved basket</li><li>Download or share an invoice</li></ul></div>
+      <div class="sp"><h4><i>10</i> Dine-in by QR</h4><ul><li><strong>Unique QR code per table</strong></li><li>No app download — opens in the browser</li><li>Table session with a running basket</li><li>Multiple guests adding to one table basket</li><li>Order sent straight to the kitchen screen</li><li>Add more rounds to an open table</li><li>Pay at table, or settle at the counter</li><li>Split the bill</li><li>Call a server request</li><li>Dine-in guests earn loyalty points too</li></ul></div>
+      <div class="sp"><h4><i>11</i> Notifications &amp; messaging</h4><ul><li><strong>WhatsApp order updates</strong></li><li>Browser and push notifications</li><li>OTP by SMS</li><li>Order confirmation and receipt by email</li><li>Offer and campaign messages</li><li>Per-channel notification preferences</li><li>Notification centre in the account</li></ul></div>
+      <div class="sp"><h4><i>12</i> Feedback &amp; reputation</h4><ul><li>Star rating after every order</li><li>Per-item rating and tags</li><li>Free-text comments</li><li>Low-rating alert routed to the manager</li><li>Your best reviews displayed on the site</li><li>Help and support with a ticket trail</li></ul></div>
+      <div class="sp"><h4><i>13</i> Brand &amp; content pages</h4><ul><li>Home, story and sourcing pages</li><li>Food photography gallery</li><li>Outlet page with map, hours and directions</li><li>Careers and contact</li><li>Terms, privacy and promotional terms</li><li>FSSAI licence and statutory notices</li><li>Installable, app-like on a phone</li><li>Works on weak connections</li><li>Built to meet accessibility standards</li></ul></div>
+      <div class="sp"><h4><i>14</i> Admin — orders &amp; kitchen</h4><ul><li><strong>Live order queue</strong> with sound alert</li><li>Accept, reject and set status</li><li>Kitchen display for the line</li><li>Ticket printing</li><li>Preparation time control per order</li><li>Rush mode and pause-new-orders</li><li>Mark items sold out in one tap</li><li>Cancel and refund an order</li><li>Dine-in table view alongside delivery</li></ul></div>
+      <div class="sp"><h4><i>15</i> Admin — menu management</h4><ul><li>Create and edit categories and items</li><li>Upload and crop item photography</li><li>Prices per item and per mode</li><li>Modifiers, add-ons and combo rules</li><li>Nutrition and allergen fields</li><li>Availability by day and time</li><li>Reorder the menu by drag</li><li>Bulk enable and disable</li></ul></div>
+      <div class="sp"><h4><i>16</i> Admin — offers &amp; pricing</h4><ul><li>Build coupons with type, value and caps</li><li>Usage limits: per customer and overall</li><li>Validity windows and day-part rules</li><li>Customer segments and eligibility</li><li>Stacking rules</li><li>Configure points earn and burn rates</li><li>Schedule a campaign in advance</li></ul></div>
+      <div class="sp"><h4><i>17</i> Admin — customers &amp; support</h4><ul><li><strong>Customer list you own</strong>, with order history</li><li>Search and segment customers</li><li>Support tickets and replies</li><li>Issue a refund or a goodwill voucher</li><li>Block abusive accounts</li><li>Export your customer list</li></ul></div>
+      <div class="sp"><h4><i>18</i> Admin — reporting</h4><ul><li>Sales by day, week and month</li><li>Average order value</li><li>Item mix and best sellers</li><li>Delivery vs takeaway vs dine-in split</li><li>Coupon and discount cost</li><li>Repeat customer rate</li><li>Peak hour view for staffing</li><li>Export to spreadsheet</li></ul></div>
+      <div class="sp"><h4><i>19</i> Admin — settings &amp; staff</h4><ul><li>Outlet details, hours and service radius</li><li>Delivery fees and minimum order</li><li>Tax and packaging charge configuration</li><li>Banner and home feed control</li><li>Staff accounts with roles and permissions</li><li>Activity log of who changed what</li><li><strong>Ready for a second outlet</strong> without a rebuild</li></ul></div>
+      <div class="sp"><h4><i>20</i> Platform foundations</h4><ul><li>Mobile-first, built for a mid-range Android phone</li><li>Real-time updates between storefront and kitchen</li><li>Secure sessions and encrypted traffic</li><li>Automated backups with restore</li><li>Error monitoring and uptime alerting</li><li>Staging environment for safe changes</li><li>Documented handover and staff training</li><li><strong>Source code and data are yours</strong></li></ul></div>
+    </div>
+    <div class="spec-note rv">
+      <span><b>Included</b> Brand identity &middot; Photography &middot; Design &middot; Build &middot; Testing &middot; Training</span>
+      <span><b>Not in v1</b> Native iOS and Android apps &middot; Multi-language &middot; Aggregator sync</span>
+    </div>
+  </div>
+</section>
+
 <!-- DESIGN -->
 <section id="design">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">05 — Design &amp; Brand</div>
+      <div class="kicker">06 — Design &amp; Brand</div>
       <h2 class="display">We build the<br><span class="grad">whole identity</span></h2>
       <p>The kitchen has a reputation; the brand doesn't yet have a system. There is no logo standard, no palette, no photography library and nothing that looks the same twice across a menu board, a delivery box and a listing photo. We build all of it — identity, food photography and platform — as one coherent piece of work.</p>
     </div>
@@ -466,12 +518,12 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="tech" style="background:var(--ink-2)">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">06 — Technology</div>
+      <div class="kicker">07 — Technology</div>
       <h2 class="display">Chosen to be<br>handed over</h2>
       <p>One language across the whole stack, mainstream tools with deep hiring pools, and no proprietary lock-in. If you ever move this work to another team, they will recognise every part of it.</p>
     </div>
     <div class="stack rv">
-      <div class="st"><span>Storefront</span><b>Next.js + TypeScript</b><i>Server-rendered for search visibility, app-fast once loaded</i></div>
+      <div class="st"><span>Storefront</span><b>Next.js + TypeScript</b><i>Renders fast on first load, then behaves like an app</i></div>
       <div class="st"><span>Interface</span><b>Tailwind + Radix</b><i>Fully custom design, accessible foundations</i></div>
       <div class="st"><span>Back end</span><b>Node.js REST API</b><i>Same language as the front end, documented contract</i></div>
       <div class="st"><span>Database</span><b>PostgreSQL</b><i>Proven relational store for menu, orders and offers</i></div>
@@ -480,7 +532,6 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="st"><span>Location</span><b>Google Maps Platform</b><i>Address autocomplete and delivery radius</i></div>
       <div class="st"><span>Messaging</span><b>WhatsApp API + OTP SMS</b><i>Order updates read where customers live</i></div>
       <div class="st"><span>Hosting</span><b>Global edge network</b><i>Fast nationwide, scales through campaign spikes</i></div>
-      <div class="st"><span>Insight</span><b>Analytics + funnels</b><i>See exactly where orders are being abandoned</i></div>
       <div class="st"><span>Reliability</span><b>Error &amp; uptime monitoring</b><i>We know it broke before a customer tells you</i></div>
       <div class="st"><span>Future</span><b>Mobile-app ready</b><i>iOS and Android can reuse this same back end</i></div>
     </div>
@@ -501,7 +552,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="roadmap">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">07 — Delivery</div>
+      <div class="kicker">08 — Delivery</div>
       <h2 class="display">How it<br>gets built</h2>
       <p>Brand and design come first and get signed off before production begins, so there are no expensive reversals later. Indicative working weeks from project kick-off.</p>
     </div>
@@ -513,7 +564,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="ph rv"><span class="w">Weeks 7–12</span><h3>The ordering experience</h3><p>Home feed, categories, product pages, customiser, search, basket, coupons, checkout and live payments. By the end of this block an order can be placed end to end.</p></div>
       <div class="ph rv"><span class="w">Weeks 11–14</span><h3>Tracking, dine-in and loyalty</h3><p>Real-time order tracking, WhatsApp updates, history and reorder, feedback capture, QR table ordering, and the points and rewards programme.</p></div>
       <div class="ph rv"><span class="w">Weeks 13–16</span><h3>Back office hardening</h3><p>Kitchen display and ticket printing, offer engine, reporting, staff roles and permissions — tested in your actual restaurant, on your actual hardware.</p></div>
-      <div class="ph rv"><span class="w">Weeks 15–17</span><h3>Content, search and speed</h3><p>Brand pages, structured data for Google, sitemap, and a performance pass targeting top-tier scores on a mid-range phone over mobile data.</p></div>
+      <div class="ph rv"><span class="w">Weeks 15–17</span><h3>Content and speed</h3><p>Brand pages, the photography gallery, and a performance pass targeting top-tier scores on a mid-range phone over mobile data.</p></div>
       <div class="ph rv"><span class="w">Weeks 16–18</span><h3>Testing, training and launch</h3><p>Cross-device testing, accessibility review, load testing against a launch-campaign spike, your team's own acceptance testing, staff training on the till, then go-live.</p></div>
     </div>
   </div>
@@ -523,9 +574,9 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="needs" style="background:var(--ink-2)">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">08 — From Your Side</div>
+      <div class="kicker">09 — From Your Side</div>
       <h2 class="display">What we<br>need from you</h2>
-      <p>Six things. Every one of them, late, moves the launch date — so they're listed here rather than buried in a schedule.</p>
+      <p>Five things. Every one of them, late, moves the launch date — so they're listed here rather than buried in a schedule.</p>
     </div>
     <div class="chk rv">
       <div class="ck"><em>1</em><div><b>The menu, complete</b><span>Every item, description, price, and any nutrition or allergen information you hold — by the end of week three.</span></div></div>
@@ -533,7 +584,6 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
       <div class="ck"><em>3</em><div><b>Trading accounts in your name</b><span>Payment gateway, maps and messaging accounts opened by you, so revenue and data are yours from day one. We handle the setup.</span></div></div>
       <div class="ck"><em>4</em><div><b>One decision maker</b><span>A single person who can sign off brand and design. Committee reviews are the most common cause of slipped launches.</span></div></div>
       <div class="ck"><em>5</em><div><b>Access to the restaurant</b><span>Two site visits to test QR table ordering and the kitchen screen on your real hardware and network.</span></div></div>
-      <div class="ck"><em>6</em><div><b>Google Business Profile access</b><span>Manager access to the Hoodi Main Road listing, so we can wire direct ordering into Google Search and Maps.</span></div></div>
     </div>
   </div>
 </section>
@@ -542,7 +592,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section id="risk">
   <div class="wrap">
     <div class="head rv">
-      <div class="kicker">09 — Straight Talk</div>
+      <div class="kicker">10 — Straight Talk</div>
       <h2 class="display">Where this<br>could go wrong</h2>
       <p>We would rather raise these now than discover them together in week fourteen.</p>
     </div>
@@ -571,7 +621,7 @@ footer{padding:40px var(--gutter);border-top:1px solid var(--line);display:flex;
 <section class="cta">
   <div class="wrap">
     <div class="rv" style="max-width:34ch">
-      <div class="kicker">10 — Next Step</div>
+      <div class="kicker">11 — Next Step</div>
       <h2 class="display">Let's get<br>the kitchen<br><span class="grad">online</span></h2>
     </div>
     <p class="rv" style="margin-top:26px">Commercial terms, milestone schedule and support options are in the accompanying document. Once the scope on this page is agreed, we can start discovery within a week.</p>
